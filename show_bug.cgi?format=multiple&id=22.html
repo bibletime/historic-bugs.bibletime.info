@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Full Text Bug Listing</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="index.html">
+
+
+
+    
+    <link href="skins/standard/global.css%3F1408459644.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="skins/standard/global.css%3F1408459644.css" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_multiple.css%3F1408459645.css" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/buglist.css%3F1408459641.css" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1408459644" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css%3F1408459639.css" rel="stylesheet"
+        type="text/css" title="Dusk"><link href="skins/contrib/Dusk/buglist.css%3F1408459638.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js%3F1408459544"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js%3F1408459566"></script><script type="text/javascript" src="js/global.js%3F1408459574"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 100
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    // -->
+    </script>
+
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class="bugs-bibletime-info yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Full Text Bug Listing</p>
+    </td>
+
+
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.bibletime.info/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fformat=multiple&amp;id=22&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi%3Fformat=multiple&amp;id=22.html" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+      <input type="checkbox" id="Bugzilla_remember_top" 
+             name="Bugzilla_remember" value="on" class="bz_remember"
+                 >
+      <label for="Bugzilla_remember_top">Remember</label>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1408461744-zpmbNKoXfBzErNfMAuk3s3RadRKLHhRgN9iqhgO9HS8">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="show_bug.cgi%3Fformat=multiple&amp;id=22.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi%3Fformat=multiple&amp;id=22&amp;GoAheadAndLogIn=1.html#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="http://bugs.bibletime.info/token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1408461744-F4HDlM9veyKghmlxCAyF7ULAyecmWtQZ7XE4r8C1d8Q">
+    <a href="show_bug.cgi%3Fformat=multiple&amp;id=22.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+<script type="text/javascript" src="tracker.js"></script>
+<script type="text/javascript">try{var t=Piwik.getTracker("http://bugs.bibletime.info/tracker",5);t.trackPageView();t.enableLinkTracking();}catch(err){}</script><noscript><p><img src="tracker%3Fidsite=5" style="border:0;display:absolute" alt=""/></p></noscript>
+<div id="message" style="text-align:center;font-size:200%"><b>NB!</b> Bugs.bibletime.org will be shut down in a few weeks. Please file new bugs to <a href="https://github.com/bibletime/bibletime/issues">our new issue tracker at GitHub</a>.</div><h1>Bug 
+    <a href="show_bug.cgi%3Fid=22.html">22</a>
+  </h1>
+
+  <table class="bugfields">
+    
+
+    
+<tr>
+    <th>Summary:</th>
+    <td colspan=3>Keyboard Verse Navigation Shortcut Asymmetry</td>
+  </tr>
+
+    <tr>
+      <th>Product:</th>
+      <td>
+          [BibleTime applications]&nbsp;BibleTime
+      </td>
+<th class="rightcell">Reporter:</th>
+      <td>Fred Gilham &lt;gilham&gt;</td>
+    </tr>
+<tr>
+    <th>Component:</th>
+    <td>User interface</td><th class="rightcell">Assignee:</th>
+      <td>BibleTime Research Department, Institute of Bug Fixes &lt;bibletime-tracker&gt;</td>
+  </tr>
+
+    <tr>
+      <th>Status:</th>
+      <td>RESOLVED
+        WONTFIX
+      </td>
+<td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <th>Severity:</th>
+      <td class="bz_minor">minor
+      </td>
+<th class="rightcell">CC:</th>
+      <td>jaak
+    </tr>
+
+    <tr>
+      <th>Priority:</th>
+      <td class="bz_Normal">Normal
+      </td>
+<td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+<tr>
+    <th>Version:</th>
+    <td>other</td><td>&nbsp;</td>
+      <td>&nbsp;</td>
+  </tr><tr>
+    <th>Target Milestone:</th>
+    <td>unspecified</td><td>&nbsp;</td>
+      <td>&nbsp;</td>
+  </tr><tr>
+    <th>Hardware:</th>
+    <td>all</td><td>&nbsp;</td>
+      <td>&nbsp;</td>
+  </tr><tr>
+    <th>OS:</th>
+    <td>Linux</td><td>&nbsp;</td>
+      <td>&nbsp;</td>
+  </tr>
+
+
+
+
+        <tr><th class="field_label "
+    id="field_label_cf_qt_version">
+
+
+  <a 
+      title="A custom Multiple-Selection Box field in this installation of Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#cf_qt_version"
+  >Qt version:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_cf_qt_version" >4.8.1</td>
+        
+        <th class="field_label "
+    id="field_label_cf_os_brand">
+
+
+  <a 
+      title="A custom Free Text field in this installation of Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#cf_os_brand"
+  >OS brand and version:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_cf_os_brand" >Linux Ubuntu 12.04.1</td>
+        </tr>
+    
+
+
+
+  
+   
+  </table>
+
+
+  <br>
+<script src="js/comments.js%3F1408459574" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=22.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Fred Gilham</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-12-30 18:19:08 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I'm using the Git development version that I update from time to time.  Currently the version is 2.1.0_dev+0484ae7
+
+I've noticed a kind of asymmetry in the verse scrolling that I don't think is intentional and doesn't really make sense.
+
+If I type &quot;ctrl-v&quot; to scroll down the verses in a chapter, when I get to the end of the chapter it stops with the last verse of the chapter. However, when I hit &quot;ctrl-shift-v&quot; to scroll up, when I get to the first verse and hit it again it will scroll to the last verse of the previous chapter.
+
+I actually like this latter behavior because chapter breaks are artificial. But at least it should do one or the other, because if I scroll accidentally into the previous chapter and then try to scroll back with &quot;ctrl-v&quot; it won't; it just stays at the last verse of the previous chapter. I have to use the chapter-scroll mechanism and that's inconvenient.
+
+Actually I've mapped the second shortcuts in the Bible windows to the arrow keys, which is why it's inconvenient (I can't just use the arrow keys to scroll back and forth because it gets &quot;stuck&quot;), but the same behavior exists whether or not there's any such mapping.</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=22.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-08-19 18:05:56 EEST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >That version if git is no longer supported, closing. If this is still an issue with BibleTime, please use <a href="https://github.com/bibletime/bibletime/issues/new">https://github.com/bibletime/bibletime/issues/new</a> to report a new bug.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.bibletime.info/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fformat=multiple&amp;id=22&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi%3Fformat=multiple&amp;id=22.html" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+      <input type="checkbox" id="Bugzilla_remember_bottom" 
+             name="Bugzilla_remember" value="on" class="bz_remember"
+                 >
+      <label for="Bugzilla_remember_bottom">Remember</label>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1408461744-zpmbNKoXfBzErNfMAuk3s3RadRKLHhRgN9iqhgO9HS8">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="show_bug.cgi%3Fformat=multiple&amp;id=22.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi%3Fformat=multiple&amp;id=22&amp;GoAheadAndLogIn=1.html#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="http://bugs.bibletime.info/token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1408461744-F4HDlM9veyKghmlxCAyF7ULAyecmWtQZ7XE4r8C1d8Q">
+    <a href="show_bug.cgi%3Fformat=multiple&amp;id=22.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

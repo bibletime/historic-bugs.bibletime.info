@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Log in to Bugzilla</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="index.html">
+
+
+
+    
+    <link href="skins/standard/global.css%3F1408459644.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="skins/standard/global.css%3F1408459644.css" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1408459644" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css%3F1408459639.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js%3F1408459544"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js%3F1408459566"></script><script type="text/javascript" src="js/global.js%3F1408459574"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 100
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    // -->
+    </script>
+
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload="document.forms['login'].Bugzilla_login.focus()"
+        class="bugs-bibletime-info yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Log in to Bugzilla</p>
+    </td>
+
+
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.bibletime.info/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li></li>
+
+  
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+<script type="text/javascript" src="tracker.js"></script>
+<script type="text/javascript">try{var t=Piwik.getTracker("http://bugs.bibletime.info/tracker",5);t.trackPageView();t.enableLinkTracking();}catch(err){}</script><noscript><p><img src="tracker%3Fidsite=5" style="border:0;display:absolute" alt=""/></p></noscript>
+<div id="message" style="text-align:center;font-size:200%"><b>NB!</b> Bugs.bibletime.org will be shut down in a few weeks. Please file new bugs to <a href="https://github.com/bibletime/bibletime/issues">our new issue tracker at GitHub</a>.</div>
+
+
+<p>Bugzilla needs a legitimate login and password to continue.
+</p>
+
+<form name="login" action="http://bugs.bibletime.info/show_bug.cgi" method="POST">
+  <table>
+    <tr>
+      <th align="right"><label for="Bugzilla_login">Login:</label></th>
+      <td>
+        <input size="35" id="Bugzilla_login" name="Bugzilla_login">
+      </td>
+    </tr>
+    <tr>
+      <th align="right"><label for="Bugzilla_password">Password:</label></th>
+      <td>
+        <input type="password" size="35" id="Bugzilla_password" name="Bugzilla_password">
+      </td>
+    </tr>
+
+      <tr>
+        <th>&nbsp;</th>
+        <td>
+          <input type="checkbox" id="Bugzilla_remember" name="Bugzilla_remember" value="on"
+                 >
+          <label for="Bugzilla_remember">Remember my Login</label>
+        </td>
+      </tr>
+
+    <tr>
+      <th>&nbsp;</th>
+      <td>
+        <input type="checkbox" id="Bugzilla_restrictlogin" name="Bugzilla_restrictlogin"
+               checked="checked">
+        <label for="Bugzilla_restrictlogin">Restrict this session to this IP address
+        (using this option improves security)</label>
+      </td>
+    </tr>
+  </table>
+<input type="hidden" name="id"
+             value="29">
+  
+      <input type="hidden" name="GoAheadAndLogIn"
+             value="1">
+
+  <input type="hidden" name="Bugzilla_login_token"
+         value="1408461849-H7e-1QvFkRql3S3DciofyK6sCQeNkj38aQw9zeNwbiU">
+  <input type="submit" name="GoAheadAndLogIn" value="Log in" id="log_in">
+
+  <p>
+    (Note: you should make sure cookies are enabled for this site. 
+    Otherwise, you will be required to log in frequently.)
+  </p>
+</form>
+
+
+
+
+    <hr>
+
+    <p>
+      If you don't have a Bugzilla account, you can
+      <a href="createaccount.cgi.html">create a new account</a>.
+        A user account is required to file a new bug or to comment
+        into existing ones so that you can be contacted if more information is
+        needed.
+    </p>
+
+    <hr>
+
+    <form id="forgot" method="get" action="http://bugs.bibletime.info/token.cgi">
+      <input type="hidden" name="a" value="reqpw">
+      If you have an account, but have forgotten your password,
+      enter your login name below and submit a request
+      to change your password.<br>
+      <input size="35" name="loginname">
+      <input type="hidden" id="token" name="token" value="1408461849-8NzCyFOvLYCNMxqKj0W0y3uHkxbLguSgot2wkCp14-M">
+      <input type="submit" id="request" value="Reset Password">
+    </form>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.bibletime.info/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li></li>
+
+  
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

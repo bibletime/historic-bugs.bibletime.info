@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>35</bug_id>
+          
+          <creation_ts>2014-02-02 17:45:00 +0200</creation_ts>
+          <short_desc>Search results missing for Old Testament using KJV</short_desc>
+          <delta_ts>2014-02-03 00:30:11 +0200</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>General</component>
+          <version>git stable-2.10</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>Linux</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>FIXED</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>normal</bug_severity>
+          <target_milestone>2.10.0</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Gary Holmlund">gary.holmlund</reporter>
+          <assigned_to name="Gary Holmlund">gary.holmlund</assigned_to>
+          
+          <cf_qt_version>irrelevant</cf_qt_version>
+          <cf_os_brand>Ubuntu 13.10, LinuxMint 16</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>160</commentid>
+    <comment_count>0</comment_count>
+    <who name="Gary Holmlund">gary.holmlund</who>
+    <bug_when>2014-02-02 17:45:26 +0200</bug_when>
+    <thetext>Using BibleTime 2.9.2 or 2.10.0 stable git, searching using KJV or KJVA does not produce any results in the old testament. Tried on ubuntu 13.10 and linuxmint 16.
+
+Reported by Jack Seiler on BT Facebook and reproduced by Gary.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>161</commentid>
+    <comment_count>1</comment_count>
+    <who name="Gary Holmlund">gary.holmlund</who>
+    <bug_when>2014-02-02 17:46:38 +0200</bug_when>
+    <thetext>Reproduced on Ubuntu 13.10 using BT 2.9.2 or 2.10.0 stable git.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>162</commentid>
+    <comment_count>2</comment_count>
+    <who name="Gary Holmlund">gary.holmlund</who>
+    <bug_when>2014-02-03 00:30:11 +0200</bug_when>
+    <thetext>The problem occurs in indexing. When KJV is indexed using BT 2.10.0, the complete search of old and new testament does work. I believe the actual problem was in sword. BT 2.10.0 is using the new version of sword and does not show the problem. I am resolving this issue.</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>13</bug_id>
+          
+          <creation_ts>2012-04-14 00:58:00 +0300</creation_ts>
+          <short_desc>Crash when trying to close an MDI window</short_desc>
+          <delta_ts>2012-04-14 02:00:20 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>User interface</component>
+          <version>2.9.1</version>
+          <rep_platform>PC</rep_platform>
+          <op_sys>Linux</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>FIXED</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>major</bug_severity>
+          <target_milestone>2.9.2</target_milestone>
+          
+          
+          <everconfirmed>0</everconfirmed>
+          <reporter name="John Zaitseff">J.Zaitseff</reporter>
+          <assigned_to name="BibleTime Research Department, Institute of Bug Fixes">bibletime-tracker</assigned_to>
+          <cc>gary.holmlund</cc>
+          <cf_qt_version>4.8.0</cf_qt_version>
+          <cf_os_brand>Ubuntu 11.10</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>83</commentid>
+    <comment_count>0</comment_count>
+      <attachid>16</attachid>
+    <who name="John Zaitseff">J.Zaitseff</who>
+    <bug_when>2012-04-14 00:58:03 +0300</bug_when>
+    <thetext>Created attachment 16
+Backtrace from BibleTime crash
+
+BibleTime uses MDI windows to display Bibles and other works.  Under BibleTime 2.9.1 (and earlier), running under Ubuntu 11.10 x86, clicking on the close button on any MDI window&apos;s tab (X in red circle in KDE 4.8.1) causes BibleTime to crash with an assertion failure.  Right-clicking that tab (or button), then selecting Close, works.  The arrangement mode is Tabbed and the MDI window is maximised.
+
+The following is generated to stderr:
+
+(BibleTime 2.9.1) FATAL: ASSERT failure in QList&lt;T&gt;::operator[]: &quot;index out of range&quot;, file /usr/include/qt4/QtCore/qlist.h, line 464                           
+Please report this bug! (http://www.bibletime.info/development_help.html)Aborted (core dumped)
+
+I&apos;ll attach a GDB backtrace as well, although it is probably not as helpful as it could be since there is no debugging info in the binary.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>84</commentid>
+    <comment_count>1</comment_count>
+    <who name="Gary Holmlund">gary.holmlund</who>
+    <bug_when>2012-04-14 02:00:20 +0300</bug_when>
+    <thetext>This bug has already be fixed in the master and stable-2.9. The bug occurs when closing tabbed windows and using Qt 4.8.
+
+We need to release 2.9.2.</thetext>
+  </long_desc>
+      
+          <attachment
+              isobsolete="0"
+              ispatch="0"
+              isprivate="0"
+          >
+            <attachid>16</attachid>
+            <date>2012-04-14 00:58:00 +0300</date>
+            <delta_ts>2012-04-14 00:58:03 +0300</delta_ts>
+            <desc>Backtrace from BibleTime crash</desc>
+            <filename>bibletime.backtrace</filename>
+            <type>text/plain</type>
+            <size>3642</size>
+            <attacher name="John Zaitseff">J.Zaitseff</attacher>
+            
+              <data encoding="base64">W05ldyBMV1AgMzA5NF0KW05ldyBMV1AgMzA5OV0KW05ldyBMV1AgMzEwMF0KW1RocmVhZCBkZWJ1
+Z2dpbmcgdXNpbmcgbGlidGhyZWFkX2RiIGVuYWJsZWRdCkNvcmUgd2FzIGdlbmVyYXRlZCBieSBg
+YmlibGV0aW1lJy4KUHJvZ3JhbSB0ZXJtaW5hdGVkIHdpdGggc2lnbmFsIDYsIEFib3J0ZWQuCiMw
+ICAweDAwYjc1NDE2IGluIF9fa2VybmVsX3ZzeXNjYWxsICgpCiMwICAweDAwYjc1NDE2IGluIF9f
+a2VybmVsX3ZzeXNjYWxsICgpCiMxICAweDAyMmZhYzhmIGluIF9fR0lfcmFpc2UgKHNpZz02KSBh
+dCAuLi9ucHRsL3N5c2RlcHMvdW5peC9zeXN2L2xpbnV4L3JhaXNlLmM6NjQKIzIgIDB4MDIyZmUy
+YjUgaW4gX19HSV9hYm9ydCAoKSBhdCBhYm9ydC5jOjkyCiMzICAweDA4MGNkNzNkIGluID8/ICgp
+CiM0ICAweDAwMTZjNWE5IGluIHF0X21lc3NhZ2Vfb3V0cHV0KFF0TXNnVHlwZSwgY2hhciBjb25z
+dCopICgpIGZyb20gL3Vzci9saWIvaTM4Ni1saW51eC1nbnUvbGliUXRDb3JlLnNvLjQKIzUgIDB4
+MDAxNmNhZGIgaW4gPz8gKCkgZnJvbSAvdXNyL2xpYi9pMzg2LWxpbnV4LWdudS9saWJRdENvcmUu
+c28uNAojNiAgMHgwMDE2Y2JmOCBpbiBxRmF0YWwoY2hhciBjb25zdCosIC4uLikgKCkgZnJvbSAv
+dXNyL2xpYi9pMzg2LWxpbnV4LWdudS9saWJRdENvcmUuc28uNAojNyAgMHgwMDE2Y2MzZCBpbiBx
+dF9hc3NlcnRfeChjaGFyIGNvbnN0KiwgY2hhciBjb25zdCosIGNoYXIgY29uc3QqLCBpbnQpICgp
+IGZyb20gL3Vzci9saWIvaTM4Ni1saW51eC1nbnUvbGliUXRDb3JlLnNvLjQKIzggIDB4MDgxNGM0
+NDQgaW4gQ01ESUFyZWE6OmNsb3NlVGFiKGludCkgKCkKIzkgIDB4MDgxZTExNjUgaW4gQ01ESUFy
+ZWE6OnF0X21ldGFjYWxsKFFNZXRhT2JqZWN0OjpDYWxsLCBpbnQsIHZvaWQqKikgKCkKIzEwIDB4
+MDAyOTNkN2QgaW4gUU1ldGFPYmplY3Q6Om1ldGFjYWxsKFFPYmplY3QqLCBRTWV0YU9iamVjdDo6
+Q2FsbCwgaW50LCB2b2lkKiopICgpIGZyb20gL3Vzci9saWIvaTM4Ni1saW51eC1nbnUvbGliUXRD
+b3JlLnNvLjQKIzExIDB4MDAyYTNhOWQgaW4gUU1ldGFPYmplY3Q6OmFjdGl2YXRlKFFPYmplY3Qq
+LCBRTWV0YU9iamVjdCBjb25zdCosIGludCwgdm9pZCoqKSAoKSBmcm9tIC91c3IvbGliL2kzODYt
+bGludXgtZ251L2xpYlF0Q29yZS5zby40CiMxMiAweDAzOTA3NjI1IGluIFFUYWJCYXI6OnRhYkNs
+b3NlUmVxdWVzdGVkKGludCkgKCkgZnJvbSAvdXNyL2xpYi9pMzg2LWxpbnV4LWdudS9saWJRdEd1
+aS5zby40CiMxMyAweDAzOTA3NmQ2IGluID8/ICgpIGZyb20gL3Vzci9saWIvaTM4Ni1saW51eC1n
+bnUvbGliUXRHdWkuc28uNAojMTQgMHgwMDJhMzc5MSBpbiBRTWV0YU9iamVjdDo6YWN0aXZhdGUo
+UU9iamVjdCosIFFNZXRhT2JqZWN0IGNvbnN0KiwgaW50LCB2b2lkKiopICgpIGZyb20gL3Vzci9s
+aWIvaTM4Ni1saW51eC1nbnUvbGliUXRDb3JlLnNvLjQKIzE1IDB4MDNiNWM2N2QgaW4gUUFic3Ry
+YWN0QnV0dG9uOjpjbGlja2VkKGJvb2wpICgpIGZyb20gL3Vzci9saWIvaTM4Ni1saW51eC1nbnUv
+bGliUXRHdWkuc28uNAojMTYgMHgwMzg0ZmY1ZCBpbiA/PyAoKSBmcm9tIC91c3IvbGliL2kzODYt
+bGludXgtZ251L2xpYlF0R3VpLnNvLjQKIzE3IDB4MDM4NTE1Y2IgaW4gPz8gKCkgZnJvbSAvdXNy
+L2xpYi9pMzg2LWxpbnV4LWdudS9saWJRdEd1aS5zby40CiMxOCAweDAzODUxODg2IGluIFFBYnN0
+cmFjdEJ1dHRvbjo6bW91c2VSZWxlYXNlRXZlbnQoUU1vdXNlRXZlbnQqKSAoKSBmcm9tIC91c3Iv
+bGliL2kzODYtbGludXgtZ251L2xpYlF0R3VpLnNvLjQKIzE5IDB4MDM0ODFiOWMgaW4gUVdpZGdl
+dDo6ZXZlbnQoUUV2ZW50KikgKCkgZnJvbSAvdXNyL2xpYi9pMzg2LWxpbnV4LWdudS9saWJRdEd1
+aS5zby40CiMyMCAweDAzODUwYjI5IGluIFFBYnN0cmFjdEJ1dHRvbjo6ZXZlbnQoUUV2ZW50Kikg
+KCkgZnJvbSAvdXNyL2xpYi9pMzg2LWxpbnV4LWdudS9saWJRdEd1aS5zby40CiMyMSAweDAzNDI3
+OWY0IGluIFFBcHBsaWNhdGlvblByaXZhdGU6Om5vdGlmeV9oZWxwZXIoUU9iamVjdCosIFFFdmVu
+dCopICgpIGZyb20gL3Vzci9saWIvaTM4Ni1saW51eC1nbnUvbGliUXRHdWkuc28uNAojMjIgMHgw
+MzQyZGI0NCBpbiBRQXBwbGljYXRpb246Om5vdGlmeShRT2JqZWN0KiwgUUV2ZW50KikgKCkgZnJv
+bSAvdXNyL2xpYi9pMzg2LWxpbnV4LWdudS9saWJRdEd1aS5zby40CiMyMyAweDAwMjhjYTVlIGlu
+IFFDb3JlQXBwbGljYXRpb246Om5vdGlmeUludGVybmFsKFFPYmplY3QqLCBRRXZlbnQqKSAoKSBm
+cm9tIC91c3IvbGliL2kzODYtbGludXgtZ251L2xpYlF0Q29yZS5zby40CiMyNCAweDAzNDI4OWI1
+IGluIFFBcHBsaWNhdGlvblByaXZhdGU6OnNlbmRNb3VzZUV2ZW50KFFXaWRnZXQqLCBRTW91c2VF
+dmVudCosIFFXaWRnZXQqLCBRV2lkZ2V0KiwgUVdpZGdldCoqLCBRUG9pbnRlcjxRV2lkZ2V0PiYs
+IGJvb2wpICgpIGZyb20gL3Vzci9saWIvaTM4Ni1saW51eC1nbnUvbGliUXRHdWkuc28uNAojMjUg
+MHgwMzRiMWVhNCBpbiA/PyAoKSBmcm9tIC91c3IvbGliL2kzODYtbGludXgtZ251L2xpYlF0R3Vp
+LnNvLjQKIzI2IDB4MDM0YjBlN2QgaW4gUUFwcGxpY2F0aW9uOjp4MTFQcm9jZXNzRXZlbnQoX1hF
+dmVudCopICgpIGZyb20gL3Vzci9saWIvaTM4Ni1saW51eC1nbnUvbGliUXRHdWkuc28uNAojMjcg
+MHgwMzRkZDY4YyBpbiA/PyAoKSBmcm9tIC91c3IvbGliL2kzODYtbGludXgtZ251L2xpYlF0R3Vp
+LnNvLjQKIzI4IDB4MDg2OTgyNWYgaW4gZ19tYWluX2NvbnRleHRfZGlzcGF0Y2ggKCkgZnJvbSAv
+bGliL2kzODYtbGludXgtZ251L2xpYmdsaWItMi4wLnNvLjAKIzI5IDB4MDg2OTg5OTAgaW4gPz8g
+KCkgZnJvbSAvbGliL2kzODYtbGludXgtZ251L2xpYmdsaWItMi4wLnNvLjAKIzMwIDB4MDg2OThj
+MmEgaW4gZ19tYWluX2NvbnRleHRfaXRlcmF0aW9uICgpIGZyb20gL2xpYi9pMzg2LWxpbnV4LWdu
+dS9saWJnbGliLTIuMC5zby4wCiMzMSAweDAwMmJmYTM3IGluIFFFdmVudERpc3BhdGNoZXJHbGli
+Ojpwcm9jZXNzRXZlbnRzKFFGbGFnczxRRXZlbnRMb29wOjpQcm9jZXNzRXZlbnRzRmxhZz4pICgp
+IGZyb20gL3Vzci9saWIvaTM4Ni1saW51eC1nbnUvbGliUXRDb3JlLnNvLjQKIzMyIDB4MDM0ZGQy
+OGEgaW4gPz8gKCkgZnJvbSAvdXNyL2xpYi9pMzg2LWxpbnV4LWdudS9saWJRdEd1aS5zby40CiMz
+MyAweDAwMjhiNWVkIGluIFFFdmVudExvb3A6OnByb2Nlc3NFdmVudHMoUUZsYWdzPFFFdmVudExv
+b3A6OlByb2Nlc3NFdmVudHNGbGFnPikgKCkgZnJvbSAvdXNyL2xpYi9pMzg2LWxpbnV4LWdudS9s
+aWJRdENvcmUuc28uNAojMzQgMHgwMDI4Yjg4OSBpbiBRRXZlbnRMb29wOjpleGVjKFFGbGFnczxR
+RXZlbnRMb29wOjpQcm9jZXNzRXZlbnRzRmxhZz4pICgpIGZyb20gL3Vzci9saWIvaTM4Ni1saW51
+eC1nbnUvbGliUXRDb3JlLnNvLjQKIzM1IDB4MDAyOTBmOWEgaW4gUUNvcmVBcHBsaWNhdGlvbjo6
+ZXhlYygpICgpIGZyb20gL3Vzci9saWIvaTM4Ni1saW51eC1nbnUvbGliUXRDb3JlLnNvLjQKIzM2
+IDB4MDM0MjU4NTQgaW4gUUFwcGxpY2F0aW9uOjpleGVjKCkgKCkgZnJvbSAvdXNyL2xpYi9pMzg2
+LWxpbnV4LWdudS9saWJRdEd1aS5zby40CiMzNyAweDA4MGI3ZGZkIGluIG1haW4gKCkK
+</data>
+
+          </attachment>
+      
+
+    </bug>
+
+</bugzilla>

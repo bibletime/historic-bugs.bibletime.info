@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>28</bug_id>
+          
+          <creation_ts>2013-07-04 17:42:00 +0300</creation_ts>
+          <short_desc>Text doesn&apos;t display in main window</short_desc>
+          <delta_ts>2013-07-04 18:58:28 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>User interface</component>
+          <version>2.9.1</version>
+          <rep_platform>PC</rep_platform>
+          <op_sys>Linux</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>DUPLICATE</resolution>
+          <dup_id>25</dup_id>
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>major</bug_severity>
+          <target_milestone>2.9.2</target_milestone>
+          
+          
+          <everconfirmed>0</everconfirmed>
+          <reporter name="Ray Klassen">rayklassen</reporter>
+          <assigned_to name="BibleTime Research Department, Institute of Bug Fixes">bibletime-tracker</assigned_to>
+          <cc>gary.holmlund</cc>
+          <cf_qt_version>4.8.4</cf_qt_version>
+          <cf_os_brand>Ubuntu 13.05</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>124</commentid>
+    <comment_count>0</comment_count>
+    <who name="Ray Klassen">rayklassen</who>
+    <bug_when>2013-07-04 17:42:13 +0300</bug_when>
+    <thetext>See https://bugs.launchpad.net/ubuntu/+source/bibletime/+bug/1132479
+
+Text doesn&apos;t show except to flicker on and then off on initial load of new bible
+
+the following patch appears to work.
+
+--- /usr/src/bibletime-2.9.1/src/frontend/display/bthtmlreaddisplay.cpp	2011-12-22 12:18:06.000000000 -0800
++++ bthtmlreaddisplay.cpp	2013-05-23 07:40:54.000000000 -0700
+@@ -247,7 +247,14 @@
+ 
+ // Scroll QWebView to the correct location as specified by the anchor
+ void BtHtmlReadDisplay::moveToAnchor( const QString&amp; anchor ) {
+-    slotGoToAnchor(anchor);
++
++#if QT_VERSION &gt;= 0x040700
++    mainFrame()-&gt;scrollToAnchor(anchor);
++#else
++     slotGoToAnchor(anchor);
++#endif
++
++
+ }</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>125</commentid>
+    <comment_count>1</comment_count>
+    <who name="Gary Holmlund">gary.holmlund</who>
+    <bug_when>2013-07-04 18:58:28 +0300</bug_when>
+    <thetext>The 2.9.2 version of BibleTime fixes this issue and also lets you build against either Qt4 or Qt5
+
+*** This bug has been marked as a duplicate of bug 25 ***</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

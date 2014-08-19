@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>31</bug_id>
+          
+          <creation_ts>2013-11-13 19:05:00 +0200</creation_ts>
+          <short_desc>Highlighting issue</short_desc>
+          <delta_ts>2014-08-19 18:07:42 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>User interface</component>
+          <version>2.9.2</version>
+          <rep_platform>PC</rep_platform>
+          <op_sys>Windows</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>WONTFIX</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>normal</bug_severity>
+          <target_milestone>unspecified</target_milestone>
+          
+          
+          <everconfirmed>0</everconfirmed>
+          <reporter name="Konstantin Maslyuk">kalemas</reporter>
+          <assigned_to name="BibleTime Research Department, Institute of Bug Fixes">bibletime-tracker</assigned_to>
+          <cc>jaak</cc>
+          <cf_qt_version>unknown</cf_qt_version>
+          <cf_os_brand>Windows 7x64</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>142</commentid>
+    <comment_count>0</comment_count>
+    <who name="Konstantin Maslyuk">kalemas</who>
+    <bug_when>2013-11-13 19:05:50 +0200</bug_when>
+    <thetext>Trying search for &quot;strong:G25&quot; finds correct results but highlighting also highlight G2523 as well as G25</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>212</commentid>
+    <comment_count>1</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2014-08-19 18:07:42 +0300</bug_when>
+    <thetext>The 2.9.2 is no longer supported, closing. If this is still an issue with BibleTime, please use https://github.com/bibletime/bibletime/issues/new to report a new bug.</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

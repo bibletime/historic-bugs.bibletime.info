@@ -1,0 +1,1042 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Full Text Bug Listing</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="index.html">
+
+
+
+    
+    <link href="skins/standard/global.css%3F1408459644.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="skins/standard/global.css%3F1408459644.css" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_multiple.css%3F1408459645.css" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/buglist.css%3F1408459641.css" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1408459644" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css%3F1408459639.css" rel="stylesheet"
+        type="text/css" title="Dusk"><link href="skins/contrib/Dusk/buglist.css%3F1408459638.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js%3F1408459544"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js%3F1408459566"></script><script type="text/javascript" src="js/global.js%3F1408459574"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 100
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    // -->
+    </script>
+
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class="bugs-bibletime-info yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Full Text Bug Listing</p>
+    </td>
+
+
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.bibletime.info/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fformat=multiple&amp;id=7&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi%3Fformat=multiple&amp;id=7.html" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+      <input type="checkbox" id="Bugzilla_remember_top" 
+             name="Bugzilla_remember" value="on" class="bz_remember"
+                 >
+      <label for="Bugzilla_remember_top">Remember</label>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1408461491--b9PdcNOV6WI_rtvomIlY_Uzq1eLuGOITpHwh_k1MaI">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="show_bug.cgi%3Fformat=multiple&amp;id=7.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi%3Fformat=multiple&amp;id=7&amp;GoAheadAndLogIn=1.html#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="http://bugs.bibletime.info/token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1408461491-p19Jv1134XPulRYA6fQUE1oh1fO_Zs-vjHT3UgHoE64">
+    <a href="show_bug.cgi%3Fformat=multiple&amp;id=7.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+<script type="text/javascript" src="tracker.js"></script>
+<script type="text/javascript">try{var t=Piwik.getTracker("http://bugs.bibletime.info/tracker",5);t.trackPageView();t.enableLinkTracking();}catch(err){}</script><noscript><p><img src="tracker%3Fidsite=5" style="border:0;display:absolute" alt=""/></p></noscript>
+<div id="message" style="text-align:center;font-size:200%"><b>NB!</b> Bugs.bibletime.org will be shut down in a few weeks. Please file new bugs to <a href="https://github.com/bibletime/bibletime/issues">our new issue tracker at GitHub</a>.</div><h1>Bug 
+    <a href="show_bug.cgi%3Fid=7.html">7</a>
+  </h1>
+
+  <table class="bugfields">
+    
+
+    
+<tr>
+    <th>Summary:</th>
+    <td colspan=3>Display of Hebrew text messed up</td>
+  </tr>
+
+    <tr>
+      <th>Product:</th>
+      <td>
+          [BibleTime applications]&nbsp;BibleTime
+      </td>
+<th class="rightcell">Reporter:</th>
+      <td>alvanx &lt;alvanx&gt;</td>
+    </tr>
+<tr>
+    <th>Component:</th>
+    <td>General</td><th class="rightcell">Assignee:</th>
+      <td>Gary Holmlund &lt;gary.holmlund&gt;</td>
+  </tr>
+
+    <tr>
+      <th>Status:</th>
+      <td>RESOLVED
+        UPSTREAM
+      </td>
+<td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <th>Severity:</th>
+      <td class="bz_major">major
+      </td>
+<th class="rightcell">CC:</th>
+      <td>gary.holmlund, jaak, jmarsden, ojschmidt
+    </tr>
+
+    <tr>
+      <th>Priority:</th>
+      <td class="bz_Normal">Normal
+      </td>
+<td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+<tr>
+    <th>Version:</th>
+    <td>git stable-2.9</td><td>&nbsp;</td>
+      <td>&nbsp;</td>
+  </tr><tr>
+    <th>Target Milestone:</th>
+    <td>unspecified</td><td>&nbsp;</td>
+      <td>&nbsp;</td>
+  </tr><tr>
+    <th>Hardware:</th>
+    <td>all</td><td>&nbsp;</td>
+      <td>&nbsp;</td>
+  </tr><tr>
+    <th>OS:</th>
+    <td>Linux</td><td>&nbsp;</td>
+      <td>&nbsp;</td>
+  </tr>
+
+      <tr>
+        <th>URL:</th>
+        <td colspan="3">
+            <a href="https://bugs.webkit.org/show_bug.cgi?id=75193">https://bugs.webkit.org/show_bug.cgi?id=75193</a>
+        </td>
+      </tr>
+
+
+
+        <tr><th class="field_label "
+    id="field_label_cf_qt_version">
+
+
+  <a 
+      title="A custom Multiple-Selection Box field in this installation of Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#cf_qt_version"
+  >Qt version:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_cf_qt_version" >4.7.3</td>
+        
+        <th class="field_label "
+    id="field_label_cf_os_brand">
+
+
+  <a 
+      title="A custom Free Text field in this installation of Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#cf_os_brand"
+  >OS brand and version:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_cf_os_brand" >openSUSE 12.1</td>
+        </tr>
+    
+
+
+
+      <tr>
+        <th>Attachments:</th>
+        <td colspan="3">
+              <a href="attachment.cgi%3Fid=6">screenshot of the problem
+              </a><br>
+              <a href="attachment.cgi%3Fid=7">Screenshot showing correct Hebrew display in BT 2.9.1 under Ubuntu 10.04 amd64
+              </a><br>
+              <a href="attachment.cgi%3Fid=8">academic-bible.com, linuxmint 12, fedora 16, and openSuse 12.1 compared
+              </a>
+        </td>
+      </tr>
+  
+   
+  </table>
+
+
+  <br>
+<script src="js/comments.js%3F1408459574" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=7.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">alvanx</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-08 22:59:47 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >BibleTime 2.9 messes up Hebrew text (and presumably other RTL text?). It seems that the letters are force displayed as LTR. It is effectively turned into &quot;siht ekil txet a&quot; - you have to read it backwords to get it. 
+This happens in the text display as well as the mag window. 
+
+This is with BT 2.9 compiled from source, Qt 4.7.4.</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=7.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-23 00:22:58 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Please give us more detailed information. What hebrew module(s) does this happen with? Does it happen always or only when using parallel view or some other feature? Do you have a custom font set for Hebrew texts? Please attach a screenshot displaying the problem. Thanks.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=7.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">alvanx</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-23 13:27:26 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="attachment.cgi%3Fid=6" name="attach_6" title="screenshot of the problem">attachment 6</a> <a href="attachment.cgi%3Fid=6&amp;action=edit.html" title="screenshot of the problem">[details]</a></span>
+screenshot of the problem
+
+Screenshot of Bibletime 2.9.0 with Gen 1:1</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=7.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">alvanx</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-23 13:39:43 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I tried Esra SIL and SBL Hebrew, which are the most commonly used (and probably the best free) Hebrew fonts. Most others will have some kind of problem. I have used SBL Hebrew in BibleTime for years with no problem, so it's not the font. I tried OSMHB, WLC, Aleppo and HebModern. I can't read Arab or Syriac, so Hebrew is the only thing I can check. The problem occurs in parallel view as well as in single view. 
+
+Here is what the text is supposed to look like (hope this website will display it right): בְּרֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים
+
+For double-check comparison, look at Gen 1:1 online: <a href="http://www.academic-bible.com/en/nc/online-bibles/hebrew-bible-bhs/bibelstelle/Gen%201,1/anzeige/context/#iv">http://www.academic-bible.com/en/nc/online-bibles/hebrew-bible-bhs/bibelstelle/Gen%201,1/anzeige/context/#iv</a>
+
+Even if you don't know Hebrew, you can compare where you find the major characters (ignore the dots and dashes around (those are vowels), but they are what made me notice the bug in the first place). The behavior of the text is as follows: 
+
+The words are in correct order. When you compare the two first words (on the right side), you will see it is bereshit (בְּרֵאשִׁ֖ית, &quot;in the beginning&quot;). What BibleTime displays is &quot;tihsereb&quot; (the equivalent of &quot;ni eht gninnigeb&quot;). 
+
+Can you see the problem? There are minor variations with the other module, but they share the same basic issue.</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=7.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">alvanx</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-23 22:57:33 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >One more specification: Hebrew modules that include vowels (WLCD and OSMHB) act as described regarding word order: They retain the word order. The first word of a sentence is on the right side, even though the first letter of the word is on the left. 
+
+Modules without punctuation actually also twist the word order so that an RTL text is completely turned LTR. The first word of each sentence is on the left side, and the first letter of the word is on the left side as well.</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=7.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jonathan Marsden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-24 01:36:42 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="attachment.cgi%3Fid=7" name="attach_7" title="Screenshot showing correct Hebrew display in BT 2.9.1 under Ubuntu 10.04 amd64">attachment 7</a> <a href="attachment.cgi%3Fid=7&amp;action=edit.html" title="Screenshot showing correct Hebrew display in BT 2.9.1 under Ubuntu 10.04 amd64">[details]</a></span>
+Screenshot showing correct Hebrew display in BT 2.9.1 under Ubuntu 10.04 amd64</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=7.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jonathan Marsden</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-24 01:45:58 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I think this issue may be specific to the reporters build process, or to the
+libraries installed on his system.
+
+I just installed BibleTime 2.9.1 here, on Ubuntu 10.04 amd64, from the .deb
+package of it that I just created (which will be uploaded to the CrossWire
+Stable PPA, and to Debian, after a bit more testing).  
+
+On my system, BibleTime 2.9.1 does not have any &quot;Hebrew reversing&quot; issue that I
+can see.  I used the same bible module as the reporter's screenshot, OSMHB,
+displaying the same verse (Genesis 1:1).  I use the SIL Ezra font, installed
+from the SIL Ubuntu package repository at <a href="http://packages.sil.org/ubuntu/">http://packages.sil.org/ubuntu/</a> by
+doing
+
+  sudo apt-get install ttf-sil-ezra
+
+Screenshot attached -- it looks correct to me.
+
+Jonathan</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=7.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Gary Holmlund</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-24 03:49:10 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I believe I have narrowed down this problem to a Qt bug. I am attaching a png file with Gen 1:1 shown from academic-bible.com and BibleTime on LinuxMint 12, Fedora 16, and openSuse 12.1. BibleTime was the latest git master. 
+
+LinuxMint 12 correctly shows the text, but Fedora 16 and openSuse 12.1 do not. LinuxMint 12 is built from Ubuntu 11.10 so it should be correct also.
+
+Here are the Qt versions of each.
+
+Fedora 16
+  qt 4.8.0
+  qtwebkit 2.2.0
+
+openSuse 12.1
+  qt 4.7.4
+  qtwebkit 2.2.0
+
+linuxmint 12
+  qt 4.7.4
+  qtwebkit 2.2~2011week36-0ubuntu1
+ 
+LinuxMint 12 and Ubuntu 11.10 took a prelease of webkit and named it &quot;2.2~2011week36&quot; and it is working. The others have the final 2.2.0 webkit and they are not working right. 
+
+So, my conclusion is that after 2010week36 a bug was introduced into webkit 2.2. I have search the bug list for webkit but have not found a report like this problem. I will probably have to write a small program to demonstrate the problem and submit a bug report.</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=7.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Gary Holmlund</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-24 03:51:44 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="attachment.cgi%3Fid=8" name="attach_8" title="academic-bible.com, linuxmint 12, fedora 16, and openSuse 12.1 compared">attachment 8</a> <a href="attachment.cgi%3Fid=8&amp;action=edit.html" title="academic-bible.com, linuxmint 12, fedora 16, and openSuse 12.1 compared">[details]</a></span>
+academic-bible.com, linuxmint 12, fedora 16, and openSuse 12.1 compared</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=7.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">alvanx</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-24 13:57:42 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi Gary, 
+
+it looks like you identified the problem. Great, thanks! I can confirm that these are exactly the versions of Qt and qtwebkit installed on my system. 
+
+Will you all be able to work around it, or will you recommend steps to take for the user? I am looking right now if I can find a newer version of qtwebkit than 2.2.0 on the Build Service.</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=7.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Gary Holmlund</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-24 19:58:07 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I have written a small qt program that shows the problem. I submitted a QtWebKit bug report for it. See <a href="https://bugs.webkit.org/show_bug.cgi?id=75193">https://bugs.webkit.org/show_bug.cgi?id=75193</a>
+
+I don't believe there is any work around that can be made in BibleTime code. I also don't think there are later versions of QtWebKit which can be installed. Switching to Linux Mint 12 or Ubuntu 11.10 does work.
+
+When there is any news from the Qt bug report I will report it here.</pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=7.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-25 00:11:11 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi%3Fid=7.html#c10">comment #10</a>)
+<span class="quote">&gt; When there is any news from the Qt bug report I will report it here.</span >
+
+Thanks, Gary! I'll mark the bug as RESOLVED UPSTREAM, but any progress on the upstream bug may also be reported here. In case this still happens to be a issue with BibleTime, we can reopen this bug.</pre>
+    </div><div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=7.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Olaf Schmidt-Wischhöfer</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-29 19:36:23 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >OpenSUSE users can fix the problem by updating to QtWebkit version 4.7.4+4.7.20111227-1.1 in repository <a href="http://download.opensuse.org/repositories/KDE:/Qt47/openSUSE_11.4/">http://download.opensuse.org/repositories/KDE:/Qt47/openSUSE_11.4/</a> (or *_12.1).</pre>
+    </div><div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=7.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">alvanx</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2012-10-15 11:06:12 EEST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi, I wanted to ask about this bug again. Nothing has changed for me in almost a year, apparently there haven't really been any efforts to fix the bug upstream. 
+
+openSUSE 12.2 still comes with this bug and I am considering to open a bug report for openSUSE because nobody seems to be aware of it (although I suspect this support request might be connected to it <a href="http://forums.opensuse.org/opensuseforums/english/get-technical-help-here/applications/469255-arabic-characters-not-linked-opensuse-12-1-a.html">http://forums.opensuse.org/opensuseforums/english/get-technical-help-here/applications/469255-arabic-characters-not-linked-opensuse-12-1-a.html</a> ). 
+
+The workaround that had been suggested by Olaf didn't work for 12.1 due to dependency issues (it would have downgraded KDE). 
+
+Before I file this bug for openSUSE, I'd like to know how the situation has been for other distros. Is this still a openSUSE/Fedora only bug, or have Ubuntu and Mint upgraded to qtwebkit 2.2.0 as well? If so, can Ubuntu/Mint users confirm this bug now? 
+
+Thanks a lot. This bug is a real itch.</pre>
+    </div><div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=7.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">alvanx</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-12-30 05:18:46 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Working now on openSUSE 13.1. This means that now there is nobody that will have to be stuck with this bug because of the distribution they are using.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.bibletime.info/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fformat=multiple&amp;id=7&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi%3Fformat=multiple&amp;id=7.html" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+      <input type="checkbox" id="Bugzilla_remember_bottom" 
+             name="Bugzilla_remember" value="on" class="bz_remember"
+                 >
+      <label for="Bugzilla_remember_bottom">Remember</label>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1408461492-FCcXZZVlYKeWHQdyrUcVgo9ELwElh5zQgbmuyOhMhnA">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="show_bug.cgi%3Fformat=multiple&amp;id=7.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi%3Fformat=multiple&amp;id=7&amp;GoAheadAndLogIn=1.html#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="http://bugs.bibletime.info/token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1408461492-eTgQQmpBQndxALTZPhmdWKQ9uFJSGlAmmhHm6riBo2o">
+    <a href="show_bug.cgi%3Fformat=multiple&amp;id=7.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,918 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug Fields</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="index.html">
+
+
+
+    
+    <link href="skins/standard/global.css%3F1408459644.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="skins/standard/global.css%3F1408459644.css" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/page.css%3F1408459640.css" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1408459644" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css%3F1408459639.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js%3F1408459544"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js%3F1408459566"></script><script type="text/javascript" src="js/global.js%3F1408459574"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 100
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    // -->
+    </script>
+
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class="bugs-bibletime-info yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug Fields</p>
+    </td>
+
+
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.bibletime.info/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li></li>
+
+  
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="page.cgi%3Fid=fields.html&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="page.cgi%3Fid=fields.html" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+      <input type="checkbox" id="Bugzilla_remember_top" 
+             name="Bugzilla_remember" value="on" class="bz_remember"
+                 >
+      <label for="Bugzilla_remember_top">Remember</label>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1408461324-WgCC55KY2g1psMqRTwgq_wA9zftFu7rBiL9UD90h6AI">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="page.cgi%3Fid=fields.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="page.cgi%3Fid=fields.html&amp;GoAheadAndLogIn=1.html#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="http://bugs.bibletime.info/token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1408461324-jxFVHJLvx2mf5irzPpmAFF4Yb2GrgZmUlDHNEPMuFLI">
+    <a href="page.cgi%3Fid=fields.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+<script type="text/javascript" src="tracker.js"></script>
+<script type="text/javascript">try{var t=Piwik.getTracker("http://bugs.bibletime.info/tracker",5);t.trackPageView();t.enableLinkTracking();}catch(err){}</script><noscript><p><img src="tracker%3Fidsite=5" style="border:0;display:absolute" alt=""/></p></noscript>
+<div id="message" style="text-align:center;font-size:200%"><b>NB!</b> Bugs.bibletime.org will be shut down in a few weeks. Please file new bugs to <a href="https://github.com/bibletime/bibletime/issues">our new issue tracker at GitHub</a>.</div>
+
+<p>This page describes the various fields that you see 
+  on a bug.</p>
+
+<table class="field_value_explanation">
+  <thead>
+  <tr>
+    <td id="bug_status">
+      <h2>STATUS</h2>
+    </td>
+
+    <td id="resolution">
+      <h2>RESOLUTION</h2>
+    </td>
+  </tr>
+
+  <tr>
+    <td>The Status field indicates the 
+      current state of a bug. Only certain status transitions
+      are allowed.</td>
+
+    <td>The Resolution field indicates what
+      happened to this bug.</td>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr class="header_row">
+    <td colspan="2">Open Bugs</td>
+  </tr>
+  <tr>
+    <td>
+      <dl>
+        <dt class="unconfirmed">UNCONFIRMED
+        </dt>
+        <dd class="unconfirmed">
+          This bug has recently been added to the database. 
+          Nobody has confirmed that this bug is valid. Users
+          who have the "canconfirm" permission set may confirm
+          this bug, changing its state to 
+          <b>CONFIRMED</b>. 
+          Or, it may be directly resolved and marked
+          <b>RESOLVED</b>.
+        </dd>
+
+        <dt class="confirmed">CONFIRMED
+        </dt>
+        <dd class="confirmed">
+          This bug is valid and has recently been filed.
+          Bugs in this state become 
+          <b>IN_PROGRESS</b>
+          when somebody is working on them, or become resolved and marked
+          <b>RESOLVED</b>.
+        </dd>
+
+        <dt class="in_progress">IN_PROGRESS
+        </dt>
+        <dd class="in_progress">
+          This bug is not yet resolved, but is assigned to the
+          proper person who is working on the bug. From here,
+          bugs can be given to another person and become
+          <b>CONFIRMED</b>, or
+          resolved and become 
+          <b>RESOLVED</b>.
+        </dd>
+        
+      </dl>
+    </td>
+
+    <td>
+      No resolution yet. All bugs which are in one of
+      these "open" states have no resolution set.
+    </td>
+  </tr>
+
+  <tr class="header_row">
+    <td colspan="2">Closed Bugs</td>
+  </tr>
+
+  <tr>
+    <td>
+      <dl>
+        <dt class="resolved">RESOLVED
+        </dt>
+        <dd class="resolved">
+          A resolution has been performed, and it is awaiting verification by
+          QA. From here bugs are either reopened and given some
+          open status, or are verified by QA and marked
+          <b>VERIFIED</b>.
+        </dd>
+
+        <dt class="verified">VERIFIED
+        </dt>
+        <dd class="verified">
+          QA has looked at the bug and the resolution and
+          agrees that the appropriate resolution has been taken. This is
+          the final status for bugs.
+        </dd>
+        
+      </dl>
+    </td>
+
+    <td>
+      <dl>
+        <dt class="fixed">FIXED
+        </dt>
+        <dd class="fixed">
+          A fix for this bug is checked into the tree and 
+          tested.
+        </dd>
+
+        <dt class="invalid">INVALID
+        </dt>
+        <dd class="invalid">
+          The problem described is not a bug.
+        </dd>
+
+        <dt class="wontfix">WONTFIX
+        </dt>
+        <dd class="wontfix">
+          The problem described is a bug which will never be 
+          fixed.
+        </dd>
+
+        <dt class="duplicate">DUPLICATE
+        </dt>
+        <dd class="duplicate">
+          The problem is a duplicate of an existing bug.
+          When a bug is marked as a
+          <b>DUPLICATE</b>,
+          you will see which bug it is a duplicate of,
+          next to the resolution.
+        </dd>
+
+        <dt class="worksforme">WORKSFORME
+        </dt>
+        <dd class="worksforme">
+          All attempts at reproducing this bug were futile, 
+          and reading the code produces no clues as to why the described
+          behavior would occur. If more information appears later,
+          the bug can be reopened.
+        </dd>
+        
+      </dl>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<h2>Other Fields</h2>
+
+
+
+
+
+
+
+<dl class="field_descriptions">
+
+
+
+
+  
+
+
+  <dt id="alias">Alias</dt>
+    <dd>A short, unique name assigned to a bug in order to assist with
+   looking it up and referring to it in other places in Bugzilla.
+    </dd>
+
+
+
+  
+
+
+  <dt id="assigned_to">Assignee</dt>
+    <dd>The person in charge of resolving the bug.
+    </dd>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  <dt id="blocked">Blocks</dt>
+    <dd>This bug must be resolved before the bugs listed in this
+   field can be resolved.
+    </dd>
+
+
+
+  
+
+
+  <dt id="bug_id">Bug ID</dt>
+    <dd>The numeric id of a bug, unique within this entire installation of Bugzilla.
+    </dd>
+
+
+
+  
+
+
+  <dt id="cc">CC</dt>
+    <dd>Users who may not have a direct role to play on this bug, but who
+   are interested in its progress.
+    </dd>
+
+
+
+  
+
+
+
+
+  
+
+
+  <dt id="delta_ts">Changed</dt>
+    <dd>When this bug was last updated.
+    </dd>
+
+
+
+  
+
+
+  <dt id="classification">Classification</dt>
+    <dd>Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation.
+    </dd>
+
+
+
+  
+
+
+  <dt id="longdesc">Comment</dt>
+    <dd>Bugs have comments added to them by Bugzilla users. You can search for some text in those comments.
+    </dd>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+  <dt id="component">Component</dt>
+    <dd>Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list.
+    </dd>
+
+
+
+  
+
+
+  <dt id="content">Content</dt>
+    <dd>This is a field available in searches that does a Google-like
+   'full-text' search on the Summary and
+   Comment fields.
+    </dd>
+
+
+
+  
+
+
+  <dt id="creation_ts">Creation date</dt>
+    <dd>When the bug was filed.
+    </dd>
+
+
+
+  
+
+
+
+
+
+  
+
+
+  <dt id="dependson">Depends on</dt>
+    <dd>The bugs listed here must be resolved before this bug
+   can be resolved.
+    </dd>
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+  <dt id="rep_platform">Hardware</dt>
+    <dd>The hardware platform the bug was observed on. 
+  <strong>Note:</strong> When searching, selecting the option "All"
+  only finds bugs whose value for this field is literally
+  the word "All".
+    </dd>
+
+
+
+
+
+  
+
+
+  <dt id="importance">Importance</dt>
+    <dd>The importance of a bug is described as the combination of
+   its Priority and Severity.
+    </dd>
+
+
+
+  
+
+
+  <dt id="keywords">Keywords</dt>
+    <dd>You can add keywords from a defined list to bugs, in order to easily identify and group them.
+    </dd>
+
+
+
+  
+
+
+
+
+  
+
+
+  <dt id="op_sys">OS</dt>
+    <dd>The operating system the bug was observed on. 
+  <strong>Note:</strong> When searching, selecting the option "All"
+  only finds bugs whose value for this field is literally
+  the word "All".
+    </dd>
+
+
+
+  
+
+
+  <dt id="cf_os_brand">OS brand and version</dt>
+    <dd>A custom Free Text field in this installation of Bugzilla.
+    </dd>
+
+
+
+  
+
+
+  <dt id="priority">Priority</dt>
+    <dd>Engineers prioritize their bugs using this field.
+    </dd>
+
+
+
+  
+
+
+  <dt id="product">Product</dt>
+    <dd>Bugs are categorised into Products and Components. Select a Classification to narrow down this list.
+    </dd>
+
+
+
+  
+
+
+  <dt id="qa_contact">QA Contact</dt>
+    <dd>The person responsible for confirming this bug if it is unconfirmed, and for verifying the fix once the bug has been resolved.
+    </dd>
+
+
+
+  
+
+
+  <dt id="cf_qt_version">Qt version</dt>
+    <dd>A custom Multiple-Selection Box field in this installation of Bugzilla.
+    </dd>
+
+
+
+  
+
+
+  <dt id="reporter">Reporter</dt>
+    <dd>The person who filed this bug.
+    </dd>
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+  <dt id="see_also">See Also</dt>
+    <dd>This allows you to refer to bugs in other installations.
+   You can enter a URL to a bug in the 'Add Bug URLs'
+   field to note that that bug is related to this one. You can
+   enter multiple URLs at once by separating them with a comma.
+
+   <p>You should normally use this field to refer to bugs in
+     <em>other</em> installations. For bugs in this
+     installation, it is better to use the Depends on and 
+     Blocks fields.</p>
+    </dd>
+
+
+
+  
+
+
+  <dt id="bug_severity">Severity</dt>
+    <dd>How severe the bug is, or whether it's an enhancement.
+    </dd>
+
+
+
+  
+
+
+
+
+  
+
+
+  <dt id="short_desc">Summary</dt>
+    <dd>The bug summary is a short sentence which succinctly describes what the bug is about.
+    </dd>
+
+
+
+  
+
+
+  <dt id="tag">Tags</dt>
+    <dd>Unlike Keywords which are global and visible by
+   all users, Tags are personal and can only be
+   viewed and edited by their author.
+   Editing them won't send any notification to other users. Use them
+   to tag and keep track of bugs.
+    </dd>
+
+
+
+  
+
+
+  <dt id="target_milestone">Target Milestone</dt>
+    <dd>The Target Milestone field is used to define when the engineer the bug is assigned to expects to fix it.
+    </dd>
+
+
+
+  
+
+
+
+
+  
+
+
+  <dt id="bug_file_loc">URL</dt>
+    <dd>Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen.
+    </dd>
+
+
+
+  
+
+
+  <dt id="version">Version</dt>
+    <dd>The version field defines the version of the software the bug was found in.
+    </dd>
+
+
+</dl>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.bibletime.info/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li></li>
+
+  
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="page.cgi%3Fid=fields.html&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="page.cgi%3Fid=fields.html" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+      <input type="checkbox" id="Bugzilla_remember_bottom" 
+             name="Bugzilla_remember" value="on" class="bz_remember"
+                 >
+      <label for="Bugzilla_remember_bottom">Remember</label>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1408461324-WgCC55KY2g1psMqRTwgq_wA9zftFu7rBiL9UD90h6AI">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="page.cgi%3Fid=fields.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="page.cgi%3Fid=fields.html&amp;GoAheadAndLogIn=1.html#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="http://bugs.bibletime.info/token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1408461324-jxFVHJLvx2mf5irzPpmAFF4Yb2GrgZmUlDHNEPMuFLI">
+    <a href="page.cgi%3Fid=fields.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>21</bug_id>
+          
+          <creation_ts>2012-07-21 23:17:00 +0300</creation_ts>
+          <short_desc>Bookshelf doesn&apos;t remember whether it&apos;d been expanded or not</short_desc>
+          <delta_ts>2014-07-06 19:09:20 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>User interface</component>
+          <version>2.9.1</version>
+          <rep_platform>irrelevant</rep_platform>
+          <op_sys>irrelevant</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>MOVED TO NEW ISSUE TRACKER</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>normal</bug_severity>
+          <target_milestone>2.9.2</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Jaak Ristioja">jaak</reporter>
+          <assigned_to name="Jaak Ristioja">jaak</assigned_to>
+          
+          <cf_qt_version>irrelevant</cf_qt_version>
+          <cf_os_brand>irrelevant</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>97</commentid>
+    <comment_count>0</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2012-07-21 23:17:17 +0300</bug_when>
+    <thetext>From the old bug tracker, the original bug report by alvanx (alvanx) - 2011-01-14 12:13:54 PST read:
+
+Bibletime 2.8.0, Qt 4.6.3, openSUSE 11.3: The bookshelf doesn&apos;t remember if one or more categories had been expanded the last time BT was used. It always starts collapsed. It used to, so I assume it&apos;s a bug.
+
+---
+
+I commented: This is something we didn&apos;t reimplement when we switched to the new
+bookshelf tree model view framework.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>119</commentid>
+    <comment_count>2</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-05-22 16:31:58 +0300</bug_when>
+    <thetext>I could try to implement it for 2.9.2 similarly to the solution described at http://stackoverflow.com/questions/3253301/howto-restore-qtreeview-last-expanded-state</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>201</commentid>
+    <comment_count>4</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2014-07-06 19:09:20 +0300</bug_when>
+    <thetext>Moved to https://github.com/bibletime/bibletime/issues/3</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

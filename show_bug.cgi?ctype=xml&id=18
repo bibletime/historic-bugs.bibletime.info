@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>18</bug_id>
+          
+          <creation_ts>2012-07-13 12:40:00 +0300</creation_ts>
+          <short_desc>Preview of language specific fonts should display verse in respective language</short_desc>
+          <delta_ts>2014-08-19 18:05:10 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>User interface</component>
+          <version>2.9.1</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>all</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>WONTFIX</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>minor</bug_severity>
+          <target_milestone>unspecified</target_milestone>
+          
+          
+          <everconfirmed>0</everconfirmed>
+          <reporter name="alvanx">alvanx</reporter>
+          <assigned_to name="BibleTime Research Department, Institute of Bug Fixes">bibletime-tracker</assigned_to>
+          <cc>jaak</cc>
+          <cf_qt_version>4.8.2</cf_qt_version>
+          <cf_os_brand>openSUSE 12.1</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>93</commentid>
+    <comment_count>0</comment_count>
+    <who name="alvanx">alvanx</who>
+    <bug_when>2012-07-13 12:40:48 +0300</bug_when>
+    <thetext>In Settings -&gt; Configure Bibletime -&gt; Fonts (path is retranslated from German, so no guarantee), it is possible to set a specific font for each of the module languages that are present in your library. This is great for displaying Greek and Hebrew in optimized fonts, probably also for other non-Latin languages. 
+
+But here&apos;s the problem: The preview always displays Gen 1,1-2 in English. This is clearly a usability bug (if minor). Let me explain. Say I want to set a specific font for Greek. I can do that, but the preview doesn&apos;t help me at all: It previews my font in English, with a Latin script, not in Greek, wit a Greek script. Hence, if I really want to know what the font is going to look like, I first have to exit out of the configuration window and load a bible in the language specified.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>209</commentid>
+    <comment_count>1</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2014-08-19 18:05:10 +0300</bug_when>
+    <thetext>The 2.9.1 is no longer supported, closing. If this is still an issue with BibleTime, please use https://github.com/bibletime/bibletime/issues/new to report a new bug.</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

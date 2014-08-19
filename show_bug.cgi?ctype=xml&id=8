@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>8</bug_id>
+          
+          <creation_ts>2011-12-28 11:53:00 +0200</creation_ts>
+          <short_desc>Some tr() translations are not applied at runtime.</short_desc>
+          <delta_ts>2011-12-28 12:53:52 +0200</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>User interface</component>
+          <version>git stable-2.9</version>
+          <rep_platform>irrelevant</rep_platform>
+          <op_sys>irrelevant</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>FIXED</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>normal</bug_severity>
+          <target_milestone>2.9.2</target_milestone>
+          
+          
+          <everconfirmed>0</everconfirmed>
+          <reporter name="Jaak Ristioja">jaak</reporter>
+          <assigned_to name="BibleTime Research Department, Institute of Bug Fixes">bibletime-tracker</assigned_to>
+          
+          <cf_qt_version>irrelevant</cf_qt_version>
+          <cf_os_brand>irrelevant</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>65</commentid>
+    <comment_count>0</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2011-12-28 11:53:08 +0200</bug_when>
+    <thetext>How to reproduce:
+1) E.g. for Portuguese, run &quot;LANG=pt_PT LC_ALL=pt_PT LC_MESSAGES=pt_PT bibletime&quot;. However this happens with other translations as well.
+2) Go to the BibleTime settings dialog, &quot;Desktop&quot; page.
+3) The names of the tabs are translated, but their contents are not.
+
+I&apos;m not sure whether this is a bug in our code or in Qt. To debug this we need to find out whether StandardWorksTab::retranslateUi() and TextFiltersTab::retranslateUi() ever get called. If they don&apos;t then it&apos;s likely a bug in our code.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>67</commentid>
+    <comment_count>1</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2011-12-28 12:53:52 +0200</bug_when>
+    <thetext>The bug is in our code and is now fixed by commit ff539b8e0683924d66e96fb18736c022bc45fdc0 in stable-2.9 branch. The fix will be in BibleTime 2.9.2. Thanks again to Mário for reporting this!</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

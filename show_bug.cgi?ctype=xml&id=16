@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>16</bug_id>
+          
+          <creation_ts>2012-05-23 10:48:00 +0300</creation_ts>
+          <short_desc>Wish: &quot;Duplicate Tab&quot; option</short_desc>
+          <delta_ts>2014-07-06 19:17:15 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>User interface</component>
+          <version>irrelevant</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>all</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>MOVED TO NEW ISSUE TRACKER</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>enhancement</bug_severity>
+          <target_milestone>unspecified</target_milestone>
+          
+          
+          <everconfirmed>0</everconfirmed>
+          <reporter name="alvanx">alvanx</reporter>
+          <assigned_to name="BibleTime Research Department, Institute of Bug Fixes">bibletime-tracker</assigned_to>
+          <cc>jaak</cc>
+          <cf_qt_version>irrelevant</cf_qt_version>
+          <cf_os_brand>feature request</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>91</commentid>
+    <comment_count>0</comment_count>
+    <who name="alvanx">alvanx</who>
+    <bug_when>2012-05-23 10:48:53 +0300</bug_when>
+    <thetext>A &quot;duplicate tab&quot; option would come in really handy for those who use BT in tabbed mode. A tab represents a subwindow which can contain several open translations/commentaries - in some cases, in reality more representing a different session (compare BibleWorks) than just a tab. Depending on the amount of open modules, it can be quite time-consuming to open another identical such &quot;session&quot; (e.g. if you want to use the same modules to look at a different passage at the same time): You&apos;d have to open a module in a new window, then add the desired additional modules one by one. 
+
+This is where it would be really nice to have a feature that essentially duplicates your current session - by duplicating a tab. 
+
+Of course this feature would be even more powerful with my older request to have tabs within tabs=activities within BT: http://sourceforge.net/tracker/?func=detail&amp;aid=2969483&amp;group_id=954&amp;atid=350954
+In that request, jotik had commented that this was already implemented in some way in svn. I guess it didn&apos;t make it upstream so far. 
+
+Thank you for all of your efforts with this program! 
+
+(P.S.: I did not find a way to enter a feature request other than as a bug report. Hope this is alright.)</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>204</commentid>
+    <comment_count>1</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2014-07-06 19:17:15 +0300</bug_when>
+    <thetext>Moved to https://github.com/bibletime/bibletime/issues/6</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

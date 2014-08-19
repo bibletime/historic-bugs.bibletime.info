@@ -1,0 +1,869 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Full Text Bug Listing</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="index.html">
+
+
+
+    
+    <link href="skins/standard/global.css%3F1408459644.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="skins/standard/global.css%3F1408459644.css" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_multiple.css%3F1408459645.css" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/buglist.css%3F1408459641.css" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1408459644" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css%3F1408459639.css" rel="stylesheet"
+        type="text/css" title="Dusk"><link href="skins/contrib/Dusk/buglist.css%3F1408459638.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js%3F1408459544"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js%3F1408459566"></script><script type="text/javascript" src="js/global.js%3F1408459574"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 100
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    // -->
+    </script>
+
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class="bugs-bibletime-info yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Full Text Bug Listing</p>
+    </td>
+
+
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.bibletime.info/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fformat=multiple&amp;id=36&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi%3Fformat=multiple&amp;id=36.html" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+      <input type="checkbox" id="Bugzilla_remember_top" 
+             name="Bugzilla_remember" value="on" class="bz_remember"
+                 >
+      <label for="Bugzilla_remember_top">Remember</label>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1408461953-1durQEAe2Cu6OzHPEBuzE9mIPeRa-sE7T5nHgQGf_l8">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="show_bug.cgi%3Fformat=multiple&amp;id=36.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi%3Fformat=multiple&amp;id=36&amp;GoAheadAndLogIn=1.html#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="http://bugs.bibletime.info/token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1408461953-Z3F11m4S-mV40bujJMKgASCxYVn57QDKjf92n0txbzQ">
+    <a href="show_bug.cgi%3Fformat=multiple&amp;id=36.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+<script type="text/javascript" src="tracker.js"></script>
+<script type="text/javascript">try{var t=Piwik.getTracker("http://bugs.bibletime.info/tracker",5);t.trackPageView();t.enableLinkTracking();}catch(err){}</script><noscript><p><img src="tracker%3Fidsite=5" style="border:0;display:absolute" alt=""/></p></noscript>
+<div id="message" style="text-align:center;font-size:200%"><b>NB!</b> Bugs.bibletime.org will be shut down in a few weeks. Please file new bugs to <a href="https://github.com/bibletime/bibletime/issues">our new issue tracker at GitHub</a>.</div><h1>Bug 
+    <a href="show_bug.cgi%3Fid=36.html">36</a>
+  </h1>
+
+  <table class="bugfields">
+    
+
+    
+<tr>
+    <th>Summary:</th>
+    <td colspan=3>Escape characters in About window</td>
+  </tr>
+
+    <tr>
+      <th>Product:</th>
+      <td>
+          [BibleTime applications]&nbsp;BibleTime
+      </td>
+<th class="rightcell">Reporter:</th>
+      <td>yvand &lt;yvand.sword&gt;</td>
+    </tr>
+<tr>
+    <th>Component:</th>
+    <td>General</td><th class="rightcell">Assignee:</th>
+      <td>Jaak Ristioja &lt;jaak&gt;</td>
+  </tr>
+
+    <tr>
+      <th>Status:</th>
+      <td>RESOLVED
+        FIXED
+      </td>
+<td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <th>Severity:</th>
+      <td class="bz_normal">normal
+      </td>
+<th class="rightcell">CC:</th>
+      <td>jaak
+    </tr>
+
+    <tr>
+      <th>Priority:</th>
+      <td class="bz_Normal">Normal
+      </td>
+<td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+<tr>
+    <th>Version:</th>
+    <td>git master</td><td>&nbsp;</td>
+      <td>&nbsp;</td>
+  </tr><tr>
+    <th>Target Milestone:</th>
+    <td>2.10.1</td><td>&nbsp;</td>
+      <td>&nbsp;</td>
+  </tr><tr>
+    <th>Hardware:</th>
+    <td>irrelevant</td><td>&nbsp;</td>
+      <td>&nbsp;</td>
+  </tr><tr>
+    <th>OS:</th>
+    <td>irrelevant</td><td>&nbsp;</td>
+      <td>&nbsp;</td>
+  </tr>
+
+
+
+
+        <tr><th class="field_label "
+    id="field_label_cf_qt_version">
+
+
+  <a 
+      title="A custom Multiple-Selection Box field in this installation of Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#cf_qt_version"
+  >Qt version:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_cf_qt_version" >irrelevant</td>
+        
+        <th class="field_label "
+    id="field_label_cf_os_brand">
+
+
+  <a 
+      title="A custom Free Text field in this installation of Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#cf_os_brand"
+  >OS brand and version:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_cf_os_brand" >irrelevant</td>
+        </tr>
+    
+
+
+
+      <tr>
+        <th>Attachments:</th>
+        <td colspan="3">
+              <a href="attachment.cgi%3Fid=23">Screenshot of BibleTime (About FreJND)
+              </a>
+        </td>
+      </tr>
+  
+   
+  </table>
+
+
+  <br>
+<script src="js/comments.js%3F1408459574" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=36.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">yvand</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-03-05 00:11:13 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >In the about window, the strings between &lt; and &gt; in the .conf are not visible.
+I guess BibleTime forget to escape XML/HTML characters (especially &lt; and &gt;).
+
+In fact, I found this, when looking for the About of the module FreJND. Indeed you can read &quot;Distribution notes: Report errors to &quot;. The email address is missing because is between &lt; and &gt; in the .conf file.
+
+Btw a pretty feature could be to transform links in the text in clickable links.</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=36.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-03-05 00:37:16 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I can't reproduce. Please state the exact version/revision of BibleTime and Sword, the FreJND module and Qt. Please also add a screenshot of this issue as an attachment to this bug report.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=36.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">yvand</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-03-05 09:34:26 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="attachment.cgi%3Fid=23" name="attach_23" title="Screenshot of BibleTime (About FreJND)">attachment 23</a> <a href="attachment.cgi%3Fid=23&amp;action=edit.html" title="Screenshot of BibleTime (About FreJND)">[details]</a></span>
+Screenshot of BibleTime (About FreJND)</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=36.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">yvand</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-03-05 09:38:03 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I installed the last version (from svn) of sword and BibleTime last week.
+I don't know how I can know the exact svn revision of sword. osis2mod says &quot;You are running osis2mod: $Rev: 3016 $&quot; so it is more than 3016 I guess.
+For BibleTime it is 2.10.0_rc1+9d10356dfca1b537a5ea16fa033eac5912cf0b09.
+It is more clear with the screenshot, can you reproduice it?</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=36.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">yvand</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-03-05 09:39:10 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I forget to mention that the problem with FreJND is in *Distribution notes* field!</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=36.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">yvand</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-03-05 09:42:41 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Sorry for the multiple comments... It should be the last.
+According to BibleTime, Qt version is 4.8.5 (and SWORD library version 1.7.2).</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=36.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-03-05 09:55:28 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to yvand from <a href="show_bug.cgi%3Fid=36.html#c4">comment #4</a>)
+<span class="quote">&gt; I forget to mention that the problem with FreJND is in *Distribution notes*
+&gt; field!</span >
+
+Ok, this is why I didn't see it at first sight.
+
+The bug was CSwordModuleInfo::aboutText() which didn't properly escape HTML entities. Fixed by 76ba29e34da1d0a039e0d308c95af1abf74bfe24 and 688aea1e32963e9df75c3c7a7e2515ed0fe5ce1e in master and stable-2.10 git branches respectively.
+
+Please test and reply whether it works.</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=36.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">yvand</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-03-05 10:34:48 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I can confirm that it fixes the problem with FreJND's conf file.
+BUT I try to modify .conf and add &lt;hello&gt; and &lt;b&gt;BUG&lt;/b&gt; in other fields like Description, About, DistributionLicense, and some unexpected behaviours appeared.
+
+Text in the Description field (visible in the left panel Mag) and text in About field, which might contain &lt; or &gt; are not escaped.
+If you write at the end of the About field '&lt;hello &amp; &quot;', the About window will not show some under About field!</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=36.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-03-18 21:48:46 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Made some commits to the master and stable-2.10 branches to address this issue. Please try again.</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=36.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">yvand</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-03-22 11:01:59 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Now it seems fine. Thanks</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=36.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2014-03-22 11:09:03 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Thanks for reporting and testing! :)
+
+Resolving bug.</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.bibletime.info/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fformat=multiple&amp;id=36&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi%3Fformat=multiple&amp;id=36.html" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+      <input type="checkbox" id="Bugzilla_remember_bottom" 
+             name="Bugzilla_remember" value="on" class="bz_remember"
+                 >
+      <label for="Bugzilla_remember_bottom">Remember</label>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1408461954-09SruZniJfgXq-kvD8rAMGIa0Wrnd5qfmWGk1Zk-yfo">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="show_bug.cgi%3Fformat=multiple&amp;id=36.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi%3Fformat=multiple&amp;id=36&amp;GoAheadAndLogIn=1.html#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="http://bugs.bibletime.info/token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1408461954-Iwo2NzjYiTaL_CjoEmg5KkmlHtDKlw38kUiQjXUbLm0">
+    <a href="show_bug.cgi%3Fformat=multiple&amp;id=36.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>3</bug_id>
+          
+          <creation_ts>2011-11-27 06:50:00 +0200</creation_ts>
+          <short_desc>MAG window is broken</short_desc>
+          <delta_ts>2011-11-27 08:00:55 +0200</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>User interface</component>
+          <version>2.8.1</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>Linux</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>FIXED</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>normal</bug_severity>
+          <target_milestone>unspecified</target_milestone>
+          
+          
+          <everconfirmed>0</everconfirmed>
+          <reporter name="Howard Coles Jr">dhcolesj</reporter>
+          <assigned_to name="BibleTime Research Department, Institute of Bug Fixes">bibletime-tracker</assigned_to>
+          <cc>gary.holmlund</cc>
+          <cf_qt_version>4.8.0</cf_qt_version>
+          <cf_os_brand>Kubuntu 11.10 and Fedora 16</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>19</commentid>
+    <comment_count>0</comment_count>
+    <who name="Howard Coles Jr">dhcolesj</who>
+    <bug_when>2011-11-27 06:50:34 +0200</bug_when>
+    <thetext>I cannot highlight a word, or click on a scripture reference and see the result in the MAG window.  This is rather important as I used the window for strongs results and to display linked to verses.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>20</commentid>
+    <comment_count>1</comment_count>
+    <who name="Howard Coles Jr">dhcolesj</who>
+    <bug_when>2011-11-27 06:51:20 +0200</bug_when>
+    <thetext>This bug appears in 32bit Kubuntu, and 64bit Fedora 16.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>21</commentid>
+    <comment_count>2</comment_count>
+    <who name="Gary Holmlund">gary.holmlund</who>
+    <bug_when>2011-11-27 08:00:55 +0200</bug_when>
+    <thetext>This is a known bug that was fixed a few days ago. It was triggered by the newer Qt in ubuntu 11.10 and Fedora 16. There is source available for BibleTime 2.8.4 which will fix this. We are expecting to have BibleTime 2.8.4 in a ppa within a few days and will plan to get it into Fedora 16 in the near future.</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

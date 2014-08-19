@@ -1,0 +1,545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Dependency tree for Bug 38</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="index.html">
+
+
+
+    
+    <link href="skins/standard/global.css%3F1408459644.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="skins/standard/global.css%3F1408459644.css" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/dependency-tree.css%3F1408459645.css" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1408459644" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css%3F1408459639.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js%3F1408459544"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js%3F1408459566"></script><script type="text/javascript" src="js/global.js%3F1408459574"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 100
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    // -->
+    </script>
+<script type="text/javascript" src="js/expanding-tree.js%3F1408459572"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class="bugs-bibletime-info yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Dependency tree for 
+                      <a href="show_bug.cgi%3Fid=38.html">Bug 38</a></p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Newlines in About field in the conf file</p>
+    </td>
+
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.bibletime.info/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/hintsandtips.html#dependencytree" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="showdependencytree.cgi%3Fid=38&amp;hide_resolved=1&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="showdependencytree.cgi%3Fid=38&amp;hide_resolved=1.html" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+      <input type="checkbox" id="Bugzilla_remember_top" 
+             name="Bugzilla_remember" value="on" class="bz_remember"
+                 >
+      <label for="Bugzilla_remember_top">Remember</label>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1408461984-hGv84mnLgyKybPavOPnlkIVRikVRmdBboeyrf99kUjM">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="showdependencytree.cgi%3Fid=38&amp;hide_resolved=1.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="showdependencytree.cgi%3Fid=38&amp;hide_resolved=1&amp;GoAheadAndLogIn=1.html#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="http://bugs.bibletime.info/token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1408461984-gfKykUDvtohNHc1FMwJynuxG3rDdkpz0VKQZYwIBrGg">
+    <a href="showdependencytree.cgi%3Fid=38&amp;hide_resolved=1.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+<script type="text/javascript" src="tracker.js"></script>
+<script type="text/javascript">try{var t=Piwik.getTracker("http://bugs.bibletime.info/tracker",5);t.trackPageView();t.enableLinkTracking();}catch(err){}</script><noscript><p><img src="tracker%3Fidsite=5" style="border:0;display:absolute" alt=""/></p></noscript>
+<div id="message" style="text-align:center;font-size:200%"><b>NB!</b> Bugs.bibletime.org will be shut down in a few weeks. Please file new bugs to <a href="https://github.com/bibletime/bibletime/issues">our new issue tracker at GitHub</a>.</div>
+<table cellpadding="3" border="0" cellspacing="0" bgcolor="#e0e0e0">
+   <tr>
+   
+   <td align="center">
+   <form method="get" action="http://bugs.bibletime.info/showdependencytree.cgi"
+           style="display: inline; margin: 0px;">
+     <input name="id" type="hidden" value="38">
+     <input type="hidden" name="hide_resolved" value="0">
+     <input type="submit" id="toggle_visibility"
+            value="Show Resolved">
+   </form>
+   </td>
+
+   <td>
+     Max Depth:
+   </td>
+
+   <td>
+     &nbsp;
+   </td>
+
+   <td>
+   <form method="get" action="http://bugs.bibletime.info/showdependencytree.cgi"
+         style="display: inline; margin: 0px;">
+     
+     <input type="submit" id="change_maxdepth"
+       value="&nbsp;1&nbsp;" disabled>
+     <input name="id" type="hidden" value="38">
+     <input name="maxdepth" type="hidden" value="1">
+     <input name="hide_resolved" type="hidden" value="1">
+   </form>
+   </td>
+
+   <td>
+   <form method="get" action="http://bugs.bibletime.info/showdependencytree.cgi"
+         style="display: inline; margin: 0px;">
+     
+     <input name="id" type="hidden" value="38">
+     <input name="maxdepth" type="hidden" value="0">
+     <input name="hide_resolved" type="hidden" value="1">
+     <input type="submit" id="decrease_depth" value="&nbsp;&lt;&nbsp;"disabled>
+   </form>
+   </td>
+
+   <td>
+   <form method="get" action="http://bugs.bibletime.info/showdependencytree.cgi"
+         style="display: inline; margin: 0px;">
+     
+     <input name="maxdepth" size="4" maxlength="4" value="">
+     <input name="id" type="hidden" value="38">
+     <input name="hide_resolved" type="hidden" value="1">
+     <noscript>
+       <input type="submit" id="change_depth" value="Change"disabled>
+     </noscript>
+   </form>
+   </td>
+
+   <td>
+   <form method="get" action="http://bugs.bibletime.info/showdependencytree.cgi"
+         style="display: inline; margin: 0px;">
+     
+     <input name="id" type="hidden" value="38">
+     <input name="hide_resolved" type="hidden" value="1">
+     <input type="submit" id="increase_depth" value="&nbsp;&gt;&nbsp;" disabled>
+   </form>
+   </td>
+
+   <td>
+   <form method="get" action="http://bugs.bibletime.info/showdependencytree.cgi"
+         style="display: inline; margin: 0px;">
+     
+     <input name="id" type="hidden" value="38">
+     <input name="hide_resolved" type="hidden" value="1">
+     <input type="submit" id="remove_limit"
+       value="&nbsp;Unlimited&nbsp;"disabled>
+   </form>
+   </td>
+ </tr>
+</table>
+  <h3>
+    <a href="show_bug.cgi%3Fid=38.html">Bug 38</a> 
+            does not depend on any open bugs. 
+  </h3>
+ <h3>
+    <a href="show_bug.cgi%3Fid=38.html">Bug 38</a> 
+            does not block any open bugs. 
+  </h3> 
+<table cellpadding="3" border="0" cellspacing="0" bgcolor="#e0e0e0">
+   <tr>
+   
+   <td align="center">
+   <form method="get" action="http://bugs.bibletime.info/showdependencytree.cgi"
+           style="display: inline; margin: 0px;">
+     <input name="id" type="hidden" value="38">
+     <input type="hidden" name="hide_resolved" value="0">
+     <input type="submit" id="toggle_visibility"
+            value="Show Resolved">
+   </form>
+   </td>
+
+   <td>
+     Max Depth:
+   </td>
+
+   <td>
+     &nbsp;
+   </td>
+
+   <td>
+   <form method="get" action="http://bugs.bibletime.info/showdependencytree.cgi"
+         style="display: inline; margin: 0px;">
+     
+     <input type="submit" id="change_maxdepth"
+       value="&nbsp;1&nbsp;" disabled>
+     <input name="id" type="hidden" value="38">
+     <input name="maxdepth" type="hidden" value="1">
+     <input name="hide_resolved" type="hidden" value="1">
+   </form>
+   </td>
+
+   <td>
+   <form method="get" action="http://bugs.bibletime.info/showdependencytree.cgi"
+         style="display: inline; margin: 0px;">
+     
+     <input name="id" type="hidden" value="38">
+     <input name="maxdepth" type="hidden" value="0">
+     <input name="hide_resolved" type="hidden" value="1">
+     <input type="submit" id="decrease_depth" value="&nbsp;&lt;&nbsp;"disabled>
+   </form>
+   </td>
+
+   <td>
+   <form method="get" action="http://bugs.bibletime.info/showdependencytree.cgi"
+         style="display: inline; margin: 0px;">
+     
+     <input name="maxdepth" size="4" maxlength="4" value="">
+     <input name="id" type="hidden" value="38">
+     <input name="hide_resolved" type="hidden" value="1">
+     <noscript>
+       <input type="submit" id="change_depth" value="Change"disabled>
+     </noscript>
+   </form>
+   </td>
+
+   <td>
+   <form method="get" action="http://bugs.bibletime.info/showdependencytree.cgi"
+         style="display: inline; margin: 0px;">
+     
+     <input name="id" type="hidden" value="38">
+     <input name="hide_resolved" type="hidden" value="1">
+     <input type="submit" id="increase_depth" value="&nbsp;&gt;&nbsp;" disabled>
+   </form>
+   </td>
+
+   <td>
+   <form method="get" action="http://bugs.bibletime.info/showdependencytree.cgi"
+         style="display: inline; margin: 0px;">
+     
+     <input name="id" type="hidden" value="38">
+     <input name="hide_resolved" type="hidden" value="1">
+     <input type="submit" id="remove_limit"
+       value="&nbsp;Unlimited&nbsp;"disabled>
+   </form>
+   </td>
+ </tr>
+</table>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.bibletime.info/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/hintsandtips.html#dependencytree" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="showdependencytree.cgi%3Fid=38&amp;hide_resolved=1&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="showdependencytree.cgi%3Fid=38&amp;hide_resolved=1.html" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+      <input type="checkbox" id="Bugzilla_remember_bottom" 
+             name="Bugzilla_remember" value="on" class="bz_remember"
+                 >
+      <label for="Bugzilla_remember_bottom">Remember</label>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1408461984-hGv84mnLgyKybPavOPnlkIVRikVRmdBboeyrf99kUjM">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="showdependencytree.cgi%3Fid=38&amp;hide_resolved=1.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="showdependencytree.cgi%3Fid=38&amp;hide_resolved=1&amp;GoAheadAndLogIn=1.html#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="http://bugs.bibletime.info/token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1408461984-gfKykUDvtohNHc1FMwJynuxG3rDdkpz0VKQZYwIBrGg">
+    <a href="showdependencytree.cgi%3Fid=38&amp;hide_resolved=1.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

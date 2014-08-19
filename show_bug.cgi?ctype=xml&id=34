@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>34</bug_id>
+          
+          <creation_ts>2013-12-24 15:12:00 +0200</creation_ts>
+          <short_desc>BibleTime settings not applied</short_desc>
+          <delta_ts>2014-07-06 19:04:32 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>General</component>
+          <version>2.10.0</version>
+          <rep_platform>irrelevant</rep_platform>
+          <op_sys>irrelevant</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>FIXED</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>critical</bug_severity>
+          <target_milestone>2.11.0</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Damian Wrzalski">damian</reporter>
+          <assigned_to name="BibleTime Research Department, Institute of Bug Fixes">bibletime-tracker</assigned_to>
+          <cc>gary.holmlund</cc>
+    
+    <cc>jaak</cc>
+          <cf_qt_version>irrelevant</cf_qt_version>
+          <cf_os_brand>irrelevant</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>150</commentid>
+    <comment_count>0</comment_count>
+    <who name="Damian Wrzalski">damian</who>
+    <bug_when>2013-12-24 15:12:19 +0200</bug_when>
+    <thetext>I&apos;ve do a clean installation of BibleTime 2.10.0 (private ebuild). After change any settings from Desk -&gt; Text filters and click Apply/OK there are no changes in settings. After reopen this settings, it&apos;s still unchanged. Other setting (Standard works for example) works as expected.
+Please fix it.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>151</commentid>
+    <comment_count>1</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-12-24 19:33:32 +0200</bug_when>
+    <thetext>Fixed in git:
+ * 3b8d43d426659a374f3bd91bfbe22ac40b29967b in master
+ * affa5595070ea9154e410c0eace6a17be095c692 in stable-2.10
+
+This could have been avoided with more testing. Ohwell. Resolving.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>152</commentid>
+    <comment_count>2</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-12-24 19:46:37 +0200</bug_when>
+    <thetext>PS: Thank you for reporting! :)</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>153</commentid>
+    <comment_count>3</comment_count>
+    <who name="Damian Wrzalski">damian</who>
+    <bug_when>2013-12-24 22:30:26 +0200</bug_when>
+    <thetext>Now options are saved but not applied (compiled via build-debug.sh from git). For example I changed &quot;Show verse numbers&quot;, but they don&apos;t show on opened Bible.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>154</commentid>
+    <comment_count>4</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-12-25 00:10:54 +0200</bug_when>
+    <thetext>You&apos;re right. Reopening.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>155</commentid>
+    <comment_count>5</comment_count>
+    <who name="Gary Holmlund">gary.holmlund</who>
+    <bug_when>2013-12-25 00:18:29 +0200</bug_when>
+    <thetext>This seems to be working correctly. The Text Filter settings apply to newly opened windows, not already open windows. For already open windows, each can be controlled using the &quot;Display settings&quot; toolbar icon.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>156</commentid>
+    <comment_count>6</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-12-25 00:20:56 +0200</bug_when>
+    <thetext>Maybe we should still warn the user somehow, i.e. a warning dialog or something like that? Or maybe just call these settings the &quot;default for new windows&quot;?</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>157</commentid>
+    <comment_count>7</comment_count>
+    <who name="Damian Wrzalski">damian</who>
+    <bug_when>2013-12-25 02:47:12 +0200</bug_when>
+    <thetext>I think that enought will be small a information added to this text &quot;Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.&quot;. For example &quot;This settings will not be applied to currently opened windows.&quot; or something like that. I can write a suitable translation to Polish language.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>159</commentid>
+    <comment_count>8</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-12-30 22:49:54 +0200</bug_when>
+    <thetext>Additionally we should check whether settings for any open subwindows are restored on startup.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>200</commentid>
+    <comment_count>9</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2014-07-06 19:04:32 +0300</bug_when>
+    <thetext>Added note in git master (185c5d65bd0f23e24ed7090175bcb9c6af7d3175). Fixing. Reopen in https://github.com/bibletime/bibletime/issues if needed.</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

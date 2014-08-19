@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>29</bug_id>
+          
+          <creation_ts>2013-07-31 00:02:00 +0300</creation_ts>
+          <short_desc>BibleTime reaches invalid state if installation fails.</short_desc>
+          <delta_ts>2013-12-23 21:02:08 +0200</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>Backend</component>
+          <version>git master</version>
+          <rep_platform>irrelevant</rep_platform>
+          <op_sys>irrelevant</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>FIXED</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Highest</priority>
+          <bug_severity>blocker</bug_severity>
+          <target_milestone>2.10.0</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Jaak Ristioja">jaak</reporter>
+          <assigned_to name="Jaak Ristioja">jaak</assigned_to>
+          
+          <cf_qt_version>irrelevant</cf_qt_version>
+          <cf_os_brand>irrelevant</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>133</commentid>
+    <comment_count>0</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-07-31 00:02:58 +0300</bug_when>
+    <thetext>When in BtInstallThread::run() the calls to m_iMgr-&gt;installModule() fail, the application reaches invalid state which results in crashes. Messages of failure are printed to stderr/stdout but nothing in the GUI changes as a result of failure. This may urge the user to try to abort the installation after nothing happens for a while, but aborting the installation leads to some kind memory errors which may cause a crash.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>149</commentid>
+    <comment_count>2</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-12-23 21:02:08 +0200</bug_when>
+    <thetext>Fixed. Here is the commit message:
+
+Refactored BtInstallThread and the install progress dialog.
+
+This was in part done to fix a bug which caused BibleTime to freeze if the installation of a module failed. This was caused by an unhandled case in BtInstallThread which resulted in BtInstallProgressDialog not being notified of failure.
+
+While working out this bug, numerous other bugs were found and I refactored the classes a bit. Now a single BtInstallThread thread handles installation of all modules. I also removed buttons to stop installation of single modules from the progress dialog. This made the design much more simple, and since installation was not done in parallel anyway, these buttons had ambigious semantics.</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

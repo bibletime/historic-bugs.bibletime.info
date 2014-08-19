@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>6</bug_id>
+          
+          <creation_ts>2011-12-03 00:15:00 +0200</creation_ts>
+          <short_desc>Provide a welcome screen</short_desc>
+          <delta_ts>2014-07-06 18:51:06 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>User interface</component>
+          <version>irrelevant</version>
+          <rep_platform>irrelevant</rep_platform>
+          <op_sys>irrelevant</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>MOVED TO NEW ISSUE TRACKER</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>enhancement</bug_severity>
+          <target_milestone>unspecified</target_milestone>
+          
+          
+          <everconfirmed>0</everconfirmed>
+          <reporter name="Jaak Ristioja">jaak</reporter>
+          <assigned_to name="BibleTime Research Department, Institute of Bug Fixes">bibletime-tracker</assigned_to>
+          
+          <cf_qt_version>irrelevant</cf_qt_version>
+          <cf_os_brand>irrelevant</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>40</commentid>
+    <comment_count>0</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2011-12-03 00:15:28 +0200</bug_when>
+    <thetext>BibleTime needs a welcome screen. Perhaps something like Qt Creator has which lets the user choose a profile to continue with. The welcome screen should also notify the user if no works are installed and provide a shortcut button to open the bookshelf manager to install some.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>199</commentid>
+    <comment_count>1</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2014-07-06 18:51:06 +0300</bug_when>
+    <thetext>Moved to https://github.com/bibletime/bibletime/issues/2</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

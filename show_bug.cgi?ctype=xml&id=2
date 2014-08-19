@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>2</bug_id>
+          
+          <creation_ts>2011-11-25 03:22:00 +0200</creation_ts>
+          <short_desc>Provide means to change the language of BibleTime via the GUI</short_desc>
+          <delta_ts>2014-07-06 18:28:36 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>Translations</component>
+          <version>irrelevant</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>all</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>MOVED TO NEW ISSUE TRACKER</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>High</priority>
+          <bug_severity>enhancement</bug_severity>
+          <target_milestone>3.0.0</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Mário">maccounts</reporter>
+          <assigned_to name="BibleTime Research Department, Institute of Bug Fixes">bibletime-tracker</assigned_to>
+          <cc>jaak</cc>
+    
+    <cc>maccounts</cc>
+    
+    <cc>thomas</cc>
+          <cf_qt_version>irrelevant</cf_qt_version>
+          <cf_os_brand>irrelevant</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>11</commentid>
+    <comment_count>0</comment_count>
+    <who name="Mário">maccounts</who>
+    <bug_when>2011-11-25 03:22:53 +0200</bug_when>
+    <thetext>Bibletime UI (as all other modern UI) should be able to auto-detect the system&apos;s language and, if the language is available, activate it automatically (whitout the user needing to get the file from the website m-a-n-u-a-l-l-y! :(
+
+There should also be a place to manually change the UI language.
+
+(really... how can such a great front end miss something so basic?! Not everyone is a computer expert)</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>12</commentid>
+    <comment_count>1</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2011-11-25 09:33:32 +0200</bug_when>
+    <thetext>Its harder to (In reply to comment #0)
+&gt; Bibletime UI (as all other modern UI) should be able to auto-detect the
+&gt; system&apos;s language and, if the language is available, activate it automatically
+&gt; (whitout the user needing to get the file from the website m-a-n-u-a-l-l-y! :(
+
+As far as I know, BibleTime should auto-detect the language. Could you please comment a bit on how you currently manually change the language?
+
+&gt; There should also be a place to manually change the UI language.
+
+I guess we could implement such a feature right away, but if we do it now it would still need that BibleTime be restarted for the change to apply.
+
+&gt; (really... how can such a great front end miss something so basic?! Not
+&gt; everyone is a computer expert)
+
+For more than a year we&apos;ve been working towards a solution which would make it able to change the language of BibleTime at runtime. In reality, this is a lot harder to implement than it might seem. But eventually, we&apos;ll be able to change the language of the application at runtime.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>14</commentid>
+    <comment_count>3</comment_count>
+    <who name="Mário">maccounts</who>
+    <bug_when>2011-11-25 18:35:48 +0200</bug_when>
+    <thetext>(sorry. copy/past gone wrong - my fault... here&apos;s the complete reply)
+
+
+&gt; As far as I know, BibleTime should auto-detect the language. Could you please
+&gt; comment a bit on how you currently manually change the language?
+
+Well, that&apos;s the thing... I don&apos;t change it! :( 
+I just assumed that it could be changed, since you do have the language files available for download!
+
+I&apos;m Portuguese and i&apos;ve even started the translation of BibleTime into Pt-Pt... however, since i didn&apos;t saw any way to change the language, i stopped. I thought that in the absense of the pt-pt language file, it would fall into pt-br or allow a user to select the prefered language!
+
+But now, from what you&apos;re saying, i&apos;m starting to think that BibleTime works fine and, because it does not have a pt-pt, it does fall into english language... is that it?
+
+if that&apos;s the problem, next week i&apos;ll get you a pt-pt UI file translated!
+
+
+&gt; I guess we could implement such a feature right away, but if we do it now it
+&gt; would still need that BibleTime be restarted for the change to apply.
+
+I think everyone would be Ok whit that! Just an Alert saying that BibleTime would have to be restarted would work just fine! I thing having such an option (even if we have to restart BT to get the new language) makes total sense!!! e.g.: I&apos;m portuguese, there&apos;s no pt-pt language, but most portuguese users would understand much better pt-br that en.
+
+e.g.2: I now a lot of people from other countries. They buy portables here in portugal - the Operating system cames in Portuguese, but those people could prefere to choose their own language which they understand better
+
+More options = better software ;)
+
+I guess that (very sadly) is a litle late to get it into 2.9 (since it&apos;s on RC2 already) but please, do add that option ASAP!
+
+I&apos;ll get you that pt-pt file next week!</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>16</commentid>
+    <comment_count>5</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2011-11-25 19:23:05 +0200</bug_when>
+    <thetext>(In reply to comment #3)
+&gt; I&apos;m Portuguese and i&apos;ve even started the translation of BibleTime into Pt-Pt...
+&gt; however, since i didn&apos;t saw any way to change the language, i stopped. I
+&gt; thought that in the absense of the pt-pt language file, it would fall into
+&gt; pt-br or allow a user to select the prefered language!
+&gt; 
+&gt; But now, from what you&apos;re saying, i&apos;m starting to think that BibleTime works
+&gt; fine and, because it does not have a pt-pt, it does fall into english
+&gt; language... is that it?
+
+Something like that, yes. I could try to make the fallback algorithm a bit more intelligent. I might even manage to get it into 2.9.0.
+
+
+&gt; if that&apos;s the problem, next week i&apos;ll get you a pt-pt UI file translated!
+
+You can take the pt_BR files as a basis. For br_BR translation file for versions 2.9 is located here:
+
+  https://gitorious.org/bibletime/bibletime/blobs/stable-2.9/i18n/messages/bibletime_ui_pt_BR.ts
+
+For older 2.8 versions its here:
+
+  https://gitorious.org/bibletime/bibletime/blobs/stable-2.8/i18n/messages/bibletime_ui_pt_BR.ts
+
+For the development branch:
+
+  https://gitorious.org/bibletime/bibletime/blobs/master/i18n/messages/bibletime_ui_pt_BR.ts
+
+&gt; &gt; I guess we could implement such a feature right away, but if we do it now it
+&gt; &gt; would still need that BibleTime be restarted for the change to apply.
+&gt; 
+&gt; I think everyone would be Ok whit that! Just an Alert saying that BibleTime
+&gt; would have to be restarted would work just fine! I thing having such an option
+&gt; (even if we have to restart BT to get the new language) makes total sense!!!
+&gt; e.g.: I&apos;m portuguese, there&apos;s no pt-pt language, but most portuguese users
+&gt; would understand much better pt-br that en.
+&gt; 
+&gt; e.g.2: I now a lot of people from other countries. They buy portables here in
+&gt; portugal - the Operating system cames in Portuguese, but those people could
+&gt; prefere to choose their own language which they understand better
+&gt; 
+&gt; More options = better software ;)
+&gt; 
+&gt; I guess that (very sadly) is a litle late to get it into 2.9 (since it&apos;s on RC2
+&gt; already) but please, do add that option ASAP!
+&gt; 
+&gt; I&apos;ll get you that pt-pt file next week!
+
+Yes, its too late to get this feature into for 2.9.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>17</commentid>
+    <comment_count>6</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2011-11-25 19:42:23 +0200</bug_when>
+    <thetext>(In reply to comment #5)
+&gt; (In reply to comment #3)
+&gt; &gt; I&apos;m Portuguese and i&apos;ve even started the translation of BibleTime into Pt-Pt...
+&gt; &gt; however, since i didn&apos;t saw any way to change the language, i stopped. I
+&gt; &gt; thought that in the absense of the pt-pt language file, it would fall into
+&gt; &gt; pt-br or allow a user to select the prefered language!
+&gt; &gt; 
+&gt; &gt; But now, from what you&apos;re saying, i&apos;m starting to think that BibleTime works
+&gt; &gt; fine and, because it does not have a pt-pt, it does fall into english
+&gt; &gt; language... is that it?
+&gt; 
+&gt; Something like that, yes. I could try to make the fallback algorithm a bit more
+&gt; intelligent. I might even manage to get it into 2.9.0.
+
+By the looks of it, there fallback algorithm provided by Qt appears to be rather good. The problem at hand is caused by the way we have named the translation files.
+
+If QLocale::system().name() returns &quot;pt_PT&quot; for your system, then BibleTime will search (in order) for the following files in the translations directory:
+
+  bibletime_ui_pt_PT.qm
+  bibletime_ui_pt_PT
+  bibletime_ui_pt.qm
+  bibletime_ui_pt
+  bibletime_ui.qm
+  bibletime_ui
+  bibletime.qm
+  bibletime
+
+The bibletime_ui_pt_BR.qm file just doesn&apos;t happen to be on that list. But the file can easily and should probably be renamed. I guess we have similar problems with other translations.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>18</commentid>
+    <comment_count>7</comment_count>
+    <who name="Thomas Abthorpe">thomas</who>
+    <bug_when>2011-11-26 08:45:52 +0200</bug_when>
+    <thetext>(In reply to comment #6)
+&gt; (In reply to comment #5)
+&gt; &gt; (In reply to comment #3)
+&gt; &gt; &gt; I&apos;m Portuguese and i&apos;ve even started the translation of BibleTime into Pt-Pt...
+&gt; &gt; &gt; however, since i didn&apos;t saw any way to change the language, i stopped. I
+&gt; &gt; &gt; thought that in the absense of the pt-pt language file, it would fall into
+&gt; &gt; &gt; pt-br or allow a user to select the prefered language!
+&gt; &gt; &gt; 
+&gt; &gt; &gt; But now, from what you&apos;re saying, i&apos;m starting to think that BibleTime works
+&gt; &gt; &gt; fine and, because it does not have a pt-pt, it does fall into english
+&gt; &gt; &gt; language... is that it?
+&gt; &gt; 
+&gt; &gt; Something like that, yes. I could try to make the fallback algorithm a bit more
+&gt; &gt; intelligent. I might even manage to get it into 2.9.0.
+&gt; 
+&gt; By the looks of it, there fallback algorithm provided by Qt appears to be
+&gt; rather good. The problem at hand is caused by the way we have named the
+&gt; translation files.
+&gt; 
+&gt; If QLocale::system().name() returns &quot;pt_PT&quot; for your system, then BibleTime
+&gt; will search (in order) for the following files in the translations directory:
+&gt; 
+&gt;   bibletime_ui_pt_PT.qm
+&gt;   bibletime_ui_pt_PT
+&gt;   bibletime_ui_pt.qm
+&gt;   bibletime_ui_pt
+&gt;   bibletime_ui.qm
+&gt;   bibletime_ui
+&gt;   bibletime.qm
+&gt;   bibletime
+&gt; 
+&gt; The bibletime_ui_pt_BR.qm file just doesn&apos;t happen to be on that list. But the
+&gt; file can easily and should probably be renamed. I guess we have similar
+&gt; problems with other translations.
+
+An acquaintance from Brazil once told me that there was a unification of the pt_BR and pt_PT languages. If this is true, then we just rename the file to pt. If this is not the case, I can make available pt_BR as pt_PT for translation.
+
+As a native English speaker from Canada, I prefer en_GB spellings, so I do understand the subtle nuances between similar languages.
+
+On the unix/linux side of things we could try a head fake and softlink files to emulate the behaviour we want.  I suspect we could do something similar with shortcuts on Windows. Not sure about the Mac stuff though.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>22</commentid>
+    <comment_count>8</comment_count>
+    <who name="Mário">maccounts</who>
+    <bug_when>2011-11-28 20:17:49 +0200</bug_when>
+    <thetext>(In reply to comment #7)
+&gt; (In reply to comment #6)
+&gt; &gt; (In reply to comment #5)
+&gt; &gt; &gt; (In reply to comment #3)
+&gt; &gt; &gt; &gt; I&apos;m Portuguese and i&apos;ve even started the translation of BibleTime into Pt-Pt...
+&gt; &gt; &gt; &gt; however, since i didn&apos;t saw any way to change the language, i stopped. I
+&gt; &gt; &gt; &gt; thought that in the absense of the pt-pt language file, it would fall into
+&gt; &gt; &gt; &gt; pt-br or allow a user to select the prefered language!
+&gt; &gt; &gt; &gt; 
+&gt; &gt; &gt; &gt; But now, from what you&apos;re saying, i&apos;m starting to think that BibleTime works
+&gt; &gt; &gt; &gt; fine and, because it does not have a pt-pt, it does fall into english
+&gt; &gt; &gt; &gt; language... is that it?
+&gt; &gt; &gt; 
+&gt; &gt; &gt; Something like that, yes. I could try to make the fallback algorithm a bit more
+&gt; &gt; &gt; intelligent. I might even manage to get it into 2.9.0.
+&gt; &gt; 
+&gt; &gt; By the looks of it, there fallback algorithm provided by Qt appears to be
+&gt; &gt; rather good. The problem at hand is caused by the way we have named the
+&gt; &gt; translation files.
+&gt; &gt; 
+&gt; &gt; If QLocale::system().name() returns &quot;pt_PT&quot; for your system, then BibleTime
+&gt; &gt; will search (in order) for the following files in the translations directory:
+&gt; &gt; 
+&gt; &gt;   bibletime_ui_pt_PT.qm
+&gt; &gt;   bibletime_ui_pt_PT
+&gt; &gt;   bibletime_ui_pt.qm
+&gt; &gt;   bibletime_ui_pt
+&gt; &gt;   bibletime_ui.qm
+&gt; &gt;   bibletime_ui
+&gt; &gt;   bibletime.qm
+&gt; &gt;   bibletime
+&gt; &gt; 
+&gt; &gt; The bibletime_ui_pt_BR.qm file just doesn&apos;t happen to be on that list. But the
+&gt; &gt; file can easily and should probably be renamed. I guess we have similar
+&gt; &gt; problems with other translations.
+&gt; 
+&gt; An acquaintance from Brazil once told me that there was a unification of the
+&gt; pt_BR and pt_PT languages. If this is true, then we just rename the file to pt.
+&gt; If this is not the case, I can make available pt_BR as pt_PT for translation.
+&gt; 
+&gt; As a native English speaker from Canada, I prefer en_GB spellings, so I do
+&gt; understand the subtle nuances between similar languages.
+&gt; 
+&gt; On the unix/linux side of things we could try a head fake and softlink files to
+&gt; emulate the behaviour we want.  I suspect we could do something similar with
+&gt; shortcuts on Windows. Not sure about the Mac stuff though.
+
+
+
+
+Hi,
+
+yes there is an unification already ruling! However there will remain a few words (very few, indeed!) that will remain different. 
+The major problem, however, is not those few words but the approach to the text chosen. To give you a simple and quick example (of many)in english (on the applications menu&apos;s) we find the &quot;File&quot; word. The problem is that in Portugal that word is directly translated from english and we get &quot;Ficheiro&quot;, but in Brazil they use &quot;Arquivo&quot; (&quot;archive&quot;, in english!) and no matter what you do, neither country will change this (even when we know that &quot;Arquivo&quot; and &quot;Ficheiro&quot; are two words that exist in both countries).
+
+so, as you can see from the above example, there will have to be Pt and Pt_Br translations files for years to came :(
+
+
+
+
+Now... other subject: i&apos;ve completed the BT translations into Pt-Pt!!! ;) where do i send it? can you give me an e-mail address or something like that?
+
+
+Tks</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>23</commentid>
+    <comment_count>9</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2011-11-28 20:22:33 +0200</bug_when>
+    <thetext>(In reply to comment #8)
+&gt; Now... other subject: i&apos;ve completed the BT translations into Pt-Pt!!! ;) where
+&gt; do i send it? can you give me an e-mail address or something like that?
+
+I suggest you file a bug on this bugzilla.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>24</commentid>
+    <comment_count>10</comment_count>
+      <attachid>2</attachid>
+    <who name="Mário">maccounts</who>
+    <bug_when>2011-11-28 23:50:10 +0200</bug_when>
+    <thetext>Created attachment 2
+pt-pt translated file
+
+translation file</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>26</commentid>
+    <comment_count>11</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2011-11-29 01:14:39 +0200</bug_when>
+    <thetext>The content of attachment 2 has been deleted by
+    Jaak Ristioja &lt;jaak@ristioja.ee&gt;
+who provided the following reason:
+
+Unrelated to original bug. Moved to bug 4. Please lets keep this on-topic!
+
+The token used to delete this attachment was generated at 2011-11-29 01:09:40 EET.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>198</commentid>
+    <comment_count>12</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2014-07-06 18:28:36 +0300</bug_when>
+    <thetext>Moved to https://github.com/bibletime/bibletime/issues/1 . Closing.</thetext>
+  </long_desc>
+      
+          <attachment
+              isobsolete="1"
+              ispatch="0"
+              isprivate="0"
+          >
+            <attachid>2</attachid>
+            <date>2011-11-28 23:50:00 +0200</date>
+            <delta_ts>2011-11-28 23:50:10 +0200</delta_ts>
+            <desc>pt-pt translated file</desc>
+            <filename>i18n_messages_bibletime_ui_pt.ts</filename>
+            <type>text/plain</type>
+            <size>0</size>
+            <attacher name="Mário">maccounts</attacher>
+            
+              <data encoding="base64"></data>
+
+          </attachment>
+      
+
+    </bug>
+
+</bugzilla>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>40</bug_id>
+          
+          <creation_ts>2014-05-25 04:46:00 +0300</creation_ts>
+          <short_desc>wrong bug tracker link</short_desc>
+          <delta_ts>2014-05-25 09:50:05 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>1</classification_id>
+          <classification>BibleTime websites</classification>
+          <product>bibletime.info</product>
+          <component>Broken links</component>
+          <version>unspecified</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>unknown</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>FIXED</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>normal</bug_severity>
+          <target_milestone>---</target_milestone>
+          
+          
+          <everconfirmed>0</everconfirmed>
+          <reporter name="Alister.Hood">alister.hood</reporter>
+          <assigned_to name="BibleTime Research Department, Institute of Bug Fixes">bibletime-tracker</assigned_to>
+          <cc>jaak</cc>
+          
+          <cf_os_brand></cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>189</commentid>
+    <comment_count>0</comment_count>
+    <who name="Alister.Hood">alister.hood</who>
+    <bug_when>2014-05-25 04:46:48 +0300</bug_when>
+    <thetext>The bug tracker link on this page is wrong:
+http://devel.bibletime.info/wiki/Main_Page</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>192</commentid>
+    <comment_count>1</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2014-05-25 09:50:05 +0300</bug_when>
+    <thetext>Fixed. Thanks for reporting! :)</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

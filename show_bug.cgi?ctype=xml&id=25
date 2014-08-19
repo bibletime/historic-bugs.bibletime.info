@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>25</bug_id>
+          
+          <creation_ts>2013-04-06 18:11:00 +0300</creation_ts>
+          <short_desc>Bibletime and qtwebkit 2.3</short_desc>
+          <delta_ts>2013-07-05 09:57:44 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>General</component>
+          <version>2.9.1</version>
+          <rep_platform>unknown</rep_platform>
+          <op_sys>Linux</op_sys>
+          <bug_status>VERIFIED</bug_status>
+          <resolution>FIXED</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>normal</bug_severity>
+          <target_milestone>2.9.2</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Gary Holmlund">gary.holmlund</reporter>
+          <assigned_to name="Gary Holmlund">gary.holmlund</assigned_to>
+          <cc>jaak</cc>
+    
+    <cc>rayklassen</cc>
+          <cf_qt_version>unknown</cf_qt_version>
+          <cf_os_brand>Korora 18 based on Fedora 18.</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>109</commentid>
+    <comment_count>0</comment_count>
+    <who name="Gary Holmlund">gary.holmlund</who>
+    <bug_when>2013-04-06 18:11:44 +0300</bug_when>
+    <thetext>Received from the Sword BibleTime forum:
+
+I use Korora 18 based on Fedora 18. I have kde 4.10.2 installed on my machine (32-bit). I upgraded to qtwebkit 2.3 and bibletime was no longer displaying any bibles or text. In yum I downgraded to qtwebkit 2.2 and everything is working again.
+
+Hope this helps someone out there because I had to find this out for myself and isolate the problem. Nothing was on the internet about this.
+
+God bless, smile
+
+teezee</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>110</commentid>
+    <comment_count>1</comment_count>
+    <who name="Gary Holmlund">gary.holmlund</who>
+    <bug_when>2013-04-06 18:58:40 +0300</bug_when>
+    <thetext>Release announcement for QtWebKit 2.3
+http://blogs.kde.org/2013/03/15/qtwebkit-230-out
+
+Some excerpts:
+Note that QtWebKit 2.3 is not an official Qt release, nor will be. We recommend users to upgrade to Qt 5, but for those stuck with Qt 4.8 for the time being and who is using QtWebKit, I would personally recommend trying out QtWebKit 2.3. I have also had great feedback from the developers of the Rekonq, and Qupzilla browsers, that also recommend users to try out 2.3, several distributions are either packaging or planning to package it, the first being Arch Linux who has been packaging QtWebKit 2.3 since the betas.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>111</commentid>
+    <comment_count>2</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-05-18 22:06:21 +0300</bug_when>
+    <thetext>Fixed in the stable-2.9 branch by Gary as commit 446efade238771c28c45a175cfdf6db93e6026a1, will be in 2.9.2.
+
+Gary, please inform us whether a fix is also needed for the master branch.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>113</commentid>
+    <comment_count>3</comment_count>
+    <who name="Gary Holmlund">gary.holmlund</who>
+    <bug_when>2013-05-19 07:11:47 +0300</bug_when>
+    <thetext>Fixed in master branch as commit fa3625f7b85f6ab5510914ab97e8ea231c252175 on Dec. 16th, 2012.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>114</commentid>
+    <comment_count>4</comment_count>
+    <who name="Gary Holmlund">gary.holmlund</who>
+    <bug_when>2013-05-19 07:16:57 +0300</bug_when>
+    <thetext>Problem was specific to Qt WebKit 2.3 (Qt 4.8.4 and Qt5).</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>126</commentid>
+    <comment_count>5</comment_count>
+    <who name="Gary Holmlund">gary.holmlund</who>
+    <bug_when>2013-07-04 18:58:28 +0300</bug_when>
+    <thetext>*** Bug 28 has been marked as a duplicate of this bug. ***</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>127</commentid>
+    <comment_count>6</comment_count>
+    <who name="Ray Klassen">rayklassen</who>
+    <bug_when>2013-07-05 04:40:23 +0300</bug_when>
+    <thetext>just think it would be good to fix it in 2.9.1 as well since 2.9.2 hasn&apos;t hit the distro&apos;s yet.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>128</commentid>
+    <comment_count>7</comment_count>
+    <who name="Ray Klassen">rayklassen</who>
+    <bug_when>2013-07-05 04:41:29 +0300</bug_when>
+    <thetext>Er Ubuntu (which is pretty popular) don&apos;t know about the other distro&apos;s</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>130</commentid>
+    <comment_count>8</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-07-05 09:57:44 +0300</bug_when>
+    <thetext>(In reply to comment #6)
+&gt; just think it would be good to fix it in 2.9.1 as well since 2.9.2 hasn&apos;t hit
+&gt; the distro&apos;s yet.
+
+We did fix it in 2.9.1 as well. The fix is called 2.9.2. Contact your distro&apos;s packagers to get 2.9.2 since we can&apos;t (and won&apos;t) do anything more from our side to help you.</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

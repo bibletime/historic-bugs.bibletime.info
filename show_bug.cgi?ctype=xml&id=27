@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>27</bug_id>
+          
+          <creation_ts>2013-07-02 22:34:00 +0300</creation_ts>
+          <short_desc>BibleTime 2.9.2 shows version 2.9.1 in Control Panel &quot;Programs and Features&quot; on Windows 7</short_desc>
+          <delta_ts>2013-07-05 10:07:21 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>General</component>
+          <version>2.9.2</version>
+          <rep_platform>PC</rep_platform>
+          <op_sys>Windows</op_sys>
+          <bug_status>VERIFIED</bug_status>
+          <resolution>FIXED</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Low</priority>
+          <bug_severity>trivial</bug_severity>
+          <target_milestone>2.9.2</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Jaak Ristioja">jaak</reporter>
+          <assigned_to name="Gary Holmlund">gary.holmlund</assigned_to>
+          
+          <cf_qt_version>4.7.4</cf_qt_version>
+          <cf_os_brand>Windows 7 Professional (64-bit)</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>122</commentid>
+    <comment_count>0</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-07-02 22:34:59 +0300</bug_when>
+    <thetext>I just upgraded BibleTime from 2.8.1 (as was shown by &quot;Programs and Features&quot; in Control Panel) to 2.9.2, but in Control Panel &quot;Programs and Features&quot; installed programs list it shows the incorrect version 2.9.1.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>129</commentid>
+    <comment_count>2</comment_count>
+    <who name="Gary Holmlund">gary.holmlund</who>
+    <bug_when>2013-07-05 04:43:03 +0300</bug_when>
+    <thetext>It appears this was broken in August 2010 when the cmake var BT_REVISION_PATCH was renamed to BT_VERSION_PATCH. 
+
+A new version with this fixed was put onto SourceForge. It replaced the version that was previously there.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>131</commentid>
+    <comment_count>3</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-07-05 10:07:21 +0300</bug_when>
+    <thetext>I verified that the version shown is now correct.</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

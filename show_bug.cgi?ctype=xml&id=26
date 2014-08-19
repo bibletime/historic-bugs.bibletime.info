@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>26</bug_id>
+          
+          <creation_ts>2013-06-17 09:02:00 +0300</creation_ts>
+          <short_desc>BibleTime 2.9.2 dynamic linking crash with &lt;libcurl-7.0.0</short_desc>
+          <delta_ts>2014-07-06 18:18:34 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>General</component>
+          <version>2.9.2</version>
+          <rep_platform>Macintosh</rep_platform>
+          <op_sys>Mac OS</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>WONTFIX</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Highest</priority>
+          <bug_severity>blocker</bug_severity>
+          <target_milestone>unspecified</target_milestone>
+          
+          
+          <everconfirmed>0</everconfirmed>
+          <reporter name="Jaak Ristioja">jaak</reporter>
+          <assigned_to name="Martin Gruner">mg.pub</assigned_to>
+          
+          <cf_qt_version>unknown</cf_qt_version>
+          <cf_os_brand>Mac OS X 10.6.8 (10K549)</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>120</commentid>
+    <comment_count>0</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-06-17 09:02:39 +0300</bug_when>
+    <thetext>Process:         BibleTime [19154]
+Path:            /Applications/BibleTime.app/Contents/MacOS/BibleTime
+Identifier:      BibleTime
+Version:         ??? (???)
+Code Type:       X86-64 (Native)
+Parent Process:  launchd [203]
+
+Date/Time:       2013-06-15 23:44:16.038 +0300
+OS Version:      Mac OS X 10.6.8 (10K549)
+Report Version:  6
+
+Per-App Crashes Since Last Report:   4
+
+Exception Type:  EXC_BREAKPOINT (SIGTRAP)
+Exception Codes: 0x0000000000000002, 0x0000000000000000
+Crashed Thread:  0
+
+Dyld Error Message:
+  Library not loaded: /usr/lib/libcurl.4.dylib
+  Referenced from: /Applications/BibleTime.app/Contents/MacOS/BibleTime
+  Reason: Incompatible library version: BibleTime requires version 7.0.0 or later, but libcurl.4.dylib provides version 6.0.0
+
+Binary Images:
+    0x7fff5fc00000 -     0x7fff5fc3bdef  dyld 132.1 (???) &lt;B536F2F1-9DF1-3B6C-1C2C-9075EA219A06&gt; /usr/lib/dyld</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>197</commentid>
+    <comment_count>2</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2014-07-06 18:18:34 +0300</bug_when>
+    <thetext>I doubt this is relevant any more. Closing as WONTFIX due to migration to new issue tracker.</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

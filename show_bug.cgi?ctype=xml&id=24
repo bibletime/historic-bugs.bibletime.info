@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>24</bug_id>
+          
+          <creation_ts>2013-02-20 12:57:00 +0200</creation_ts>
+          <short_desc>Up-down passage navigation arrows are confusing, should be left-right</short_desc>
+          <delta_ts>2014-08-19 18:08:57 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>User interface</component>
+          <version>2.9.1</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>all</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>WONTFIX</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>trivial</bug_severity>
+          <target_milestone>unspecified</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="alvanx">alvanx</reporter>
+          <assigned_to name="BibleTime Research Department, Institute of Bug Fixes">bibletime-tracker</assigned_to>
+          <cc>jaak</cc>
+          <cf_qt_version>irrelevant</cf_qt_version>
+          <cf_os_brand>Kubunt 12.10 (irrelevant)</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>108</commentid>
+    <comment_count>0</comment_count>
+    <who name="alvanx">alvanx</who>
+    <bug_when>2013-02-20 12:57:13 +0200</bug_when>
+    <thetext>I am referring to the two sets of up and down arrows next to the box where you can manually enter a passage. One set of arrows lets you go back and forth between chapters, the other between verses. 
+
+My suggestion is to change the vertical direction of these arrows to horizontal. I find the vertical navigation to be extremely confusing and I can never remember which arrow will take me forward and which will take me backwards. 
+
+The problem: Confusing patterns of what up/down means. On the one hand, reading a book or scrolling a document or website, up can mean back and down can mean forward. On the other hand, numerically speaking, up would signify a jump to a bigger number, and down to a smaller. In other words, one might expect that clicking &quot;up&quot; would take you to chapter 3 from chapter 2, because 3 has the higher numerical value. 
+
+Navigating sideways, horizontally, would eliminate this problem for the most part. People are so used to it from browsers, to name just one example, that it should come natural to almost any user. This is why I don&apos;t think even people whose native reading direction is right-to-left would be confused by this.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>112</commentid>
+    <comment_count>1</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-05-18 22:14:55 +0300</bug_when>
+    <thetext>I agree that this can be confusing and should be changed. All we need is a new good design concept, and someone to implement it.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>214</commentid>
+    <comment_count>2</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2014-08-19 18:08:57 +0300</bug_when>
+    <thetext>The 2.9.1 is no longer supported, closing. If this is still an issue with BibleTime, please use https://github.com/bibletime/bibletime/issues/new to report a new bug.</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

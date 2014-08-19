@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>30</bug_id>
+          
+          <creation_ts>2013-11-07 21:57:00 +0200</creation_ts>
+          <short_desc>Bibletime doesn&apos;t start</short_desc>
+          <delta_ts>2014-05-21 00:41:19 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>User interface</component>
+          <version>2.9.2</version>
+          <rep_platform>irrelevant</rep_platform>
+          <op_sys>irrelevant</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>WONTFIX</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>High</priority>
+          <bug_severity>blocker</bug_severity>
+          <target_milestone>unspecified</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter>STilch</reporter>
+          <assigned_to name="Jaak Ristioja">jaak</assigned_to>
+          <cc>jaak</cc>
+          <cf_qt_version>irrelevant</cf_qt_version>
+          <cf_os_brand>irrelevant</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>135</commentid>
+    <comment_count>0</comment_count>
+    <who name="">STilch</who>
+    <bug_when>2013-11-07 21:57:37 +0200</bug_when>
+    <thetext>I changed my OS from Ubuntu 12.04 LTS to Lubuntu 13.10. Before the change I was able to use Xiphos and Bibletime. Now, just Xiphos works (but I like Bibletime much more ...). I installed the package bibletime via terminal, synaptic, software center and after some tries I installed all packages listed on this site (possible dependencies): http://packages.ubuntu.com/de/saucy/bibletime
+
+If I use the graphical icon for launching Bibletime I see the small loading window, but it disappears immediately. If I use the terminal the output is:
+
+(BibleTime 2.9.2) FATAL: ASSERT: &quot;!name.endsWith(&quot;.tmpl&quot;) || m_templateMap.contains(name)&quot; in file /build/buildd/bibletime-2.9.2/src/backend/managers/cdisplaytemplatemgr.cpp, line 87
+Please report this bug! (http://www.bibletime.info/development_help.html)Abgebrochen (Speicherabzug geschrieben) 
+
+Comment: I can&apos;t find the neither the file nor the directory given in the error message.
+
+I can&apos;t see the error. Please help!</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>136</commentid>
+    <comment_count>1</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-11-09 21:29:17 +0200</bug_when>
+    <thetext>Are you sure this bug still exists in the git stable-2.9 branch, or are you actually using version 2.9.2 of BibleTime?
+
+Can you please tell us the value of the &quot;displayStyle&quot; configuration parameter under the &quot;[strings]&quot; section in your ~/.bibletime/bibletimerc file? Or attach the whole file.
+
+Please also post the list of files under /usr/share/bibletime/display-templates/ and ~/.bibletime/display-templates/</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>137</commentid>
+    <comment_count>2</comment_count>
+      <attachid>21</attachid>
+    <who name="">STilch</who>
+    <bug_when>2013-11-10 13:46:22 +0200</bug_when>
+    <thetext>Created attachment 21
+~/.bibletime/bibletimerc</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>138</commentid>
+    <comment_count>3</comment_count>
+    <who name="">STilch</who>
+    <bug_when>2013-11-10 13:50:16 +0200</bug_when>
+    <thetext>... after adding an attachment, my comment is gone...
+
+I&apos;m using 2.9.2. Isn&apos;t it the stable version? It&apos;s the standard package for Ubuntu 13.10. Which version would be better?
+
+Under /usr/share/bibletime/display-templates/ there are the following files:
+
+basic_template.txt  Blue.css           Crazy.css  HighContrast.css
+Basic.tmpl          Christmastide.css  Green.css  Simple.css
+
+
+But under ~/.bibletime/display-templates/ there no files.
+
+The value of displayStyle is Blue.tmpl, as you can see in the posted file.
+
+Thank your very much for your help!</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>139</commentid>
+    <comment_count>4</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-11-12 09:11:52 +0200</bug_when>
+    <thetext>(In reply to STilch from comment #3)
+&gt; ... after adding an attachment, my comment is gone...
+
+In BugZilla you can enter an optional comment on the &quot;add an attachment&quot; page, but you probably entered a comment on this page instead, which was then ignored when you added the attachment.
+
+&gt; I&apos;m using 2.9.2. Isn&apos;t it the stable version? It&apos;s the standard package for
+&gt; Ubuntu 13.10. Which version would be better?
+
+Yes, 2.9.2 is the latest stable version released. But you marked &quot;git stable-2.9&quot; as the version, which is the currently the stable development branch in our git repository from which new stable 2.9 versions will be released. Changed this.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>140</commentid>
+    <comment_count>5</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2013-11-12 09:52:50 +0200</bug_when>
+    <thetext>(In reply to STilch from comment #3)
+&gt; Under /usr/share/bibletime/display-templates/ there are the following files:
+&gt; 
+&gt; basic_template.txt  Blue.css           Crazy.css  HighContrast.css
+&gt; Basic.tmpl          Christmastide.css  Green.css  Simple.css
+&gt; 
+&gt; 
+&gt; But under ~/.bibletime/display-templates/ there no files.
+&gt; 
+&gt; The value of displayStyle is Blue.tmpl, as you can see in the posted file.
+
+This appears to be some migration issue from older versions of BibleTime. It should work if you change the displayStyle value to &quot;Blue.css&quot;.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>141</commentid>
+    <comment_count>6</comment_count>
+    <who name="">STilch</who>
+    <bug_when>2013-11-12 09:58:16 +0200</bug_when>
+    <thetext>Thank you that fixes it.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>185</commentid>
+    <comment_count>7</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2014-05-21 00:41:19 +0300</bug_when>
+    <thetext>I&apos;m not sure whether the migration issue is also fixed in code. But I guess we don&apos;t currently have the time to fix this.</thetext>
+  </long_desc>
+      
+          <attachment
+              isobsolete="0"
+              ispatch="0"
+              isprivate="0"
+          >
+            <attachid>21</attachid>
+            <date>2013-11-10 13:46:00 +0200</date>
+            <delta_ts>2013-11-10 13:46:22 +0200</delta_ts>
+            <desc>~/.bibletime/bibletimerc</desc>
+            <filename>bibletimerc</filename>
+            <type>text/plain</type>
+            <size>5943</size>
+            <attacher>STilch</attacher>
+            
+              <data encoding="base64">W3N0cmluZ3NdCmJpYmxldGltZVZlcnNpb249Mi44LjEKZGlzcGxheVN0eWxlPUJsdWUudG1wbAps
+YW5ndWFnZT1hZgoKW0FwcGxpY2F0aW9uJTIwc2hvcnRjdXRzXQphYm91dEJpYmxlVGltZT1ASW52
+YWxpZCgpCmF1dG9DYXNjYWRlPUBWYXJpYW50KFwwXDBcMFx0XDBcMFwwXHgxXDBcMFwwXG5cMFww
+XDBceDE0XDBceDQzXDB0XDByXDBsXDArXDBceDQxXDBsXDB0XDArXDBKKQphdXRvSG9yaXpvbnRh
+bD1AVmFyaWFudChcMFwwXDBcdFwwXDBcMFx4MVwwXDBcMFxuXDBcMFwwXHgxNFwwXHg0M1wwdFww
+clwwbFwwK1wwXHg0MVwwbFwwdFwwK1wwSCkKYXV0b1RhYmJlZD1AVmFyaWFudChcMFwwXDBcdFww
+XDBcMFx4MVwwXDBcMFxuXDBcMFwwXHgxNFwwXHg0M1wwdFwwclwwbFwwK1wwXHg0MVwwbFwwdFww
+K1wwVCkKYXV0b1RpbGU9QFZhcmlhbnQoXDBcMFwwXHRcMFwwXDBceDFcMFwwXDBcblwwXDBcMFx4
+MTRcMFx4NDNcMHRcMHJcMGxcMCtcMFx4NDFcMGxcMHRcMCtcMEkpCmF1dG9WZXJ0aWNhbD1AVmFy
+aWFudChcMFwwXDBcdFwwXDBcMFx4MVwwXDBcMFxuXDBcMFwwXHgxNFwwXHg0M1wwdFwwclwwbFww
+K1wwXHg0MVwwbFwwdFwwK1wwRykKYmlibGVTdHVkeUhvd3RvPUBWYXJpYW50KFwwXDBcMFx0XDBc
+MFwwXHgxXDBcMFwwXG5cMFwwXDBceDRcMFx4NDZcMFx4MzIpCmJvb2tzaGVsZk1hbmFnZXI9QFZh
+cmlhbnQoXDBcMFwwXHRcMFwwXDBceDFcMFwwXDBcblwwXDBcMFx4NFwwXHg0NlwwXHgzNCkKY2Fz
+Y2FkZT1AVmFyaWFudChcMFwwXDBcdFwwXDBcMFx4MVwwXDBcMFxuXDBcMFwwXGZcMFx4NDNcMHRc
+MHJcMGxcMCtcMEopCmNsb3NlQWxsV2luZG93cz1AVmFyaWFudChcMFwwXDBcdFwwXDBcMFx4MVww
+XDBcMFxuXDBcMFwwXHgxNFwwXHg0M1wwdFwwclwwbFwwK1wwXHg0MVwwbFwwdFwwK1wwVykKY2xv
+c2VXaW5kb3c9QFZhcmlhbnQoXDBcMFwwXHRcMFwwXDBceDFcMFwwXDBcblwwXDBcMFxmXDBceDQz
+XDB0XDByXDBsXDArXDBXKQptYW51YWxBcnJhbmdlbWVudD1AVmFyaWFudChcMFwwXDBcdFwwXDBc
+MFx4MVwwXDBcMFxuXDBcMFwwXHgxNFwwXHg0M1wwdFwwclwwbFwwK1wwXHg0MVwwbFwwdFwwK1ww
+TSkKb3BlbkhhbmRib29rPUBWYXJpYW50KFwwXDBcMFx0XDBcMFwwXHgxXDBcMFwwXG5cMFwwXDBc
+eDRcMFx4NDZcMFx4MzEpCnF1aXQ9QFZhcmlhbnQoXDBcMFwwXHRcMFwwXDBceDFcMFwwXDBcblww
+XDBcMFxmXDBceDQzXDB0XDByXDBsXDArXDBRKQpzYXZlTmV3U2Vzc2lvbj1AVmFyaWFudChcMFww
+XDBcdFwwXDBcMFx4MVwwXDBcMFxuXDBcMFwwXHgxNFwwXHg0M1wwdFwwclwwbFwwK1wwXHg0MVww
+bFwwdFwwK1wwUykKc2VhcmNoT3BlbldvcmtzPUBWYXJpYW50KFwwXDBcMFx0XDBcMFwwXHgxXDBc
+MFwwXG5cMFwwXDBcZlwwXHg0M1wwdFwwclwwbFwwK1wwTykKc2VhcmNoU3RkQmlibGU9QFZhcmlh
+bnQoXDBcMFwwXHRcMFwwXDBceDFcMFwwXDBcblwwXDBcMFx4MTRcMFx4NDNcMHRcMHJcMGxcMCtc
+MFx4NDFcMGxcMHRcMCtcMFx4NDYpCnNldFByZWZlcmVuY2VzPUBJbnZhbGlkKCkKc2hvd0Jvb2tt
+YXJrcz1ASW52YWxpZCgpCnNob3dCb29rc2hlbGY9QEludmFsaWQoKQpzaG93Rm9ybWF0PUBJbnZh
+bGlkKCkKc2hvd01hZz1ASW52YWxpZCgpCnNob3dOYXZpZ2F0aW9uPUBJbnZhbGlkKCkKc2hvd1Bh
+cmFsbGVsVGV4dEhlYWRlcnM9QEludmFsaWQoKQpzaG93VG9vbGJhcj1AVmFyaWFudChcMFwwXDBc
+dFwwXDBcMFx4MVwwXDBcMFxuXDBcMFwwXHg0XDBceDQ2XDBceDM2KQpzaG93VG9vbGJhcnNJblRl
+eHRXaW5kb3dzPUBJbnZhbGlkKCkKc2hvd1Rvb2xzPUBJbnZhbGlkKCkKc2hvd1dvcmtzPUBJbnZh
+bGlkKCkKdGlsZT1AVmFyaWFudChcMFwwXDBcdFwwXDBcMFx4MVwwXDBcMFxuXDBcMFwwXGZcMFx4
+NDNcMHRcMHJcMGxcMCtcMEkpCnRpbGVIb3Jpem9udGFsbHk9QFZhcmlhbnQoXDBcMFwwXHRcMFww
+XDBceDFcMFwwXDBcblwwXDBcMFxmXDBceDQzXDB0XDByXDBsXDArXDBIKQp0aWxlVmVydGljYWxs
+eT1AVmFyaWFudChcMFwwXDBcdFwwXDBcMFx4MVwwXDBcMFxuXDBcMFwwXGZcMFx4NDNcMHRcMHJc
+MGxcMCtcMEcpCnRpcE9mVGhlRGF5PUBWYXJpYW50KFwwXDBcMFx0XDBcMFwwXHgxXDBcMFwwXG5c
+MFwwXDBceDRcMFx4NDZcMFx4MzMpCnRvZ2dsZUZ1bGxzY3JlZW49QFZhcmlhbnQoXDBcMFwwXHRc
+MFwwXDBceDFcMFwwXDBcblwwXDBcMFx4NFwwXHg0NlwwXHgzNSkKCltEaXNwbGF5d2luZG93JTIw
+c2hvcnRjdXRzXQpjb3B5U2VsZWN0ZWRUZXh0PUBWYXJpYW50KFwwXDBcMFx0XDBcMFwwXHgxXDBc
+MFwwXG5cMFwwXDBcZlwwXHg0M1wwdFwwclwwbFwwK1wwXHg0MykKZmluZFRleHQ9QFZhcmlhbnQo
+XDBcMFwwXHRcMFwwXDBceDFcMFwwXDBcblwwXDBcMFxmXDBceDQzXDB0XDByXDBsXDArXDBceDQ2
+KQpvcGVuTG9jYXRpb249QFZhcmlhbnQoXDBcMFwwXHRcMFwwXDBceDFcMFwwXDBcblwwXDBcMFxm
+XDBceDQzXDB0XDByXDBsXDArXDBMKQpzZWxlY3RBbGw9QFZhcmlhbnQoXDBcMFwwXHRcMFwwXDBc
+eDFcMFwwXDBcblwwXDBcMFxmXDBceDQzXDB0XDByXDBsXDArXDBceDQxKQp3aW5kb3dfaGlzdG9y
+eV9iYWNrX2FjdGlvbj1AVmFyaWFudChcMFwwXDBcdFwwXDBcMFx4MVwwXDBcMFxuXDBcMFwwXHgx
+MFwwXHg0MVwwbFwwdFwwK1wwTFwwXHg2NVwwXHg2NlwwdCkKd2luZG93X2hpc3RvcnlfZm9yd2Fy
+ZF9hY3Rpb249QFZhcmlhbnQoXDBcMFwwXHRcMFwwXDBceDFcMFwwXDBcblwwXDBcMFx4MTJcMFx4
+NDFcMGxcMHRcMCtcMFJcMGlcMGdcMGhcMHQpCndpbmRvd19zZWFyY2hfYWN0aW9uPUBWYXJpYW50
+KFwwXDBcMFx0XDBcMFwwXHgxXDBcMFwwXG5cMFwwXDBcZlwwXHg0M1wwdFwwclwwbFwwK1wwTikK
+em9vbUluPUBWYXJpYW50KFwwXDBcMFx0XDBcMFwwXHgxXDBcMFwwXG5cMFwwXDBcZlwwXHg0M1ww
+dFwwclwwbFwwK1wwKykKem9vbU91dD1AVmFyaWFudChcMFwwXDBcdFwwXDBcMFx4MVwwXDBcMFxu
+XDBcMFwwXGZcMFx4NDNcMHRcMHJcMGxcMCtcMC0pCgpbQmlibGUlMjBzaG9ydGN1dHNdCmNvcHlD
+aGFwdGVyPUBJbnZhbGlkKCkKY29weVJlZmVyZW5jZVdpdGhUZXh0PUBJbnZhbGlkKCkKY29weVRl
+eHRPZlJlZmVyZW5jZT1ASW52YWxpZCgpCm5leHRCb29rPUBWYXJpYW50KFwwXDBcMFx0XDBcMFww
+XHgxXDBcMFwwXG5cMFwwXDBcZlwwXHg0M1wwdFwwclwwbFwwK1wwWSkKbmV4dENoYXB0ZXI9QFZh
+cmlhbnQoXDBcMFwwXHRcMFwwXDBceDFcMFwwXDBcblwwXDBcMFxmXDBceDQzXDB0XDByXDBsXDAr
+XDBYKQpuZXh0VmVyc2U9QFZhcmlhbnQoXDBcMFwwXHRcMFwwXDBceDFcMFwwXDBcblwwXDBcMFxm
+XDBceDQzXDB0XDByXDBsXDArXDBWKQpwcmV2aW91c0Jvb2s9QFZhcmlhbnQoXDBcMFwwXHRcMFww
+XDBceDFcMFwwXDBcblwwXDBcMFx4MThcMFx4NDNcMHRcMHJcMGxcMCtcMFNcMGhcMGlcMFx4NjZc
+MHRcMCtcMFkpCnByZXZpb3VzQ2hhcHRlcj1AVmFyaWFudChcMFwwXDBcdFwwXDBcMFx4MVwwXDBc
+MFxuXDBcMFwwXHgxOFwwXHg0M1wwdFwwclwwbFwwK1wwU1wwaFwwaVwwXHg2NlwwdFwwK1wwWCkK
+cHJldmlvdXNWZXJzZT1AVmFyaWFudChcMFwwXDBcdFwwXDBcMFx4MVwwXDBcMFxuXDBcMFwwXHgx
+OFwwXHg0M1wwdFwwclwwbFwwK1wwU1wwaFwwaVwwXHg2NlwwdFwwK1wwVikKcHJpbnRDaGFwdGVy
+PUBWYXJpYW50KFwwXDBcMFx0XDBcMFwwXHgxXDBcMFwwXG5cMFwwXDBcZlwwXHg0M1wwdFwwclww
+bFwwK1wwUCkKcHJpbnRSZWZlcmVuY2VXaXRoVGV4dD1ASW52YWxpZCgpCnNhdmVDaGFwdGVyQXNI
+VE1MPUBJbnZhbGlkKCkKc2F2ZUNoYXB0ZXJBc1BsYWluVGV4dD1ASW52YWxpZCgpCnNhdmVSZWZl
+cmVuY2VXaXRoVGV4dD1ASW52YWxpZCgpCgpbQ29tbWVudGFyeSUyMHNob3J0Y3V0c10KY29tbWVu
+dGFyeV9zeW5jV2luZG93PUBWYXJpYW50KFwwXDBcMFx0XDBcMFwwXHgxXDBcMFwwXG5cMFwwXDBc
+eGVcMFNcMGhcMGlcMFx4NjZcMHRcMCtcMFMpCm5leHRCb29rPUBWYXJpYW50KFwwXDBcMFx0XDBc
+MFwwXHgxXDBcMFwwXG5cMFwwXDBcZlwwXHg0M1wwdFwwclwwbFwwK1wwWSkKbmV4dENoYXB0ZXI9
+QFZhcmlhbnQoXDBcMFwwXHRcMFwwXDBceDFcMFwwXDBcblwwXDBcMFxmXDBceDQzXDB0XDByXDBs
+XDArXDBYKQpuZXh0VmVyc2U9QFZhcmlhbnQoXDBcMFwwXHRcMFwwXDBceDFcMFwwXDBcblwwXDBc
+MFxmXDBceDQzXDB0XDByXDBsXDArXDBWKQpwcmV2aW91c0Jvb2s9QFZhcmlhbnQoXDBcMFwwXHRc
+MFwwXDBceDFcMFwwXDBcblwwXDBcMFx4MThcMFx4NDNcMHRcMHJcMGxcMCtcMFNcMGhcMGlcMFx4
+NjZcMHRcMCtcMFkpCnByZXZpb3VzQ2hhcHRlcj1AVmFyaWFudChcMFwwXDBcdFwwXDBcMFx4MVww
+XDBcMFxuXDBcMFwwXHgxOFwwXHg0M1wwdFwwclwwbFwwK1wwU1wwaFwwaVwwXHg2NlwwdFwwK1ww
+WCkKcHJldmlvdXNWZXJzZT1AVmFyaWFudChcMFwwXDBcdFwwXDBcMFx4MVwwXDBcMFxuXDBcMFww
+XHgxOFwwXHg0M1wwdFwwclwwbFwwK1wwU1wwaFwwaVwwXHg2NlwwdFwwK1wwVikKCltMZXhpY29u
+JTIwc2hvcnRjdXRzXQpjb3B5RW50cnlXaXRoVGV4dD1ASW52YWxpZCgpCmNvcHlSZWZlcmVuY2VP
+bmx5PUBJbnZhbGlkKCkKbmV4dEVudHJ5PUBWYXJpYW50KFwwXDBcMFx0XDBcMFwwXHgxXDBcMFww
+XG5cMFwwXDBcZlwwXHg0M1wwdFwwclwwbFwwK1wwVikKcHJldmlvdXNFbnRyeT1AVmFyaWFudChc
+MFwwXDBcdFwwXDBcMFx4MVwwXDBcMFxuXDBcMFwwXHgxOFwwXHg0M1wwdFwwclwwbFwwK1wwU1ww
+aFwwaVwwXHg2NlwwdFwwK1wwVikKcHJpbnRFbnRyeVdpdGhUZXh0PUBJbnZhbGlkKCkKcHJpbnRS
+ZWZlcmVuY2VPbmx5PUBJbnZhbGlkKCkKc2F2ZUVudHJ5QXNQbGFpbj1ASW52YWxpZCgpCnNhdmVI
+dG1sPUBJbnZhbGlkKCkKd2luZG93X2ZpbmRfc3Ryb25nc19hY3Rpb249QEludmFsaWQoKQoKW0Jv
+b2slMjBzaG9ydGN1dHNdCnRvZ2dsZVRyZWU9QEludmFsaWQoKQoKW2ZvbnRzXQpHcmVlayUyQyUy
+MEFuY2llbnQlMjAlMjh0byUyMDE0NTMlMjk9IlRpbWVzLDEyLC0xLDUsNTAsMCwwLDAsMCwwIgpH
+ZXJtYW49IlRpbWVzLDEyLC0xLDUsNTAsMCwwLDAsMCwwIgpFbmdsaXNoPSJUaW1lcywxMiwtMSw1
+LDUwLDAsMCwwLDAsMCIKSGVicmV3PSJUaW1lcywxMiwtMSw1LDUwLDAsMCwwLDAsMCIKTGF0aW49
+IlRpbWVzLDEyLC0xLDUsNTAsMCwwLDAsMCwwIgoKW2ZvbnQlMjBzdGFuZGFyZCUyMHNldHRpbmdz
+XQpHcmVlayUyQyUyMEFuY2llbnQlMjAlMjh0byUyMDE0NTMlMjk9ZmFsc2UKR2VybWFuPWZhbHNl
+CkVuZ2xpc2g9ZmFsc2UKSGVicmV3PWZhbHNlCkxhdGluPWZhbHNlCgpbbW9kdWxlc10Kc3RhbmRh
+cmRCaWJsZT1LSlYKc3RhbmRhcmRDb21tZW50YXJ5PUF1Z3VzdGluCnN0YW5kYXJkTGV4aWNvbj0K
+c3RhbmRhcmREYWlseURldm90aW9uYWw9CnN0YW5kYXJkSGVicmV3TGV4aWNvbj0Kc3RhbmRhcmRH
+cmVla0xleGljb249CnN0YW5kYXJkSGVicmV3TW9ycGhMZXhpY29uPQpzdGFuZGFyZEdyZWVrTW9y
+cGhMZXhpY29uPQoKW2Jvb2xzXQpsaW5lQnJlYWtzPWZhbHNlCnZlcnNlTnVtYmVycz10cnVlCmxv
+Z289dHJ1ZQp0b29sYmFyPXRydWUKYXV0b1RpbGVWZXJ0aWNhbD10cnVlCmF1dG9UaWxlSG9yaXpv
+bnRhbD1mYWxzZQphdXRvVGlsZT1mYWxzZQphdXRvVGFiYmVkPWZhbHNlCmF1dG9DYXNjYWRlPWZh
+bHNlCmNyYXNoZWRMYXN0VGltZT1mYWxzZQpjcmFzaGVkVHdvVGltZXM9ZmFsc2UKc2hvd1Rvb2xi
+YXJzSW5FYWNoV2luZG93PWZhbHNlCgpbaW50c10KaGVhZGluZ3M9MQpzY3JpcHR1cmVSZWZlcmVu
+Y2VzPTEKaGVicmV3UG9pbnRzPTEKaGVicmV3Q2FudGlsbGF0aW9uPTEKbW9ycGhTZWdtZW50YXRp
+b249MQpncmVla0FjY2VudHM9MQp0ZXh0dWFsVmFyaWFudHM9MApjb25maWdEaWFsb2dXaWR0aD0x
+CmNvbmZpZ0RpYWxvZ0hlaWdodD0xCmNvbmZpZ0RpYWxvZ1Bvc1g9MQpjb25maWdEaWFsb2dQb3NZ
+PTEKdGlwTnVtYmVyPTMK
+</data>
+
+          </attachment>
+      
+
+    </bug>
+
+</bugzilla>

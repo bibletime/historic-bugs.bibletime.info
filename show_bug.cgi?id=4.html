@@ -1,0 +1,1958 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 4 &ndash; New pt_PT translation for BibleTime</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="index.html">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi%3Fid=4&amp;hide_resolved=1.html">
+      <link rel="Show" title="Dependency Graph"
+            href="showdependencygraph.cgi%3Fid=4.html">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi%3Fid=4.html">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi%3Fformat=multiple&amp;id=4.html">
+
+
+
+    
+    <link href="skins/standard/global.css%3F1408459644.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css%3F1408459554.css" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css%3F1408459551.css" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css%3F1408459644.css" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css%3F1408459644.css" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1408459644" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css%3F1408459639.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js%3F1408459544"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js%3F1408459566"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js%3F1408459570"></script><script type="text/javascript" src="js/yui/connection/connection-min.js%3F1408459567"></script><script type="text/javascript" src="js/yui/json/json-min.js%3F1408459541"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js%3F1408459567"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js%3F1408459548"></script><script type="text/javascript" src="js/global.js%3F1408459574"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 100
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if (history && history.replaceState) {
+      if(!document.location.href.match(/show_bug\.cgi/)) {
+        history.replaceState( null, 
+                             "Bug 4 – New pt_PT translation for BibleTime",  
+                             "show_bug.cgi?id=4" );
+        document.title = "Bug 4 – New pt_PT translation for BibleTime";
+      }
+      if (document.location.href.match(/show_bug\.cgi\?.*list_id=/)) {
+        var href = document.location.href;
+        href = href.replace(/[\?&]+list_id=(\d+|cookie)/, '');
+        history.replaceState(null, "Bug 4 – New pt_PT translation for BibleTime", href);
+      }
+    }
+    YAHOO.util.Event.onDOMReady(function() {
+      initDirtyFieldTracking();
+    });
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js%3F1408459574"></script><script type="text/javascript" src="js/field.js%3F1408459572"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class="bugs-bibletime-info bz_bug bz_status_RESOLVED bz_product_BibleTime bz_component_Translations bz_bug_4 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;4</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">New pt_PT translation for BibleTime</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2011-12-28 17:17:51 EET</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.bibletime.info/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="show_bug.cgi%3Fid=4&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="show_bug.cgi%3Fid=4.html" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+      <input type="checkbox" id="Bugzilla_remember_top" 
+             name="Bugzilla_remember" value="on" class="bz_remember"
+                 >
+      <label for="Bugzilla_remember_top">Remember</label>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1408461393-XArU8t0wXxL1EZ6xiBCXY6lyBBeEiI8FsNwafP-hdG0">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="show_bug.cgi%3Fid=4.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="show_bug.cgi%3Fid=4&amp;GoAheadAndLogIn=1.html#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="http://bugs.bibletime.info/token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1408461393-e57LsP0ygfA6dDDENd0S2TUiXxftFBbDyZ-HRcLh5uo">
+    <a href="show_bug.cgi%3Fid=4.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+<script type="text/javascript" src="tracker.js"></script>
+<script type="text/javascript">try{var t=Piwik.getTracker("http://bugs.bibletime.info/tracker",5);t.trackPageView();t.enableLinkTracking();}catch(err){}</script><noscript><p><img src="tracker%3Fidsite=5" style="border:0;display:absolute" alt=""/></p></noscript>
+<div id="message" style="text-align:center;font-size:200%"><b>NB!</b> Bugs.bibletime.org will be shut down in a few weeks. Please file new bugs to <a href="https://github.com/bibletime/bibletime/issues">our new issue tracker at GitHub</a>.</div>
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="http://bugs.bibletime.info/process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2011-12-28 17:17:51">
+  <input type="hidden" name="longdesclength" value="26">
+  <input type="hidden" name="id" value="4">
+  <input type="hidden" name="token" value="1408461393-i-DjFzBcgdE8t-mgZfPpdK9_RC1vWN9H2G--HrtKc1Q">
+<div class="bz_alias_short_desc_container edit_form">
+     <a href="show_bug.cgi%3Fid=4.html"><b>Bug&nbsp;4</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">New pt_PT translation for BibleTime</span>
+     </span>
+  
+       
+    <div id="summary_alias_input">
+      <table id="summary"> 
+        <tr>
+            <td colspan="2">
+          </td>
+        </tr>
+        
+        <tr><th class="field_label "
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</th>
+          <td>New pt_PT translation for BibleTime
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('New pt_PT translation for BibleTime', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tr>
+    <th class="field_label">
+      <a href="page.cgi%3Fid=fields.html#bug_status">Status</a>:
+    </th>
+    <td id="bz_field_status">
+      <span id="static_bug_status">RESOLVED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi.html"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >BibleTime</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >BibleTime applications</td>
+    </tr>
+        
+    
+    
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi%3Fproduct=BibleTime.html"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Translations</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+</label>
+</th>
+        <td>git master
+  </td>
+    </tr>
+        
+    
+        
+    <tr><th class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</th>
+      <td class="field_value">irrelevant
+       irrelevant
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <th class="field_label">
+        <label for="priority" accesskey="i">
+          <a href="page.cgi%3Fid=fields.html#importance"><u>I</u>mportance</a></label>:
+      </th>
+      <td>Normal
+       enhancement
+      </td>
+    </tr>
+
+      <tr>
+        <th class="field_label">
+          <label for="target_milestone">
+            <a href="page.cgi%3Fid=fields.html#target_milestone">
+            Target&nbsp;Milestone</a></label>:
+        </th><td>unspecified
+  </td>
+      </tr>            
+          
+          <tr>
+      <th class="field_label">
+        <a href="page.cgi%3Fid=fields.html#assigned_to">Assigned To</a>:
+      </th>
+      <td><span class="vcard"><span class="fn">Thomas Abthorpe</span>
+</span>
+      </td>
+    </tr>
+
+    <script type="text/javascript">
+      assignToDefaultOnChange(['product', 'component'],
+        'bibletime-tracker\x40lists.sourceforge.net',
+        '');
+    </script>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          
+<tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a 
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a 
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+    
+  </td>
+  </tr>
+  
+  <tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi%3Fid=4&amp;hide_resolved=1.html">tree</a>
+  
+        /&nbsp;<a href="showdependencygraph.cgi%3Fid=4.html">graph</a>
+    </td>
+  </tr>
+          
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <th class="field_label">
+      Reported:
+    </th>
+    <td>2011-11-29 01:13 EET by <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th class="field_label">
+      Modified:
+    </th>
+    <td>2011-12-28 17:17 EET 
+      (<a href="show_activity.cgi%3Fid=4.html">History</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <th class="field_label">
+        <label for="newcc" accesskey="a">CC List:</label>
+      </th>
+      <td>2 
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="show_bug.cgi%3Fid=4.html#" id="cc_edit_area_showhide">show</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="jaak">jaak</option>
+                <option value="maccounts">maccounts</option>
+            </select>
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container', 
+                               'cc_edit_area', 
+                               'cc_edit_area_showhide', 
+                               '', 
+                               '');  
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a 
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr> 
+         <tr><th class="field_label "
+    id="field_label_cf_qt_version">
+
+
+  <a 
+      title="A custom Multiple-Selection Box field in this installation of Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#cf_qt_version"
+  >Qt version:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_cf_qt_version"  colspan="2">irrelevant</td>
+    </tr>
+    <tr><th class="field_label "
+    id="field_label_cf_os_brand">
+
+
+  <a 
+      title="A custom Free Text field in this installation of Bugzilla."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#cf_os_brand"
+  >OS brand and version:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_cf_os_brand"  colspan="2">irrelevant</td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+    
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter 
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="2" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_text_xml bz_tr_obsolete bz_default_hidden">
+        <td valign="top">
+            <a href="attachment.cgi%3Fid=3"
+               title="View the content of the attachment">
+          <b><span class="bz_obsolete">i18n_messages_bibletime_ui_pt.ts</span></b></a>
+
+          <span class="bz_attach_extra_info">
+              (259.56 KB,
+                text/xml)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=4.html#attach_3"
+               title="Go to the comment associated with the attachment">2011-11-29 01:13 EET</a>,
+
+            <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+          <a href="attachment.cgi%3Fid=3&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_text_xml">
+        <td valign="top">
+            <a href="attachment.cgi%3Fid=5"
+               title="View the content of the attachment">
+          <b>pt-pt translated file updated on 4/12/11</b></a>
+
+          <span class="bz_attach_extra_info">
+              (253.03 KB,
+                text/xml)
+
+            <br>
+            <a href="show_bug.cgi%3Fid=4.html#attach_5"
+               title="Go to the comment associated with the attachment">2011-12-04 04:48 EET</a>,
+
+            <span class="vcard"><span class="fn">Mário</span>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+          <a href="attachment.cgi%3Fid=5&amp;action=edit.html">Details</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <span class="bz_attach_view_hide">
+            <a href="show_bug.cgi%3Fid=4.html#a0" onclick="return toggle_display(this);">Show
+              Obsolete</a> (1)
+        </span>
+        <a href="attachment.cgi%3Fbugid=4&amp;action=enter.html">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Note</legend>
+              You need to
+              <a href="show_bug.cgi%3Fid=4&amp;GoAheadAndLogIn=1.html">log in</a>
+              before you can comment on or make changes to this bug.
+            </fieldset>
+          </td>
+        </tr> 
+      </table>
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+  
+  <div id="comments"><script src="js/comments.js%3F1408459574" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+<!--
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id, name) {
+      var prefix = "(In reply to " + name + " from comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      if (textarea.value != replytext) {
+          textarea.value += replytext;
+      }
+
+      textarea.focus();
+  } 
+//-->
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-11-29 01:13:08 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class="bz_obsolete"><a href="attachment.cgi%3Fid=3" name="attach_3" title="i18n_messages_bibletime_ui_pt.ts">attachment 3</a> <a href="attachment.cgi%3Fid=3&amp;action=edit.html" title="i18n_messages_bibletime_ui_pt.ts">[details]</a></span>
+i18n_messages_bibletime_ui_pt.ts
+
+This is the pt_PT translation file originally provided by Mário in <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED MOVED TO NEW ISSUE TRACKER - Provide means to change the language of BibleTime via the GUI"
+   href="show_bug.cgi%3Fid=2.html">bug 2</a>.</pre>
+    </div><div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-11-29 01:20:54 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I marked this translation for git master branch, although Mário gave no direct information about this. So I'm not sure whether it would properly apply to 2.9.</pre>
+    </div><div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mário</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-11-29 03:19:29 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi%3Fid=4.html#c1">comment #1</a>)
+<span class="quote">&gt; I marked this translation for git master branch, although Mário gave no direct
+&gt; information about this. So I'm not sure whether it would properly apply to 2.9.</span >
+
+Hi.
+
+this is the first translation of a &quot;big&quot; software i've ever made, and i based myself on the pt-br version...
+
+what else is needed??
+
+i think you have to point me some directions so i can do a better work :)
+
+how can i test this live on BT? The idea was to see if this could be get into 2.9. It's important to have this available in as many languages as possible</pre>
+    </div><div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-11-29 23:28:44 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt; this is the first translation of a &quot;big&quot; software i've ever made, and i based
+&gt; myself on the pt-br version...
+&gt; 
+&gt; what else is needed??</span >
+
+In <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED MOVED TO NEW ISSUE TRACKER - Provide means to change the language of BibleTime via the GUI"
+   href="show_bug.cgi%3Fid=2.html">bug 2</a> I gave you links to 3 different pt_BR translation files. Did you base your translation on one of these or some other pt_BR translation file? Which one? 
+
+We need to know this because old translations don't apply well to newer versions of BibleTime and the other way around. The texts that need to be translated change between versions and if we apply the translation to a wrong version of BibleTime then some strings might not get translated when BibleTime runs.</pre>
+    </div><div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mário</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-11-30 03:08:29 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi%3Fid=4.html#c3">comment #3</a>)
+<span class="quote">&gt; &gt; this is the first translation of a &quot;big&quot; software i've ever made, and i based
+&gt; &gt; myself on the pt-br version...
+&gt; &gt; 
+&gt; &gt; what else is needed??
+&gt; 
+&gt; In <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED MOVED TO NEW ISSUE TRACKER - Provide means to change the language of BibleTime via the GUI"
+   href="show_bug.cgi%3Fid=2.html">bug 2</a> I gave you links to 3 different pt_BR translation files. Did you base
+&gt; your translation on one of these or some other pt_BR translation file? Which
+&gt; one? 
+&gt; 
+&gt; We need to know this because old translations don't apply well to newer
+&gt; versions of BibleTime and the other way around. The texts that need to be
+&gt; translated change between versions and if we apply the translation to a wrong
+&gt; version of BibleTime then some strings might not get translated when BibleTime
+&gt; runs.</span >
+
+Hi Jaak,
+
+thank you for answering :)
+
+I based my self on a file i downloaded 1 or 2 months ago from your website at:
+
+<a href="http://gitorious.org/bibletime/bibletime/blobs/raw/master/i18n/messages/bibletime_ui_pt_BR.ts">http://gitorious.org/bibletime/bibletime/blobs/raw/master/i18n/messages/bibletime_ui_pt_BR.ts</a>
+
+the file was almost totally translated, that's why i didn't re-downloaded it. I think it could still be applied!
+
+do i have to re-translate it all over again???</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mário</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-11-30 03:15:10 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >I just went to check the date on my laptop. I downloaded the file on September 6, 2011...</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-11-30 09:50:52 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi%3Fid=4.html#c5">comment #5</a>)
+<span class="quote">&gt; I just went to check the date on my laptop. I downloaded the file on September
+&gt; 6, 2011...</span >
+
+Ok, so you took the translation from the master branch on September 6. According to <a href="http://devel.bibletime.info/wiki/Release_Schedules/2.9">http://devel.bibletime.info/wiki/Release_Schedules/2.9</a> this means that the translation should be applied to the master and stable-2.9 branch.
+
+Once we apply it to the stable-2.9 branch, we will update it and send it back to you for translation so that you could translate all missing strings (new strings added between September 6 and November 7; no new strings were added after that because of &quot;string freeze&quot; in the stable-2.9 branch).
+
+Thomas, could you do this as quickly as possible, because the 2.9 release is just around the corner? Thanks!</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mário</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-11-30 16:36:00 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi%3Fid=4.html#c6">comment #6</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=4.html#c5">comment #5</a>)
+&gt; &gt; I just went to check the date on my laptop. I downloaded the file on September
+&gt; &gt; 6, 2011...
+&gt; 
+&gt; Ok, so you took the translation from the master branch on September 6.
+&gt; According to <a href="http://devel.bibletime.info/wiki/Release_Schedules/2.9">http://devel.bibletime.info/wiki/Release_Schedules/2.9</a> this means
+&gt; that the translation should be applied to the master and stable-2.9 branch.
+&gt; 
+&gt; Once we apply it to the stable-2.9 branch, we will update it and send it back
+&gt; to you for translation so that you could translate all missing strings (new
+&gt; strings added between September 6 and November 7; no new strings were added
+&gt; after that because of &quot;string freeze&quot; in the stable-2.9 branch).
+&gt; 
+&gt; Thomas, could you do this as quickly as possible, because the 2.9 release is
+&gt; just around the corner? Thanks!</span >
+
+
+
+Great!!! It's good to know it will get into 2.9. :D I'll be waiting for that file, then. :D
+
+I would, however, like ask an off-topic question: when can i start working on the 2.10 translation and if i'll i have to re-translate all over again, or just update the 2.9 translation?
+
+Thanks</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-11-30 21:25:43 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi%3Fid=4.html#c7">comment #7</a>)
+<span class="quote">&gt; Great!!! It's good to know it will get into 2.9. :D I'll be waiting for that
+&gt; file, then. :D
+&gt; 
+&gt; I would, however, like ask an off-topic question: when can i start working on
+&gt; the 2.10 translation and if i'll i have to re-translate all over again, or just
+&gt; update the 2.9 translation?</span >
+
+The texts to translate for the final 2.10 release will (hopefully) be fixed when we release 2.10 Release Candidate 1. We call this a &quot;string freeze&quot;. After a string freeze, no new strings will be added, so that translators can update the translations without worrying that the texts change before the final 2.10 release. We will notify translators primarily via the translators mailing list.
+
+We have not yet fixed a schedule for the release of 2.10. Once we do, we can also notify the translators.</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-02 19:04:10 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi%3Fid=4.html#c6">comment #6</a>)
+<span class="quote">&gt; Thomas, could you do this as quickly as possible, because the 2.9 release is
+&gt; just around the corner? Thanks!</span >
+
+Ok, I did it myself. For 2.9 you need to update this translation:
+
+<a href="https://gitorious.org/bibletime/bibletime/blobs/stable-2.9/i18n/messages/bibletime_ui_pt.ts">https://gitorious.org/bibletime/bibletime/blobs/stable-2.9/i18n/messages/bibletime_ui_pt.ts</a>
+
+If you also want to provide a translation for BibleTime 2.8 series, let me know.</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mário</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-02 20:41:17 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >i can't open the file in QT Linguistic :(
+
+it says &quot;unexpected tag at c:/............... bibletime_ui_pt.ts:4:6&quot;
+
+am i doing anything wrong?
+
+tks</pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c11">Comment 11</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-02 22:23:55 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi%3Fid=4.html#c10">comment #10</a>)
+<span class="quote">&gt; i can't open the file in QT Linguistic :(
+&gt; 
+&gt; it says &quot;unexpected tag at c:/............... bibletime_ui_pt.ts:4:6&quot;
+&gt; 
+&gt; am i doing anything wrong?
+&gt; 
+&gt; tks</span >
+
+The link I gave you is a webpage where you can download the real file. The raw data should be directly available at <a href="https://gitorious.org/bibletime/bibletime/blobs/raw/stable-2.9/i18n/messages/bibletime_ui_pt.ts">https://gitorious.org/bibletime/bibletime/blobs/raw/stable-2.9/i18n/messages/bibletime_ui_pt.ts</a></pre>
+    </div><div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c12">Comment 12</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mário</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-04 04:48:43 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Created <span class=""><a href="attachment.cgi%3Fid=5" name="attach_5" title="pt-pt translated file updated on 4/12/11">attachment 5</a> <a href="attachment.cgi%3Fid=5&amp;action=edit.html" title="pt-pt translated file updated on 4/12/11">[details]</a></span>
+pt-pt translated file updated on 4/12/11
+
+pt-pt translated file updated on 4/12/11</pre>
+    </div><div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c13">Comment 13</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mário</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-04 04:57:48 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >oh and, by the way, what does that huge &quot;34.7% need revision&quot; on &quot; <a href="http://www.bibletime.info/translation.shtml">http://www.bibletime.info/translation.shtml</a> &quot; means?!
+
+Revision?! I've just re-read the translations all over again. Can you please explain what am i missing? :)
+
+thanks again :)</pre>
+    </div><div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c14">Comment 14</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mário</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-09 05:04:30 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Not working on 2.9 final :(</pre>
+    </div><div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c15">Comment 15</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Thomas Abthorpe</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-09 07:36:39 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi%3Fid=4.html#c13">comment #13</a>)
+<span class="quote">&gt; oh and, by the way, what does that huge &quot;34.7% need revision&quot; on &quot;
+&gt; <a href="http://www.bibletime.info/translation.shtml">http://www.bibletime.info/translation.shtml</a> &quot; means?!
+&gt; 
+&gt; Revision?! I've just re-read the translations all over again. Can you please
+&gt; explain what am i missing? :)
+&gt; 
+&gt; thanks again :)</span >
+
+I have updated the statistics, now following the 2.9 stable branch of BT, it now says 99.1%</pre>
+    </div><div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c16">Comment 16</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Thomas Abthorpe</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-09 08:00:26 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi%3Fid=4.html#c14">comment #14</a>)
+<span class="quote">&gt; Not working on 2.9 final :(</span >
+
+It was not linked into the build, I have rectified it with this commit, <a href="http://gitorious.org/bibletime/bibletime/commit/56c1c7b54d6f8f2ab10af4666aeded21b4c307f8">http://gitorious.org/bibletime/bibletime/commit/56c1c7b54d6f8f2ab10af4666aeded21b4c307f8</a>, it will be part of 2.9.1.</pre>
+    </div><div id="c17" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c17">Comment 17</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mário</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-09 16:14:47 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi%3Fid=4.html#c16">comment #16</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=4.html#c14">comment #14</a>)
+&gt; &gt; Not working on 2.9 final :(
+&gt; 
+&gt; It was not linked into the build, I have rectified it with this commit,
+&gt; <a href="http://gitorious.org/bibletime/bibletime/commit/56c1c7b54d6f8f2ab10af4666aeded21b4c307f8">http://gitorious.org/bibletime/bibletime/commit/56c1c7b54d6f8f2ab10af4666aeded21b4c307f8</a>,
+&gt; it will be part of 2.9.1.</span >
+
+when is 2.9.1 supposed to get out???</pre>
+    </div><div id="c18" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c18">Comment 18</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-09 19:25:37 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi%3Fid=4.html#c14">comment #14</a>)
+<span class="quote">&gt; Not working on 2.9 final :(</span >
+
+=(
+
+(In reply to <a href="show_bug.cgi%3Fid=4.html#c16">comment #16</a>)
+<span class="quote">&gt; It was not linked into the build, I have rectified it with this commit,
+&gt; <a href="http://gitorious.org/bibletime/bibletime/commit/56c1c7b54d6f8f2ab10af4666aeded21b4c307f8">http://gitorious.org/bibletime/bibletime/commit/56c1c7b54d6f8f2ab10af4666aeded21b4c307f8</a>,</span >
+
+I think this should be automated in CMakeLists.txt so that this wouldn't happen again.
+
+<span class="quote">&gt; it will be part of 2.9.1.</span >
+
+Maybe. Or maybe we should just rebuild the binaries with the translation included...
+
+(In reply to <a href="show_bug.cgi%3Fid=4.html#c17">comment #17</a>)
+<span class="quote">&gt; when is 2.9.1 supposed to get out???</span >
+
+I guess we could try to do a release before Christmas.</pre>
+    </div><div id="c19" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c19">Comment 19</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mário</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-09 20:05:44 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" ><span class="quote">&gt; Maybe. Or maybe we should just rebuild the binaries with the translation
+&gt; included...</span >
+
+I vote for the solution above ^ ;)
+
+I have 3 reasons: 
+
+1 - it was announced already as part of 2.9.0
+2 - i wanted to make a step-by-step tutorial on how to install BibleTime on Windows and Linux along whit the pt-pt Bible just released. 
+4 - I also intended to talk to the major responsible of the pt-pt translation of the Bible and suggest a recommendation BibleTime as a preference, since - because of a few datails- i believe it's the best choice, .
+3 - i really needed a pt-pt version for a few students and (IMHO) the other softwares are not a option!
+
+However i really needed to get on whit this, now that i have a few time off :).
+
+Anyway, it's you decision :). Please notify me when you make one :)
+
+Best wishes</pre>
+    </div><div id="c20" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c20">Comment 20</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-09 22:36:14 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi%3Fid=4.html#c19">comment #19</a>)
+<span class="quote">&gt; 3 - i really needed a pt-pt version for a few students and (IMHO) the other
+&gt; softwares are not a option!</span >
+
+Do you need a windows binaries?</pre>
+    </div><div id="c21" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c21">Comment 21</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mário</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-11 21:14:11 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi%3Fid=4.html#c20">comment #20</a>)
+<span class="quote">&gt; (In reply to <a href="show_bug.cgi%3Fid=4.html#c19">comment #19</a>)
+&gt; &gt; 3 - i really needed a pt-pt version for a few students and (IMHO) the other
+&gt; &gt; softwares are not a option!
+&gt; 
+&gt; Do you need a windows binaries?</span >
+
+well i was hopping i could give it to my students before Holidays, so i need a working installer...</pre>
+    </div><div id="c22" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c22">Comment 22</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mário</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-28 00:36:18 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Hi,
+
+just made a few changes and corrected some errors i found on the pt-pt translation. 
+
+But now I have 2 problems/questions
+
+1º - On Qt Linguist there's a few &quot;V&quot; that are grayed and that do not allow me to change their values. Should i be worried whit them? should i do something to access them and translate them?
+
+2º - and most important: on &quot;configure BibleTime&quot; &gt; &quot;Desktop&quot; only the two tabs (&quot;standard works&quot; &amp; &quot;text filters&quot;) are translated and not their content. Can't understand why, since i translated them. is it a bug?
+
+tks</pre>
+    </div><div id="c23" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c23">Comment 23</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mário</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-28 00:42:48 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >oh and, the translations i made are in the context &quot;StandardWorksTab&quot; on the Qt Linguist</pre>
+    </div><div id="c24" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c24">Comment 24</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Jaak Ristioja</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+            <img src="images/favicon.ico"
+                 alt="devs"
+                 title="devs - BibleTime developers">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-28 11:54:00 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >Marking this as RESOLVED FIXED because the given translation was released together with 2.9.1. The pt_PT translation and the students were the main reason for this release.
+
+(In reply to <a href="show_bug.cgi%3Fid=4.html#c22">comment #22</a>)
+<span class="quote">&gt; just made a few changes and corrected some errors i found on the pt-pt
+&gt; translation. </span >
+Please file a new bug for any translation updates. Those will be included in later releases.
+
+<span class="quote">&gt; 1º - On Qt Linguist there's a few &quot;V&quot; that are grayed and that do not allow me
+&gt; to change their values. Should i be worried whit them? should i do something to
+&gt; access them and translate them?</span >
+
+You need not worry about them. These are strings which used to be in BibleTime but are no longer used by the current version. In other words, these strings are marked as &quot;obsolete&quot;. In case they were translated in previous versions of BibleTime, they may serve as a reference to the translators.
+
+<span class="quote">&gt; 2º - and most important: on &quot;configure BibleTime&quot; &gt; &quot;Desktop&quot; only the two tabs
+&gt; (&quot;standard works&quot; &amp; &quot;text filters&quot;) are translated and not their content. Can't
+&gt; understand why, since i translated them. is it a bug?</span >
+
+I can confirm that this happens and that you have indeed translated those strings. There appears to be nothing wrong in the code, so I think it might be a Qt bug. I filed <a class="bz_bug_link 
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Some tr() translations are not applied at runtime."
+   href="show_bug.cgi%3Fid=8.html">bug 8</a> for this. Thanks for reporting this!</pre>
+    </div><div id="c25" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+
+
+        <span class="bz_comment_number">
+          <a 
+             href="show_bug.cgi%3Fid=4.html#c25">Comment 25</a>
+        </span>
+
+        <span class="bz_comment_user">
+          <span class="vcard"><span class="fn">Mário</span>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2011-12-28 17:17:51 EET
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" >(In reply to <a href="show_bug.cgi%3Fid=4.html#c24">comment #24</a>)
+<span class="quote">&gt; Marking this as RESOLVED FIXED because the given translation was released
+&gt; together with 2.9.1. The pt_PT translation and the students were the main
+&gt; reason for this release.</span >
+
+
+Thank you SO MUCH for this :). I already began the instrutions and plan to release them before new year's :)
+
+:D
+
+Best wishes</pre>
+    </div>
+
+
+  
+
+</td>
+<td>
+</td>
+</tr></table>
+  </div>
+        
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi%3Fformat=multiple&amp;id=4.html">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fctype=xml&amp;id=4">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi%3Fcloned_bug_id=4.html">Clone This Bug</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi%3Fid=4.html#">Top of page </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.bibletime.info/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="show_bug.cgi%3Fid=4&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="show_bug.cgi%3Fid=4.html" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+      <input type="checkbox" id="Bugzilla_remember_bottom" 
+             name="Bugzilla_remember" value="on" class="bz_remember"
+                 >
+      <label for="Bugzilla_remember_bottom">Remember</label>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1408461393-XArU8t0wXxL1EZ6xiBCXY6lyBBeEiI8FsNwafP-hdG0">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="show_bug.cgi%3Fid=4.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="show_bug.cgi%3Fid=4&amp;GoAheadAndLogIn=1.html#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="http://bugs.bibletime.info/token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1408461393-e57LsP0ygfA6dDDENd0S2TUiXxftFBbDyZ-HRcLh5uo">
+    <a href="show_bug.cgi%3Fid=4.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>20</bug_id>
+          
+          <creation_ts>2012-07-21 22:54:00 +0300</creation_ts>
+          <short_desc>Alternate versification bible not displayed properly</short_desc>
+          <delta_ts>2013-12-07 19:18:33 +0200</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>General</component>
+          <version>2.9.1</version>
+          <rep_platform>irrelevant</rep_platform>
+          <op_sys>irrelevant</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>FIXED</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>normal</bug_severity>
+          <target_milestone>2.10_beta1</target_milestone>
+          
+          
+          <everconfirmed>1</everconfirmed>
+          <reporter name="Jaak Ristioja">jaak</reporter>
+          <assigned_to name="BibleTime Research Department, Institute of Bug Fixes">bibletime-tracker</assigned_to>
+          <cc>gary.holmlund</cc>
+          <cf_qt_version>irrelevant</cf_qt_version>
+          <cf_os_brand>irrelevant</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>95</commentid>
+    <comment_count>0</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2012-07-21 22:54:11 +0300</bug_when>
+    <thetext>From the old bug tracker, the original bug report by Christopher Vella (chrisvella02) - 2012-02-02 06:03:19 PST read:
+
+I&apos;m using Bibletime 2.9.1 on Ubuntu 11.10. This bug is related to the CPDV module version 1.0.1 from the av11 repository.
+Opening the module in a new window works fine, but if I close Bibletime and reopen it the text is not longer shown. Furthmore, the book dropdown list shows only the new testament and the apocrypha. No old testament books or deutero-canonical books are shown.
+The same happens if I try to change the bible in an already open window.
+
+---
+
+The issue was confirmed by kalemas, who wrote:
+
+i would confirm this issue, RusSynodal module, on win7-64 with BibleTime
+2.9.1</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>143</commentid>
+    <comment_count>2</comment_count>
+    <who name="Gary Holmlund">gary.holmlund</who>
+    <bug_when>2013-12-07 19:18:33 +0200</bug_when>
+    <thetext>I have observed this problem on Windows with BT 2.9.1 and 2.9.2, and on linux with BT 2.92. I also don&apos;t see the problem with the lastest svn on either Windows or linux. I suspect that the fix was the change to sword 1.7. I am resolving this defect.</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

@@ -1,0 +1,1383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Search for bugs</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="index.html">
+
+
+
+    
+    <link href="skins/standard/global.css%3F1408459644.css"
+          rel="alternate stylesheet" 
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css%3F1408459554.css" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css%3F1408459551.css" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css%3F1408459644.css" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/search_form.css%3F1408459641.css" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+      
+
+
+  <link href="skins/standard/IE-fixes.css?1408459644" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="skins/contrib/Dusk/global.css%3F1408459639.css" rel="stylesheet"
+        type="text/css" title="Dusk">
+
+    
+
+    
+
+    
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js%3F1408459544"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js%3F1408459566"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js%3F1408459570"></script><script type="text/javascript" src="js/yui/connection/connection-min.js%3F1408459567"></script><script type="text/javascript" src="js/yui/json/json-min.js%3F1408459541"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js%3F1408459567"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js%3F1408459548"></script><script type="text/javascript" src="js/global.js%3F1408459574"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 100
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+function remove_token() {
+  if (queryform.token) {
+    var asDefault = document.getElementById('remasdefault');
+    queryform.token.disabled = !asDefault.checked;
+  }
+}
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js%3F1408459574"></script><script type="text/javascript" src="js/TUI.js%3F1408459572"></script><script type="text/javascript" src="js/field.js%3F1408459572"></script>
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class="bugs-bibletime-info yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Search for bugs</p>
+    </td>
+
+
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.bibletime.info/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_top" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_top");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_top"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/query.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_top">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_top">
+  <span class="separator">| </span>
+  <a id="login_link_top" href="query.cgi%3Fformat=advanced&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_top')">Log In</a>
+
+  
+  <form action="query.cgi%3Fformat=advanced.html" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_top"
+        onsubmit="return check_mini_login_fields( '_top' );"
+  >
+    <input id="Bugzilla_login_top" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_top')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_top" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_top')"
+    >
+      <input type="checkbox" id="Bugzilla_remember_top" 
+             name="Bugzilla_remember" value="on" class="bz_remember"
+                 >
+      <label for="Bugzilla_remember_top">Remember</label>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1408461313-8QY8blg3SC3eX0wxcfR8SWPirS_dPCkcFSkIrQxNFj8">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_top">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_top');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_top');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="query.cgi%3Fformat=advanced.html#" onclick="return hide_mini_login_form('_top')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_top">
+  <span class="separator">| </span>
+  <a id="forgot_link_top" href="query.cgi%3Fformat=advanced&amp;GoAheadAndLogIn=1.html#forgot"
+     onclick="return show_forgot_form('_top')">Forgot Password</a>
+  <form action="http://bugs.bibletime.info/token.cgi" method="post" id="forgot_form_top"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_top">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_top">
+    <input id="forgot_button_top" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1408461313-v7Znc19CtXKFoyHEm7iYB3NaeE0175uU-Whw8FKq4Y4">
+    <a href="query.cgi%3Fformat=advanced.html#" onclick="return hide_forgot_form('_top')">[x]</a>
+  </form>
+</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+<script type="text/javascript" src="tracker.js"></script>
+<script type="text/javascript">try{var t=Piwik.getTracker("http://bugs.bibletime.info/tracker",5);t.trackPageView();t.enableLinkTracking();}catch(err){}</script><noscript><p><img src="tracker%3Fidsite=5" style="border:0;display:absolute" alt=""/></p></noscript>
+<div id="message" style="text-align:center;font-size:200%"><b>NB!</b> Bugs.bibletime.org will be shut down in a few weeks. Please file new bugs to <a href="https://github.com/bibletime/bibletime/issues">our new issue tracker at GitHub</a>.</div>
+<div class="tabbed">
+  <table class="tabs" cellspacing="0" cellpadding="10" border="0" width="100%">
+    <tr>
+      <td class="spacer">&nbsp;</td>
+
+          <td id="tab_specific" class="clickable_area"
+              onClick="document.location='query.cgi?format=specific'">
+            <a href="query.cgi%3Fformat=specific.html">Simple Search</a>
+          </td>
+          <td id="tab_advanced" class="selected">Advanced Search</td>
+
+      <td class="spacer">&nbsp;</td>
+    </tr>
+  </table>
+
+  <div class="tabbody">
+
+
+
+<p id="search_help">Hover your mouse over each field label to get help for that field.</p>
+
+<form method="post" action="http://bugs.bibletime.info/buglist.cgi" name="queryform" id="queryform"
+      onsubmit="remove_token()">
+<input type="hidden" id="no_redirect" name="no_redirect" value="0">
+<script type="text/javascript">
+  if (history && history.replaceState) {
+    var no_redirect = document.getElementById("no_redirect");
+    no_redirect.value = 1;
+  }
+
+// Hide the Advanced Fields by default, unless the user has a cookie
+// that specifies otherwise.
+// &#9656; and &#9662; are both utf8 escaped characters for right 
+//    and down facing arrows respectivly.
+TUI_alternates['history_query'] = '&#9658;';
+TUI_alternates['people_query'] = '&#9658;';
+TUI_alternates['information_query'] = '&#9658;';
+
+TUI_hide_default('history_query');
+TUI_hide_default('people_query');
+TUI_hide_default('information_query');
+</script>
+
+
+
+<input type="hidden" name="query_format" value="advanced">
+
+
+
+  <div class="search_field_row" id="summary_field"><span class="field_label  required"
+    id="field_label_short_desc">
+
+    <label for="short_desc" accesskey="s">
+
+  <a 
+      title="The bug summary is a short sentence which succinctly describes what the bug is about."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#short_desc"
+  >Summary:</a>
+</label>
+</span><select name="short_desc_type" title="Search type"
+        class="">
+    <option value="allwordssubstr">contains all of the strings</option>
+    <option value="anywordssubstr">contains any of the strings</option>
+    <option value="substring">contains the string</option>
+    <option value="casesubstring">contains the string (exact case)</option>
+    <option value="allwords">contains all of the words</option>
+    <option value="anywords">contains any of the words</option>
+    <option value="regexp">matches regular expression</option>
+    <option value="notregexp">does not match regular expression</option>
+</select>    
+    <input name="short_desc" 
+           id="short_desc" size="40"
+           value="">
+      <script type="text/javascript"> <!--
+          document.getElementById('short_desc').focus();
+      // -->
+      </script>
+
+        <input type="submit" id="Search_top"
+               value="Search">
+  </div>
+
+
+
+<div id="container_classification" class="search_field_grid">      <span class="field_label "
+    id="field_label_classification">
+
+    <label for="classification" accesskey="c">
+
+  <a 
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#classification"
+  >Classification:</a>
+</label>
+</span>
+      <select name="classification" 
+              id="classification" 
+        multiple="multiple" size="7">
+          <option value="BibleTime applications"
+            id="v2_classification">BibleTime applications</option>
+          <option value="BibleTime websites"
+            id="v1_classification">BibleTime websites</option>
+          <option value="Other"
+            id="v3_classification">Other</option>
+      </select>
+    </div>
+
+      <script type="text/javascript"><!--
+        YAHOO.util.Event.onDOMReady(function() { var field = document.getElementById('classification'); if (field.selectedIndex != -1) bz_fireEvent(field, 'change'); }); showValueWhen('product', [2], 'classification',2, true); showValueWhen('product', [5,6,7,3], 'classification',1, true); showValueWhen('product', [9], 'classification',3, true);// --></script>
+<div id="container_product" class="search_field_grid">      <span class="field_label  required"
+    id="field_label_product">
+
+    <label for="product" accesskey="p">
+
+  <a 
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#product"
+  >Product:</a>
+</label>
+</span>
+      <select name="product" 
+              id="product" 
+        multiple="multiple" size="7">
+          <option value="BibleTime"
+            id="v2_product">BibleTime</option>
+          <option value="BibleTime Gentoo overlay"
+            id="v9_product">BibleTime Gentoo overlay</option>
+          <option value="bibletime.info"
+            id="v7_product">bibletime.info</option>
+          <option value="blog.bibletime.info"
+            id="v5_product">blog.bibletime.info</option>
+          <option value="bugs.bibletime.info"
+            id="v3_product">bugs.bibletime.info</option>
+          <option value="devel.bibletime.info"
+            id="v6_product">devel.bibletime.info</option>
+      </select>
+    </div>
+
+      <script type="text/javascript"><!--
+        YAHOO.util.Event.onDOMReady(function() { var field = document.getElementById('product'); if (field.selectedIndex != -1) bz_fireEvent(field, 'change'); }); showValueWhen('version', [2,4,5,6,15,16,17,18,20,22,23,24,25,26,27,28,29,30,31,32,35,36,37,38,39], 'product',2, true); showValueWhen('version', [34], 'product',9, true); showValueWhen('version', [14], 'product',7, true); showValueWhen('version', [12], 'product',5, true); showValueWhen('version', [3], 'product',3, true); showValueWhen('version', [13], 'product',6, true);YAHOO.util.Event.onDOMReady(function() { var field = document.getElementById('product'); if (field.selectedIndex != -1) bz_fireEvent(field, 'change'); }); showValueWhen('component', [4,32,15,31,2], 'product',2, true); showValueWhen('component', [34], 'product',9, true); showValueWhen('component', [30,29,28,27,26], 'product',7, true); showValueWhen('component', [16,17,18,19,20], 'product',5, true); showValueWhen('component', [6,5,12,8,7], 'product',3, true); showValueWhen('component', [22,21,23,24,25], 'product',6, true);YAHOO.util.Event.onDOMReady(function() { var field = document.getElementById('product'); if (field.selectedIndex != -1) bz_fireEvent(field, 'change'); }); showValueWhen('target_milestone', [2,9,17,19,13,10,20,21,22,11], 'product',2, true); showValueWhen('target_milestone', [18], 'product',9, true); showValueWhen('target_milestone', [7], 'product',7, true); showValueWhen('target_milestone', [5], 'product',5, true); showValueWhen('target_milestone', [3], 'product',3, true); showValueWhen('target_milestone', [6], 'product',6, true);// --></script><div id="container_component" class="search_field_grid">      <span class="field_label  required"
+    id="field_label_component">
+
+    <label for="component" accesskey="m">
+
+  <a 
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#component"
+  >Component:</a>
+</label>
+</span>
+      <select name="component" 
+              id="component" 
+        multiple="multiple" size="7">
+          <option value="Backend"
+            id="v4_component">Backend</option>
+          <option value="Broken links"
+            id="v30_component">Broken links</option>
+          <option value="Broken links."
+            id="v22_component">Broken links.</option>
+          <option value="Documentation"
+            id="v32_component">Documentation</option>
+          <option value="Ebuilds"
+            id="v34_component">Ebuilds</option>
+          <option value="General"
+            id="v15_component">General</option>
+          <option value="Security"
+            id="v28_component">Security</option>
+          <option value="Translations"
+            id="v31_component">Translations</option>
+          <option value="User interface"
+            id="v2_component">User interface</option>
+          <option value="Webserver problems"
+            id="v27_component">Webserver problems</option>
+          <option value="Website content"
+            id="v26_component">Website content</option>
+      </select>
+    </div>
+
+      <script type="text/javascript">
+       bz_option_duplicates['component'] = {6:30,8:27,5:15,21:15,12:28,29:15,19:27,7:26,20:26,23:28,16:30,24:27,25:26,18:28,17:15}; bz_option_duplicate_count['component'] = {15:4,27:3,28:3,30:2,26:3 };
+      </script><div id="container_bug_status" class="search_field_grid">      <span class="field_label "
+    id="field_label_bug_status">
+
+    <label for="bug_status" accesskey="a">
+
+  <a 
+      title="A bug may be in any of a number of states."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_status"
+  >Status:</a>
+</label>
+</span>
+      <select name="bug_status" 
+              id="bug_status" 
+        multiple="multiple" size="7">
+          <option value="UNCONFIRMED"
+            id="v1_bug_status">UNCONFIRMED</option>
+          <option value="CONFIRMED"
+            id="v2_bug_status">CONFIRMED</option>
+          <option value="CONFIRMED_NEED_ASSIGNEE"
+            id="v6_bug_status">CONFIRMED_NEED_ASSIGNEE</option>
+          <option value="IN_PROGRESS"
+            id="v3_bug_status">IN_PROGRESS</option>
+          <option value="NEED_FEEDBACK"
+            id="v8_bug_status">NEED_FEEDBACK</option>
+          <option value="RESOLVED"
+            id="v4_bug_status">RESOLVED</option>
+          <option value="VERIFIED"
+            id="v5_bug_status">VERIFIED</option>
+      </select>
+    </div><div id="container_resolution" class="search_field_grid">      <span class="field_label "
+    id="field_label_resolution">
+
+    <label for="resolution" accesskey="r">
+
+  <a 
+      title="If a bug is in a resolved state, then one of these reasons will be given for its resolution."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#resolution"
+  >Resolution:</a>
+</label>
+</span>
+      <select name="resolution" 
+              id="resolution" 
+        multiple="multiple" size="7">
+          <option value="---"
+            id="v1_resolution" selected="selected">---</option>
+          <option value="FIXED"
+            id="v2_resolution">FIXED</option>
+          <option value="INVALID"
+            id="v3_resolution">INVALID</option>
+          <option value="WONTFIX"
+            id="v4_resolution">WONTFIX</option>
+          <option value="DUPLICATE"
+            id="v5_resolution">DUPLICATE</option>
+          <option value="WORKSFORME"
+            id="v6_resolution">WORKSFORME</option>
+          <option value="NEEDINFO"
+            id="v7_resolution">NEEDINFO</option>
+          <option value="UPSTREAM"
+            id="v8_resolution">UPSTREAM</option>
+          <option value="LATER"
+            id="v9_resolution">LATER</option>
+          <option value="MOVED TO NEW ISSUE TRACKER"
+            id="v10_resolution">MOVED TO NEW ISSUE TRACKER</option>
+      </select>
+    </div>
+
+
+<div id="detailed_information" class="bz_section_title">
+  <div id="information_query_controller" class="arrow">&#9660;</div>
+  <a href="javascript:TUI_toggle_class('information_query')">
+    Detailed Bug Information
+  </a>
+  <span class="section_help">Narrow results by the following fields: 
+    Comments, URL, Bug Numbers, Version,  Target Milestone, Severity, Priority, Hardware, 
+    OS
+  </span>
+</div>
+
+<div id="detailed_information_section" class="bz_search_section information_query">
+  
+  
+    <div class="search_field_row"><span class="field_label "
+    id="field_label_longdesc">
+
+    <label for="longdesc" accesskey="c">
+
+  <a 
+      title="Bugs have comments added to them by Bugzilla users. You can search for some text in those comments."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#longdesc"
+  >Comment:</a>
+</label>
+</span><select name="longdesc_type" title="Search type"
+        class="">
+    <option value="allwordssubstr">contains all of the strings</option>
+    <option value="anywordssubstr">contains any of the strings</option>
+    <option value="substring">contains the string</option>
+    <option value="casesubstring">contains the string (exact case)</option>
+    <option value="allwords">contains all of the words</option>
+    <option value="anywords">contains any of the words</option>
+    <option value="regexp">matches regular expression</option>
+    <option value="notregexp">does not match regular expression</option>
+</select>    
+    <input name="longdesc" 
+           id="longdesc" size="40"
+           value="">
+    </div>
+    <div class="search_field_row"><span class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a 
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</span><select name="bug_file_loc_type" title="Search type"
+        class="">
+    <option value="allwordssubstr">contains all of the strings</option>
+    <option value="anywordssubstr">contains any of the strings</option>
+    <option value="substring">contains the string</option>
+    <option value="casesubstring">contains the string (exact case)</option>
+    <option value="allwords">contains all of the words</option>
+    <option value="anywords">contains any of the words</option>
+    <option value="regexp">matches regular expression</option>
+    <option value="notregexp">does not match regular expression</option>
+</select>    
+    <input name="bug_file_loc" 
+           id="bug_file_loc" size="40"
+           value="">
+    </div>
+
+  
+
+  <div class="search_field_row">
+    <span class="field_label"><label for="bug_id">Bugs numbered</label></span>
+    <div id="bug_id_container" >
+      <input type="text" name="bug_id" id="bug_id"
+           value="" size="20">
+           <div class="field_help">(comma-separated list)</div>
+    </div>
+    should be 
+    <select name="bug_id_type" id="bug_id_type">
+      <option value="anyexact">only included in</option>
+      <option value="nowords">excluded from</option>
+    </select> the results
+  </div>
+
+  
+  
+  <div><div id="container_version" class="search_field_grid">      <span class="field_label "
+    id="field_label_version">
+
+    <label for="version">
+
+  <a 
+      title="The version field defines the version of the software the bug was found in."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#version"
+  >Version:</a>
+</label>
+</span>
+      <select name="version" 
+              id="version" 
+        multiple="multiple" size="7">
+          <option value="2.7.3 and older"
+            id="v5_version">2.7.3 and older</option>
+          <option value="2.8.0"
+            id="v4_version">2.8.0</option>
+          <option value="2.8.1"
+            id="v18_version">2.8.1</option>
+          <option value="2.8.2"
+            id="v20_version">2.8.2</option>
+          <option value="2.8.3"
+            id="v26_version">2.8.3</option>
+          <option value="2.8_beta1"
+            id="v15_version">2.8_beta1</option>
+          <option value="2.8_rc1"
+            id="v16_version">2.8_rc1</option>
+          <option value="2.8_rc2"
+            id="v17_version">2.8_rc2</option>
+          <option value="2.9.0"
+            id="v28_version">2.9.0</option>
+          <option value="2.9.1"
+            id="v29_version">2.9.1</option>
+          <option value="2.9.2"
+            id="v32_version">2.9.2</option>
+          <option value="2.9_beta1"
+            id="v22_version">2.9_beta1</option>
+          <option value="2.9_beta2"
+            id="v23_version">2.9_beta2</option>
+          <option value="2.9_rc1"
+            id="v24_version">2.9_rc1</option>
+          <option value="2.9_rc2"
+            id="v25_version">2.9_rc2</option>
+          <option value="2.10.0"
+            id="v38_version">2.10.0</option>
+          <option value="2.10.1"
+            id="v39_version">2.10.1</option>
+          <option value="2.10_beta1"
+            id="v36_version">2.10_beta1</option>
+          <option value="2.10_rc1"
+            id="v37_version">2.10_rc1</option>
+          <option value="git master"
+            id="v6_version">git master</option>
+          <option value="git stable-2.9"
+            id="v27_version">git stable-2.9</option>
+          <option value="git stable-2.10"
+            id="v35_version">git stable-2.10</option>
+          <option value="irrelevant"
+            id="v2_version">irrelevant</option>
+          <option value="other"
+            id="v30_version">other</option>
+          <option value="unknown"
+            id="v31_version">unknown</option>
+          <option value="unspecified"
+            id="v14_version">unspecified</option>
+      </select>
+    </div>
+
+      <script type="text/javascript">
+       bz_option_duplicates['version'] = {12:14,34:2,13:14,3:14}; bz_option_duplicate_count['version'] = {14:3,2:1 };
+      </script>                              <div id="container_target_milestone" class="search_field_grid">      <span class="field_label "
+    id="field_label_target_milestone">
+
+    <label for="target_milestone">
+
+  <a 
+      title="The Target Milestone field is used to define when the engineer the bug is assigned to expects to fix it."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#target_milestone"
+  >Target Milestone:</a>
+</label>
+</span>
+      <select name="target_milestone" 
+              id="target_milestone" 
+        multiple="multiple" size="7">
+          <option value="---"
+            id="v18_target_milestone">---</option>
+          <option value="2.10.0"
+            id="v10_target_milestone">2.10.0</option>
+          <option value="2.10.1"
+            id="v20_target_milestone">2.10.1</option>
+          <option value="2.10.2"
+            id="v21_target_milestone">2.10.2</option>
+          <option value="2.10_beta1"
+            id="v13_target_milestone">2.10_beta1</option>
+          <option value="2.11.0"
+            id="v22_target_milestone">2.11.0</option>
+          <option value="2.9.0"
+            id="v9_target_milestone">2.9.0</option>
+          <option value="2.9.2"
+            id="v17_target_milestone">2.9.2</option>
+          <option value="2.9.3"
+            id="v19_target_milestone">2.9.3</option>
+          <option value="3.0.0"
+            id="v11_target_milestone">3.0.0</option>
+          <option value="unspecified"
+            id="v2_target_milestone">unspecified</option>
+      </select>
+    </div>
+
+      <script type="text/javascript">
+       bz_option_duplicates['target_milestone'] = {3:18,6:18,7:18,5:18}; bz_option_duplicate_count['target_milestone'] = {18:4 };
+      </script><div id="container_bug_severity" class="search_field_grid">      <span class="field_label "
+    id="field_label_bug_severity">
+
+    <label for="bug_severity" accesskey="v">
+
+  <a 
+      title="How severe the bug is, or whether it's an enhancement."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#bug_severity"
+  >Severity:</a>
+</label>
+</span>
+      <select name="bug_severity" 
+              id="bug_severity" 
+        multiple="multiple" size="7">
+          <option value="blocker"
+            id="v1_bug_severity">blocker</option>
+          <option value="critical"
+            id="v2_bug_severity">critical</option>
+          <option value="major"
+            id="v3_bug_severity">major</option>
+          <option value="normal"
+            id="v4_bug_severity">normal</option>
+          <option value="minor"
+            id="v5_bug_severity">minor</option>
+          <option value="trivial"
+            id="v6_bug_severity">trivial</option>
+          <option value="enhancement"
+            id="v7_bug_severity">enhancement</option>
+      </select>
+    </div><div id="container_priority" class="search_field_grid">      <span class="field_label "
+    id="field_label_priority">
+
+    <label for="priority" accesskey="i">
+
+  <a 
+      title="Engineers prioritize their bugs using this field."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#priority"
+  >Priority:</a>
+</label>
+</span>
+      <select name="priority" 
+              id="priority" 
+        multiple="multiple" size="7">
+          <option value="Highest"
+            id="v1_priority">Highest</option>
+          <option value="High"
+            id="v2_priority">High</option>
+          <option value="Normal"
+            id="v3_priority">Normal</option>
+          <option value="Low"
+            id="v4_priority">Low</option>
+          <option value="Lowest"
+            id="v5_priority">Lowest</option>
+      </select>
+    </div>    <div id="container_rep_platform" class="search_field_grid">      <span class="field_label "
+    id="field_label_rep_platform">
+
+    <label for="rep_platform" accesskey="h">
+
+  <a 
+      title="The hardware platform the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#rep_platform"
+  >Hardware:</a>
+</label>
+</span>
+      <select name="rep_platform" 
+              id="rep_platform" 
+        multiple="multiple" size="7">
+          <option value="irrelevant"
+            id="v5_rep_platform">irrelevant</option>
+          <option value="unknown"
+            id="v6_rep_platform">unknown</option>
+          <option value="all"
+            id="v1_rep_platform">all</option>
+          <option value="PC"
+            id="v2_rep_platform">PC</option>
+          <option value="Macintosh"
+            id="v3_rep_platform">Macintosh</option>
+          <option value="other"
+            id="v4_rep_platform">other</option>
+      </select>
+    </div>               <div id="container_op_sys" class="search_field_grid">      <span class="field_label "
+    id="field_label_op_sys">
+
+    <label for="op_sys" accesskey="o">
+
+  <a 
+      title="The operating system the bug was observed on. Note: When searching, selecting the option &quot;All&quot; only finds bugs whose value for this field is literally the word &quot;All&quot;."
+      class="field_help_link"
+      href="page.cgi%3Fid=fields.html#op_sys"
+  >OS:</a>
+</label>
+</span>
+      <select name="op_sys" 
+              id="op_sys" 
+        multiple="multiple" size="7">
+          <option value="irrelevant"
+            id="v6_op_sys">irrelevant</option>
+          <option value="unknown"
+            id="v7_op_sys">unknown</option>
+          <option value="all"
+            id="v1_op_sys">all</option>
+          <option value="Windows"
+            id="v2_op_sys">Windows</option>
+          <option value="Mac OS"
+            id="v3_op_sys">Mac OS</option>
+          <option value="Linux"
+            id="v4_op_sys">Linux</option>
+          <option value="BSD"
+            id="v8_op_sys">BSD</option>
+          <option value="other"
+            id="v5_op_sys">other</option>
+      </select>
+    </div>               
+  </div>
+</div>
+
+  <div class="bz_section_title" id="people_filter">
+    <div id="people_query_controller" class="arrow">&#9660;</div>
+    <a href="javascript:TUI_toggle_class('people_query')">Search By People</a>
+    <span>Narrow results to a role (i.e. Assignee,
+      Reporter, Commenter,
+      etc.) a person has on a bug
+    </span>
+  </div>
+  <div id="people_filter_section" class="bz_search_section people_query">
+    <div class="search_email_fields">
+      Any of:<div class="role_type">
+    <input type="checkbox" name="emailassigned_to1"
+           id="emailassigned_to1" value="1" checked>
+    <label for="emailassigned_to1">the Bug Assignee
+    </label>
+  </div><div class="role_type">
+    <input type="checkbox" name="emailreporter1"
+           id="emailreporter1" value="1">
+    <label for="emailreporter1">the Reporter
+    </label>
+  </div>    <div class="role_type">
+    <input type="checkbox" name="emailcc1"
+           id="emailcc1" value="1">
+    <label for="emailcc1">a CC list member
+    </label>
+  </div><div class="role_type">
+    <input type="checkbox" name="emaillongdesc1"
+           id="emaillongdesc1" value="1">
+    <label for="emaillongdesc1"> a Commenter
+    </label>
+  </div>
+      <select name="emailtype1">
+        <option value="substring">contains</option>
+        <option value="notsubstring">doesn't contain</option>
+        <option value="exact">is</option>
+        <option value="notequals">is not</option>
+        <option value="regexp">matches regexp</option>
+        <option value="notregexp">doesn't match regexp</option>
+      </select>
+        <div id="email1_autocomplete">
+      <input name="email1" class="email" id="email1" 
+             value="">
+        <div id="email1_autocomplete_container"></div>
+        </div>
+        <script type="text/javascript">
+          YAHOO.bugzilla.userAutocomplete.init( "email1", 
+                    "email1_autocomplete_container");
+        </script>
+    </div>
+    <div class="search_email_fields">
+      Any of:<div class="role_type">
+    <input type="checkbox" name="emailassigned_to2"
+           id="emailassigned_to2" value="1" checked>
+    <label for="emailassigned_to2">the Bug Assignee
+    </label>
+  </div><div class="role_type">
+    <input type="checkbox" name="emailreporter2"
+           id="emailreporter2" value="1" checked>
+    <label for="emailreporter2">the Reporter
+    </label>
+  </div>    <div class="role_type">
+    <input type="checkbox" name="emailcc2"
+           id="emailcc2" value="1" checked>
+    <label for="emailcc2">a CC list member
+    </label>
+  </div><div class="role_type">
+    <input type="checkbox" name="emaillongdesc2"
+           id="emaillongdesc2" value="1">
+    <label for="emaillongdesc2"> a Commenter
+    </label>
+  </div>
+      <select name="emailtype2">
+        <option value="substring">contains</option>
+        <option value="notsubstring">doesn't contain</option>
+        <option value="exact">is</option>
+        <option value="notequals">is not</option>
+        <option value="regexp">matches regexp</option>
+        <option value="notregexp">doesn't match regexp</option>
+      </select>
+        <div id="email2_autocomplete">
+      <input name="email2" class="email" id="email2" 
+             value="">
+        <div id="email2_autocomplete_container"></div>
+        </div>
+        <script type="text/javascript">
+          YAHOO.bugzilla.userAutocomplete.init( "email2", 
+                    "email2_autocomplete_container");
+        </script>
+    </div>
+    <div class="search_email_fields">
+      Any of:<div class="role_type">
+    <input type="checkbox" name="emailassigned_to3"
+           id="emailassigned_to3" value="1">
+    <label for="emailassigned_to3">the Bug Assignee
+    </label>
+  </div><div class="role_type">
+    <input type="checkbox" name="emailreporter3"
+           id="emailreporter3" value="1">
+    <label for="emailreporter3">the Reporter
+    </label>
+  </div>    <div class="role_type">
+    <input type="checkbox" name="emailcc3"
+           id="emailcc3" value="1">
+    <label for="emailcc3">a CC list member
+    </label>
+  </div><div class="role_type">
+    <input type="checkbox" name="emaillongdesc3"
+           id="emaillongdesc3" value="1" checked>
+    <label for="emaillongdesc3"> a Commenter
+    </label>
+  </div>
+      <select name="emailtype3">
+        <option value="substring">contains</option>
+        <option value="notsubstring">doesn't contain</option>
+        <option value="exact">is</option>
+        <option value="notequals">is not</option>
+        <option value="regexp">matches regexp</option>
+        <option value="notregexp">doesn't match regexp</option>
+      </select>
+        <div id="email3_autocomplete">
+      <input name="email3" class="email" id="email3" 
+             value="">
+        <div id="email3_autocomplete_container"></div>
+        </div>
+        <script type="text/javascript">
+          YAHOO.bugzilla.userAutocomplete.init( "email3", 
+                    "email3_autocomplete_container");
+        </script>
+    </div>
+   </div>
+
+<div class="bz_section_title" id="history_filter">
+  <div id="history_query_controller" class="arrow">&#9660;</div>
+  <a href="javascript:TUI_toggle_class('history_query')" >Search By Change History</a>
+  <span>Narrow results to how fields have changed during a specific time period</span>
+</div>
+<ul class="bug_changes bz_search_section history_query" id="history_filter_section" >
+  <li>
+    <label for="chfield">where ANY of the fields:</label>
+    
+    <select name="chfield" id="chfield" multiple="multiple" size="4">
+      <option value="[Bug creation]">[Bug creation]</option>
+      <option value="alias">Alias</option>
+      <option value="assigned_to">Assignee</option>
+      <option value="cclist_accessible">CC list accessible</option>
+      <option value="component">Component</option>
+      <option value="everconfirmed">Ever confirmed</option>
+      <option value="rep_platform">Hardware</option>
+      <option value="op_sys">OS</option>
+      <option value="cf_os_brand">OS brand and version</option>
+      <option value="priority">Priority</option>
+      <option value="product">Product</option>
+      <option value="qa_contact">QA Contact</option>
+      <option value="cf_qt_version">Qt version</option>
+      <option value="reporter_accessible">Reporter accessible</option>
+      <option value="resolution">Resolution</option>
+      <option value="bug_severity">Severity</option>
+      <option value="bug_status">Status</option>
+      <option value="short_desc">Summary</option>
+      <option value="target_milestone">Target Milestone</option>
+      <option value="bug_file_loc">URL</option>
+      <option value="version">Version</option>
+      <option value="status_whiteboard">Whiteboard</option>
+    </select>
+  </li>
+  <li>
+    <label for="chfieldvalue">changed to:</label>
+    <input name="chfieldvalue" id="chfieldvalue"
+           size="20" value="">
+  </li>
+  <li>
+    <label for="chfieldfrom">between:</label>
+    <input name="chfieldfrom" id="chfieldfrom" size="10" 
+           value="" onchange="updateCalendarFromField(this)"> 
+           <button type="button" class="calendar_button"
+                          id="button_calendar_chfieldfrom"
+                          onclick="showCalendar('chfieldfrom')"><span>Calendar</span></button>
+           and 
+           <div id="con_calendar_chfieldfrom"></div>
+          <input name="chfieldto" size="10" id="chfieldto" 
+                 value="Now" 
+                 onchange="updateCalendarFromField(this)">
+          <button type="button" class="calendar_button"
+                         id="button_calendar_chfieldto"
+                         onclick="showCalendar('chfieldto')"><span>Calendar</span></button>
+          <div id="con_calendar_chfieldto"></div>
+    (YYYY-MM-DD or relative dates)
+    <script type="text/javascript">
+      <!--
+        createCalendar('chfieldfrom');createCalendar('chfieldto');
+      //--></script>
+  </li>    
+</ul>
+<div class="bz_section_title" id="custom_search_filter">
+  <div id="custom_search_query_controller" class="arrow">&#9660;</div>
+  <a id="chart" href="javascript:TUI_toggle_class('custom_search_query')" >
+    Custom Search</a> <span class="section_help">Didn't find what 
+      you're looking for above? This area allows for ANDs, ORs, 
+      and other more complex searches.</span>
+</div>
+<div id="custom_search_filter_section" 
+     class="bz_search_section custom_search_query"><div class="any_all_select">
+    <select name="j_top" id="j_top"
+            onchange="fix_query_string(this)">
+      <option value="AND">Match ALL of the following separately:</option>
+      <option value="OR" >
+        Match ANY of the following separately:</option>
+      <option value="AND_G" >
+        Match ALL of the following against the same field:</option>
+    </select>
+      <a id="custom_search_advanced_controller"
+         href="javascript:TUI_toggle_class('custom_search_advanced')">
+        Hide Advanced Features
+      </a>
+  </div>
+
+
+  <div class="custom_search_condition" id="custom_search_last_row">
+    
+
+      <button id="op_button" type="button" class="custom_search_advanced"
+              title="Start a new group of criteria, including this row"
+              onclick="custom_search_open_paren()">(</button>
+
+      
+      <span id="custom_search_not_container_1"
+            class="custom_search_not_container custom_search_advanced"
+            title="Search for the opposite of the criteria here">
+        <input type="checkbox" id="n1"
+               class="custom_search_form_field"
+               name="n1" value="1"
+               onclick="custom_search_not_changed(1)">
+        <label for="n1">Not</label>
+      </span>
+
+      <select name="f1" title="Field"
+              id="f1"
+              onchange="fix_query_string(this)"
+              class="custom_search_form_field">
+          <option value="noop" selected="selected">---
+          </option>
+          <option value="alias">Alias
+          </option>
+          <option value="assigned_to">Assignee
+          </option>
+          <option value="attachments.submitter">Attachment creator
+          </option>
+          <option value="attach_data.thedata">Attachment data
+          </option>
+          <option value="attachments.description">Attachment description
+          </option>
+          <option value="attachments.filename">Attachment filename
+          </option>
+          <option value="attachments.isobsolete">Attachment is obsolete
+          </option>
+          <option value="attachments.ispatch">Attachment is patch
+          </option>
+          <option value="attachments.isprivate">Attachment is private
+          </option>
+          <option value="attachments.mimetype">Attachment mime type
+          </option>
+          <option value="blocked">Blocks
+          </option>
+          <option value="bug_id">Bug ID
+          </option>
+          <option value="cc">CC
+          </option>
+          <option value="cclist_accessible">CC list accessible
+          </option>
+          <option value="classification">Classification
+          </option>
+          <option value="longdesc">Comment
+          </option>
+          <option value="longdescs.isprivate">Comment is private
+          </option>
+          <option value="commenter">Commenter
+          </option>
+          <option value="component">Component
+          </option>
+          <option value="content">Content
+          </option>
+          <option value="creation_ts">Creation date
+          </option>
+          <option value="days_elapsed">Days since bug changed
+          </option>
+          <option value="dependson">Depends on
+          </option>
+          <option value="everconfirmed">Ever confirmed
+          </option>
+          <option value="requestees.login_name">Flag Requestee
+          </option>
+          <option value="setters.login_name">Flag Setter
+          </option>
+          <option value="flagtypes.name">Flags
+          </option>
+          <option value="bug_group">Group
+          </option>
+          <option value="keywords">Keywords
+          </option>
+          <option value="delta_ts">Changed
+          </option>
+          <option value="longdescs.count">Number of Comments
+          </option>
+          <option value="cf_os_brand">OS brand and version
+          </option>
+          <option value="op_sys">OS
+          </option>
+          <option value="rep_platform">Hardware
+          </option>
+          <option value="priority">Priority
+          </option>
+          <option value="product">Product
+          </option>
+          <option value="qa_contact">QA Contact
+          </option>
+          <option value="cf_qt_version">Qt version
+          </option>
+          <option value="reporter">Reporter
+          </option>
+          <option value="reporter_accessible">Reporter accessible
+          </option>
+          <option value="resolution">Resolution
+          </option>
+          <option value="see_also">See Also
+          </option>
+          <option value="bug_severity">Severity
+          </option>
+          <option value="bug_status">Status
+          </option>
+          <option value="status_whiteboard">Whiteboard
+          </option>
+          <option value="short_desc">Summary
+          </option>
+          <option value="tag">Tags
+          </option>
+          <option value="target_milestone">Target Milestone
+          </option>
+          <option value="owner_idle_time">Time Since Assignee Touched
+          </option>
+          <option value="bug_file_loc">URL
+          </option>
+          <option value="version">Version
+          </option>
+      </select>
+    <select name="o1" title="Search type"
+        class="custom_search_form_field">
+    <option value="noop">---</option>
+    <option value="equals">is equal to</option>
+    <option value="notequals">is not equal to</option>
+    <option value="anyexact">is equal to any of the strings</option>
+    <option value="substring">contains the string</option>
+    <option value="casesubstring">contains the string (exact case)</option>
+    <option value="notsubstring">does not contain the string</option>
+    <option value="anywordssubstr">contains any of the strings</option>
+    <option value="allwordssubstr">contains all of the strings</option>
+    <option value="nowordssubstr">contains none of the strings</option>
+    <option value="regexp">matches regular expression</option>
+    <option value="notregexp">does not match regular expression</option>
+    <option value="lessthan">is less than</option>
+    <option value="lessthaneq">is less than or equal to</option>
+    <option value="greaterthan">is greater than</option>
+    <option value="greaterthaneq">is greater than or equal to</option>
+    <option value="anywords">contains any of the words</option>
+    <option value="allwords">contains all of the words</option>
+    <option value="nowords">contains none of the words</option>
+    <option value="changedbefore">changed before</option>
+    <option value="changedafter">changed after</option>
+    <option value="changedfrom">changed from</option>
+    <option value="changedto">changed to</option>
+    <option value="changedby">changed by</option>
+    <option value="matches">matches</option>
+    <option value="notmatches">does not match</option>
+</select>
+    
+      <input name="v1" title="Value"
+             class="custom_search_form_field"
+             onchange="fix_query_string(this)"
+             value="">
+    
+      <button class="custom_search_add_button" type="button"
+              id="add_button" title="Add a new row"
+              onclick="custom_search_new_row()">+</button>
+      <span id="cp_container"  class="bz_default_hidden">
+        <button id="cp_button" type="button"
+                title="End this group of criteria"
+                onclick="custom_search_close_paren()">)</button>
+      </span>
+  </div>
+  <script type="text/javascript">
+    TUI_alternates['custom_search_query'] = '&#9658;';
+    TUI_hide_default('custom_search_query');
+    TUI_alternates['custom_search_advanced'] = "Show Advanced Features";
+    TUI_hide_default('custom_search_advanced');
+  </script>
+  <script type="text/javascript" src="js/custom-search.js%3F1408459575"></script>
+  <script type="text/javascript">
+    redirect_html4_browsers();
+    
+    var cs_and_label = 'Match ALL of the following:';
+    var cs_or_label  = 'Match ANY of the following:';
+    cs_reconfigure('custom_search_last_row');
+  </script>
+  <script type="text/javascript" src="js/history.js/native.history.js%3F1408459573"></script>
+</div>
+<input type="hidden" name="cmdtype" value="doit">
+
+<p>
+  <label for="order">Sort results by</label>:
+  <select name="order" id="order">
+    <option value="Bug Number">Bug Number</option>
+    <option value="Importance" selected>Importance</option>
+    <option value="Assignee">Assignee</option>
+    <option value="Last Changed">Last Changed</option>
+  </select>
+</p>
+
+<p>  
+  <input type="submit" id="Search"
+         value="Search">
+  
+</p>
+
+</form>
+
+
+  </div>
+
+</div>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="index.html">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi.html">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi.html">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi.html">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="http://bugs.bibletime.info/buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input type="hidden" id="no_redirect_bottom" name="no_redirect" value="0">
+    <script type="text/javascript">
+      if (history && history.replaceState) {
+        var no_redirect = document.getElementById("no_redirect_bottom");
+        no_redirect.value = 1;
+      }
+    </script>
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch" 
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search" 
+           id="find_bottom"></form>
+  <a href="page.cgi%3Fid=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi.html">Reports</a></li>
+
+  <li></li>
+
+  <li>
+        <span class="separator">| </span>
+        <a href="docs/en/html/query.html" target="_blank">Help</a>
+      </li>
+    
+      <li id="new_account_container_bottom">
+        <span class="separator">| </span>
+        <a href="createaccount.cgi.html">New&nbsp;Account</a>
+      </li>
+
+    <li id="mini_login_container_bottom">
+  <span class="separator">| </span>
+  <a id="login_link_bottom" href="query.cgi%3Fformat=advanced&amp;GoAheadAndLogIn=1.html"
+     onclick="return show_mini_login_form('_bottom')">Log In</a>
+
+  
+  <form action="query.cgi%3Fformat=advanced.html" method="POST" 
+        class="mini_login bz_default_hidden"
+        id="mini_login_bottom"
+        onsubmit="return check_mini_login_fields( '_bottom' );"
+  >
+    <input id="Bugzilla_login_bottom" 
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+    <input class="bz_password" 
+           id="Bugzilla_password_bottom" 
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text" 
+           id="Bugzilla_password_dummy_bottom" value="password"
+           title="Password"
+           onfocus="mini_login_on_focus('_bottom')"
+    >
+      <input type="checkbox" id="Bugzilla_remember_bottom" 
+             name="Bugzilla_remember" value="on" class="bz_remember"
+                 >
+      <label for="Bugzilla_remember_bottom">Remember</label>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1408461314-BxVKdwp64vAICf7pf-Az3zWXS0WcKjvhA6pszMcanDs">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+            id="log_in_bottom">
+    <script type="text/javascript">
+      mini_login_constants = {
+          "login" : "login",
+          "warning" : "You must set the login and password before logging in."
+      };
+      
+      if (YAHOO.env.ua.gecko || YAHOO.env.ua.ie || YAHOO.env.ua.opera) {
+          YAHOO.util.Event.onDOMReady(function() {
+              init_mini_login_form('_bottom');
+          });
+      }
+      else {
+          YAHOO.util.Event.on(window, 'load', function () {
+              window.setTimeout(function() {
+                  init_mini_login_form('_bottom');
+              }, 200);
+          });
+    }
+    </script>
+    <a href="query.cgi%3Fformat=advanced.html#" onclick="return hide_mini_login_form('_bottom')">[x]</a>
+  </form>
+</li>
+<li id="forgot_container_bottom">
+  <span class="separator">| </span>
+  <a id="forgot_link_bottom" href="query.cgi%3Fformat=advanced&amp;GoAheadAndLogIn=1.html#forgot"
+     onclick="return show_forgot_form('_bottom')">Forgot Password</a>
+  <form action="http://bugs.bibletime.info/token.cgi" method="post" id="forgot_form_bottom"
+        class="mini_forgot bz_default_hidden">
+    <label for="login_bottom">Login:</label>
+    <input type="text" name="loginname" size="20" id="login_bottom">
+    <input id="forgot_button_bottom" value="Reset Password" 
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_bottom" name="token" value="1408461314-vb0Di-81rHHF5RO2aEKKHHAdcA6hHhC3nPSuxC84Z4k">
+    <a href="query.cgi%3Fformat=advanced.html#" onclick="return hide_forgot_form('_bottom')">[x]</a>
+  </form>
+</li>
+</ul>
+  </li>
+
+  
+    
+
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

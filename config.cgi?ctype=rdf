@@ -1,0 +1,1247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Note: this interface is experimental and under development.
+   - We may and probably will make breaking changes to it in the future. -->
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:bz="http://www.bugzilla.org/rdf#">
+
+<bz:installation rdf:about="http://bugs.bibletime.info/">
+  <bz:install_version>4.4.4</bz:install_version>
+  <bz:maintainer>jaak&#64;ristioja.ee</bz:maintainer>
+
+  <bz:status>
+    <Seq>
+        <li>UNCONFIRMED</li>
+        <li>CONFIRMED</li>
+        <li>CONFIRMED_NEED_ASSIGNEE</li>
+        <li>IN_PROGRESS</li>
+        <li>NEED_FEEDBACK</li>
+        <li>RESOLVED</li>
+        <li>VERIFIED</li>
+    </Seq>
+  </bz:status>
+
+  <bz:status_open>
+    <Seq>
+        <li>UNCONFIRMED</li>
+        <li>CONFIRMED</li>
+        <li>CONFIRMED_NEED_ASSIGNEE</li>
+        <li>IN_PROGRESS</li>
+        <li>NEED_FEEDBACK</li>
+    </Seq>
+  </bz:status_open>
+
+  <bz:status_closed>
+    <Seq>
+        <li>RESOLVED</li>
+        <li>VERIFIED</li>
+    </Seq>
+  </bz:status_closed>
+
+  <bz:resolution>
+    <Seq>
+        <li></li>
+        <li>FIXED</li>
+        <li>INVALID</li>
+        <li>WONTFIX</li>
+        <li>DUPLICATE</li>
+        <li>WORKSFORME</li>
+        <li>NEEDINFO</li>
+        <li>UPSTREAM</li>
+        <li>LATER</li>
+        <li>MOVED TO NEW ISSUE TRACKER</li>
+    </Seq>
+  </bz:resolution>
+
+  <bz:keywords>
+    <Seq>
+    </Seq>
+  </bz:keywords>
+
+  <bz:platform>
+    <Seq>
+        <li>irrelevant</li>
+        <li>unknown</li>
+        <li>all</li>
+        <li>PC</li>
+        <li>Macintosh</li>
+        <li>other</li>
+    </Seq>
+  </bz:platform>
+
+  <bz:op_sys>
+    <Seq>
+        <li>irrelevant</li>
+        <li>unknown</li>
+        <li>all</li>
+        <li>Windows</li>
+        <li>Mac OS</li>
+        <li>Linux</li>
+        <li>BSD</li>
+        <li>other</li>
+    </Seq>
+  </bz:op_sys>
+
+  <bz:priority>
+    <Seq>
+        <li>Highest</li>
+        <li>High</li>
+        <li>Normal</li>
+        <li>Low</li>
+        <li>Lowest</li>
+    </Seq>
+  </bz:priority>
+
+  <bz:severity>
+    <Seq>
+        <li>blocker</li>
+        <li>critical</li>
+        <li>major</li>
+        <li>normal</li>
+        <li>minor</li>
+        <li>trivial</li>
+        <li>enhancement</li>
+    </Seq>
+  </bz:severity>
+
+  <bz:cf_qt_version>
+    <Seq>
+        <li>irrelevant</li>
+        <li>unknown</li>
+        <li>5.1.0</li>
+        <li>5.0.2</li>
+        <li>5.0.1</li>
+        <li>5.0.0</li>
+        <li>4.8.5</li>
+        <li>4.8.4</li>
+        <li>4.8.3</li>
+        <li>4.8.2</li>
+        <li>4.8.1</li>
+        <li>4.8.0</li>
+        <li>4.7.4</li>
+        <li>4.7.3</li>
+        <li>4.7.2</li>
+        <li>4.7.1</li>
+        <li>4.7.0</li>
+        <li>4.6.3</li>
+        <li>4.6.2</li>
+        <li>4.6.1</li>
+        <li>4.6.0</li>
+        <li>4.5.3</li>
+        <li>4.5.2</li>
+        <li>4.5.1</li>
+        <li>4.5.0</li>
+        <li>other</li>
+    </Seq>
+  </bz:cf_qt_version>
+
+
+  <bz:classifications>
+    <Seq>
+      <li>
+        <bz:classification rdf:about="http://bugs.bibletime.info/classification.cgi?name=BibleTime%20applications">
+          <bz:name>BibleTime applications</bz:name>
+          <bz:description>The BibleTime Bible study tool and other applications developed by the BibleTime team.</bz:description>
+          <bz:sortkey>0</bz:sortkey>
+        </bz:classification>
+      </li>
+      <li>
+        <bz:classification rdf:about="http://bugs.bibletime.info/classification.cgi?name=BibleTime%20websites">
+          <bz:name>BibleTime websites</bz:name>
+          <bz:description>Websites under bibletime.info</bz:description>
+          <bz:sortkey>100</bz:sortkey>
+        </bz:classification>
+      </li>
+      <li>
+        <bz:classification rdf:about="http://bugs.bibletime.info/classification.cgi?name=Other">
+          <bz:name>Other</bz:name>
+          <bz:description>BibleTime Gentoo overlay</bz:description>
+          <bz:sortkey>1000</bz:sortkey>
+        </bz:classification>
+      </li>
+    </Seq>
+  </bz:classifications>
+
+  <bz:products>
+    <Seq>
+        <li>
+          <bz:product rdf:about="http://bugs.bibletime.info/product.cgi?name=BibleTime">
+            <bz:name>BibleTime</bz:name>
+            <bz:allows_unconfirmed>1</bz:allows_unconfirmed>
+              <bz:classification>BibleTime applications</bz:classification>
+            <bz:components>
+              <Seq>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Backend&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Documentation&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=General&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Translations&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=User%20interface&amp;product=BibleTime"/>
+              </Seq>
+            </bz:components>
+
+            <bz:versions>
+              <Seq>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=irrelevant&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.8.0&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.7.3%20and%20older&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=git%20master&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.8_beta1&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.8_rc1&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.8_rc2&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.8.1&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.8.2&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.9_beta1&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.9_beta2&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.9_rc1&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.9_rc2&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.8.3&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=git%20stable-2.9&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.9.0&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.9.1&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=other&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=unknown&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.9.2&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=git%20stable-2.10&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.10_beta1&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.10_rc1&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.10.0&amp;product=BibleTime"/>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=2.10.1&amp;product=BibleTime"/>
+              </Seq>
+            </bz:versions>
+
+              <bz:target_milestones>
+                <Seq>
+                    <li resource="http://bugs.bibletime.info/milestone.cgi?name=unspecified&amp;product=BibleTime"/>
+                    <li resource="http://bugs.bibletime.info/milestone.cgi?name=2.9.0&amp;product=BibleTime"/>
+                    <li resource="http://bugs.bibletime.info/milestone.cgi?name=2.9.2&amp;product=BibleTime"/>
+                    <li resource="http://bugs.bibletime.info/milestone.cgi?name=2.9.3&amp;product=BibleTime"/>
+                    <li resource="http://bugs.bibletime.info/milestone.cgi?name=2.10_beta1&amp;product=BibleTime"/>
+                    <li resource="http://bugs.bibletime.info/milestone.cgi?name=2.10.0&amp;product=BibleTime"/>
+                    <li resource="http://bugs.bibletime.info/milestone.cgi?name=2.10.1&amp;product=BibleTime"/>
+                    <li resource="http://bugs.bibletime.info/milestone.cgi?name=2.10.2&amp;product=BibleTime"/>
+                    <li resource="http://bugs.bibletime.info/milestone.cgi?name=2.11.0&amp;product=BibleTime"/>
+                    <li resource="http://bugs.bibletime.info/milestone.cgi?name=3.0.0&amp;product=BibleTime"/>
+                </Seq>
+              </bz:target_milestones>
+
+          </bz:product>
+        </li>
+        <li>
+          <bz:product rdf:about="http://bugs.bibletime.info/product.cgi?name=BibleTime%20Gentoo%20overlay">
+            <bz:name>BibleTime Gentoo overlay</bz:name>
+            <bz:allows_unconfirmed>1</bz:allows_unconfirmed>
+              <bz:classification>Other</bz:classification>
+            <bz:components>
+              <Seq>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Ebuilds&amp;product=BibleTime%20Gentoo%20overlay"/>
+              </Seq>
+            </bz:components>
+
+            <bz:versions>
+              <Seq>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=irrelevant&amp;product=BibleTime%20Gentoo%20overlay"/>
+              </Seq>
+            </bz:versions>
+
+              <bz:target_milestones>
+                <Seq>
+                    <li resource="http://bugs.bibletime.info/milestone.cgi?name=---&amp;product=BibleTime%20Gentoo%20overlay"/>
+                </Seq>
+              </bz:target_milestones>
+
+          </bz:product>
+        </li>
+        <li>
+          <bz:product rdf:about="http://bugs.bibletime.info/product.cgi?name=bibletime.info">
+            <bz:name>bibletime.info</bz:name>
+            <bz:allows_unconfirmed>1</bz:allows_unconfirmed>
+              <bz:classification>BibleTime websites</bz:classification>
+            <bz:components>
+              <Seq>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Broken%20links&amp;product=bibletime.info"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=General&amp;product=bibletime.info"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Security&amp;product=bibletime.info"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Webserver%20problems&amp;product=bibletime.info"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Website%20content&amp;product=bibletime.info"/>
+              </Seq>
+            </bz:components>
+
+            <bz:versions>
+              <Seq>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=unspecified&amp;product=bibletime.info"/>
+              </Seq>
+            </bz:versions>
+
+              <bz:target_milestones>
+                <Seq>
+                    <li resource="http://bugs.bibletime.info/milestone.cgi?name=---&amp;product=bibletime.info"/>
+                </Seq>
+              </bz:target_milestones>
+
+          </bz:product>
+        </li>
+        <li>
+          <bz:product rdf:about="http://bugs.bibletime.info/product.cgi?name=blog.bibletime.info">
+            <bz:name>blog.bibletime.info</bz:name>
+            <bz:allows_unconfirmed>1</bz:allows_unconfirmed>
+              <bz:classification>BibleTime websites</bz:classification>
+            <bz:components>
+              <Seq>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Broken%20links&amp;product=blog.bibletime.info"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=General&amp;product=blog.bibletime.info"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Security&amp;product=blog.bibletime.info"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Webserver%20problems&amp;product=blog.bibletime.info"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Website%20content&amp;product=blog.bibletime.info"/>
+              </Seq>
+            </bz:components>
+
+            <bz:versions>
+              <Seq>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=unspecified&amp;product=blog.bibletime.info"/>
+              </Seq>
+            </bz:versions>
+
+              <bz:target_milestones>
+                <Seq>
+                    <li resource="http://bugs.bibletime.info/milestone.cgi?name=---&amp;product=blog.bibletime.info"/>
+                </Seq>
+              </bz:target_milestones>
+
+          </bz:product>
+        </li>
+        <li>
+          <bz:product rdf:about="http://bugs.bibletime.info/product.cgi?name=bugs.bibletime.info">
+            <bz:name>bugs.bibletime.info</bz:name>
+            <bz:allows_unconfirmed>1</bz:allows_unconfirmed>
+              <bz:classification>BibleTime websites</bz:classification>
+            <bz:components>
+              <Seq>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Broken%20links&amp;product=bugs.bibletime.info"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=General&amp;product=bugs.bibletime.info"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Security&amp;product=bugs.bibletime.info"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Webserver%20problems&amp;product=bugs.bibletime.info"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Website%20content&amp;product=bugs.bibletime.info"/>
+              </Seq>
+            </bz:components>
+
+            <bz:versions>
+              <Seq>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=unspecified&amp;product=bugs.bibletime.info"/>
+              </Seq>
+            </bz:versions>
+
+              <bz:target_milestones>
+                <Seq>
+                    <li resource="http://bugs.bibletime.info/milestone.cgi?name=---&amp;product=bugs.bibletime.info"/>
+                </Seq>
+              </bz:target_milestones>
+
+          </bz:product>
+        </li>
+        <li>
+          <bz:product rdf:about="http://bugs.bibletime.info/product.cgi?name=devel.bibletime.info">
+            <bz:name>devel.bibletime.info</bz:name>
+            <bz:allows_unconfirmed>1</bz:allows_unconfirmed>
+              <bz:classification>BibleTime websites</bz:classification>
+            <bz:components>
+              <Seq>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Broken%20links.&amp;product=devel.bibletime.info"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=General&amp;product=devel.bibletime.info"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Security&amp;product=devel.bibletime.info"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Webserver%20problems&amp;product=devel.bibletime.info"/>
+                  <li resource="http://bugs.bibletime.info/component.cgi?name=Website%20content&amp;product=devel.bibletime.info"/>
+              </Seq>
+            </bz:components>
+
+            <bz:versions>
+              <Seq>
+                  <li resource="http://bugs.bibletime.info/version.cgi?name=unspecified&amp;product=devel.bibletime.info"/>
+              </Seq>
+            </bz:versions>
+
+              <bz:target_milestones>
+                <Seq>
+                    <li resource="http://bugs.bibletime.info/milestone.cgi?name=---&amp;product=devel.bibletime.info"/>
+                </Seq>
+              </bz:target_milestones>
+
+          </bz:product>
+        </li>
+    </Seq>
+  </bz:products>
+
+  <bz:components>
+    <Seq>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Backend&amp;product=BibleTime">
+              <bz:name>Backend</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Documentation&amp;product=BibleTime">
+              <bz:name>Documentation</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=General&amp;product=BibleTime">
+              <bz:name>General</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Translations&amp;product=BibleTime">
+              <bz:name>Translations</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=User%20interface&amp;product=BibleTime">
+              <bz:name>User interface</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Ebuilds&amp;product=BibleTime%20Gentoo%20overlay">
+              <bz:name>Ebuilds</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Broken%20links&amp;product=bibletime.info">
+              <bz:name>Broken links</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=General&amp;product=bibletime.info">
+              <bz:name>General</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Security&amp;product=bibletime.info">
+              <bz:name>Security</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Webserver%20problems&amp;product=bibletime.info">
+              <bz:name>Webserver problems</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Website%20content&amp;product=bibletime.info">
+              <bz:name>Website content</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Broken%20links&amp;product=blog.bibletime.info">
+              <bz:name>Broken links</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=General&amp;product=blog.bibletime.info">
+              <bz:name>General</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Security&amp;product=blog.bibletime.info">
+              <bz:name>Security</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Webserver%20problems&amp;product=blog.bibletime.info">
+              <bz:name>Webserver problems</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Website%20content&amp;product=blog.bibletime.info">
+              <bz:name>Website content</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Broken%20links&amp;product=bugs.bibletime.info">
+              <bz:name>Broken links</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=General&amp;product=bugs.bibletime.info">
+              <bz:name>General</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Security&amp;product=bugs.bibletime.info">
+              <bz:name>Security</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Webserver%20problems&amp;product=bugs.bibletime.info">
+              <bz:name>Webserver problems</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Website%20content&amp;product=bugs.bibletime.info">
+              <bz:name>Website content</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Broken%20links.&amp;product=devel.bibletime.info">
+              <bz:name>Broken links.</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=General&amp;product=devel.bibletime.info">
+              <bz:name>General</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Security&amp;product=devel.bibletime.info">
+              <bz:name>Security</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Webserver%20problems&amp;product=devel.bibletime.info">
+              <bz:name>Webserver problems</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+          <li>
+            <bz:component rdf:about="http://bugs.bibletime.info/component.cgi?name=Website%20content&amp;product=devel.bibletime.info">
+              <bz:name>Website content</bz:name>
+              <bz:is_active>1</bz:is_active>
+                <bz:flag_types>
+                  <Seq>
+                  </Seq>
+                </bz:flag_types>
+            </bz:component>
+          </li>
+    </Seq>
+  </bz:components>
+
+  <bz:versions>
+    <Seq>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=irrelevant&amp;product=BibleTime">
+              <bz:name>irrelevant</bz:name>
+              <bz:is_active>1</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.8.0&amp;product=BibleTime">
+              <bz:name>2.8.0</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.7.3%20and%20older&amp;product=BibleTime">
+              <bz:name>2.7.3 and older</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=git%20master&amp;product=BibleTime">
+              <bz:name>git master</bz:name>
+              <bz:is_active>1</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.8_beta1&amp;product=BibleTime">
+              <bz:name>2.8_beta1</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.8_rc1&amp;product=BibleTime">
+              <bz:name>2.8_rc1</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.8_rc2&amp;product=BibleTime">
+              <bz:name>2.8_rc2</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.8.1&amp;product=BibleTime">
+              <bz:name>2.8.1</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.8.2&amp;product=BibleTime">
+              <bz:name>2.8.2</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.9_beta1&amp;product=BibleTime">
+              <bz:name>2.9_beta1</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.9_beta2&amp;product=BibleTime">
+              <bz:name>2.9_beta2</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.9_rc1&amp;product=BibleTime">
+              <bz:name>2.9_rc1</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.9_rc2&amp;product=BibleTime">
+              <bz:name>2.9_rc2</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.8.3&amp;product=BibleTime">
+              <bz:name>2.8.3</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=git%20stable-2.9&amp;product=BibleTime">
+              <bz:name>git stable-2.9</bz:name>
+              <bz:is_active>1</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.9.0&amp;product=BibleTime">
+              <bz:name>2.9.0</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.9.1&amp;product=BibleTime">
+              <bz:name>2.9.1</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=other&amp;product=BibleTime">
+              <bz:name>other</bz:name>
+              <bz:is_active>1</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=unknown&amp;product=BibleTime">
+              <bz:name>unknown</bz:name>
+              <bz:is_active>1</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.9.2&amp;product=BibleTime">
+              <bz:name>2.9.2</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=git%20stable-2.10&amp;product=BibleTime">
+              <bz:name>git stable-2.10</bz:name>
+              <bz:is_active>1</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.10_beta1&amp;product=BibleTime">
+              <bz:name>2.10_beta1</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.10_rc1&amp;product=BibleTime">
+              <bz:name>2.10_rc1</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.10.0&amp;product=BibleTime">
+              <bz:name>2.10.0</bz:name>
+              <bz:is_active>0</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=2.10.1&amp;product=BibleTime">
+              <bz:name>2.10.1</bz:name>
+              <bz:is_active>1</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=irrelevant&amp;product=BibleTime%20Gentoo%20overlay">
+              <bz:name>irrelevant</bz:name>
+              <bz:is_active>1</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=unspecified&amp;product=bibletime.info">
+              <bz:name>unspecified</bz:name>
+              <bz:is_active>1</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=unspecified&amp;product=blog.bibletime.info">
+              <bz:name>unspecified</bz:name>
+              <bz:is_active>1</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=unspecified&amp;product=bugs.bibletime.info">
+              <bz:name>unspecified</bz:name>
+              <bz:is_active>1</bz:is_active>
+            </bz:version>
+          </li>
+          <li>
+            <bz:version rdf:about="http://bugs.bibletime.info/version.cgi?name=unspecified&amp;product=devel.bibletime.info">
+              <bz:name>unspecified</bz:name>
+              <bz:is_active>1</bz:is_active>
+            </bz:version>
+          </li>
+    </Seq>
+  </bz:versions>
+
+    <bz:target_milestones>
+      <Seq>
+            <li>
+              <bz:target_milestone rdf:about="http://bugs.bibletime.info/milestone.cgi?name=unspecified&amp;product=BibleTime">
+                <bz:name>unspecified</bz:name>
+                <bz:is_active>1</bz:is_active>
+              </bz:target_milestone>
+            </li>
+            <li>
+              <bz:target_milestone rdf:about="http://bugs.bibletime.info/milestone.cgi?name=2.9.0&amp;product=BibleTime">
+                <bz:name>2.9.0</bz:name>
+                <bz:is_active>0</bz:is_active>
+              </bz:target_milestone>
+            </li>
+            <li>
+              <bz:target_milestone rdf:about="http://bugs.bibletime.info/milestone.cgi?name=2.9.2&amp;product=BibleTime">
+                <bz:name>2.9.2</bz:name>
+                <bz:is_active>0</bz:is_active>
+              </bz:target_milestone>
+            </li>
+            <li>
+              <bz:target_milestone rdf:about="http://bugs.bibletime.info/milestone.cgi?name=2.9.3&amp;product=BibleTime">
+                <bz:name>2.9.3</bz:name>
+                <bz:is_active>0</bz:is_active>
+              </bz:target_milestone>
+            </li>
+            <li>
+              <bz:target_milestone rdf:about="http://bugs.bibletime.info/milestone.cgi?name=2.10_beta1&amp;product=BibleTime">
+                <bz:name>2.10_beta1</bz:name>
+                <bz:is_active>0</bz:is_active>
+              </bz:target_milestone>
+            </li>
+            <li>
+              <bz:target_milestone rdf:about="http://bugs.bibletime.info/milestone.cgi?name=2.10.0&amp;product=BibleTime">
+                <bz:name>2.10.0</bz:name>
+                <bz:is_active>0</bz:is_active>
+              </bz:target_milestone>
+            </li>
+            <li>
+              <bz:target_milestone rdf:about="http://bugs.bibletime.info/milestone.cgi?name=2.10.1&amp;product=BibleTime">
+                <bz:name>2.10.1</bz:name>
+                <bz:is_active>0</bz:is_active>
+              </bz:target_milestone>
+            </li>
+            <li>
+              <bz:target_milestone rdf:about="http://bugs.bibletime.info/milestone.cgi?name=2.10.2&amp;product=BibleTime">
+                <bz:name>2.10.2</bz:name>
+                <bz:is_active>1</bz:is_active>
+              </bz:target_milestone>
+            </li>
+            <li>
+              <bz:target_milestone rdf:about="http://bugs.bibletime.info/milestone.cgi?name=2.11.0&amp;product=BibleTime">
+                <bz:name>2.11.0</bz:name>
+                <bz:is_active>1</bz:is_active>
+              </bz:target_milestone>
+            </li>
+            <li>
+              <bz:target_milestone rdf:about="http://bugs.bibletime.info/milestone.cgi?name=3.0.0&amp;product=BibleTime">
+                <bz:name>3.0.0</bz:name>
+                <bz:is_active>1</bz:is_active>
+              </bz:target_milestone>
+            </li>
+            <li>
+              <bz:target_milestone rdf:about="http://bugs.bibletime.info/milestone.cgi?name=---&amp;product=BibleTime%20Gentoo%20overlay">
+                <bz:name>---</bz:name>
+                <bz:is_active>1</bz:is_active>
+              </bz:target_milestone>
+            </li>
+            <li>
+              <bz:target_milestone rdf:about="http://bugs.bibletime.info/milestone.cgi?name=---&amp;product=bibletime.info">
+                <bz:name>---</bz:name>
+                <bz:is_active>1</bz:is_active>
+              </bz:target_milestone>
+            </li>
+            <li>
+              <bz:target_milestone rdf:about="http://bugs.bibletime.info/milestone.cgi?name=---&amp;product=blog.bibletime.info">
+                <bz:name>---</bz:name>
+                <bz:is_active>1</bz:is_active>
+              </bz:target_milestone>
+            </li>
+            <li>
+              <bz:target_milestone rdf:about="http://bugs.bibletime.info/milestone.cgi?name=---&amp;product=bugs.bibletime.info">
+                <bz:name>---</bz:name>
+                <bz:is_active>1</bz:is_active>
+              </bz:target_milestone>
+            </li>
+            <li>
+              <bz:target_milestone rdf:about="http://bugs.bibletime.info/milestone.cgi?name=---&amp;product=devel.bibletime.info">
+                <bz:name>---</bz:name>
+                <bz:is_active>1</bz:is_active>
+              </bz:target_milestone>
+            </li>
+      </Seq>
+    </bz:target_milestones>
+
+    <bz:flag_types>
+      <Seq>
+      </Seq>
+    </bz:flag_types>
+
+  <bz:fields>
+    <Seq>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=bug_id">
+            <bz:name>bug_id</bz:name>
+            <bz:description>Bug ID</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=short_desc">
+            <bz:name>short_desc</bz:name>
+            <bz:description>Summary</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=classification">
+            <bz:name>classification</bz:name>
+            <bz:description>Classification</bz:description>
+              <bz:is_active>1</bz:is_active>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=product">
+            <bz:name>product</bz:name>
+            <bz:description>Product</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=version">
+            <bz:name>version</bz:name>
+            <bz:description>Version</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=rep_platform">
+            <bz:name>rep_platform</bz:name>
+            <bz:description>Hardware</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=bug_file_loc">
+            <bz:name>bug_file_loc</bz:name>
+            <bz:description>URL</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=op_sys">
+            <bz:name>op_sys</bz:name>
+            <bz:description>OS</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=bug_status">
+            <bz:name>bug_status</bz:name>
+            <bz:description>Status</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=status_whiteboard">
+            <bz:name>status_whiteboard</bz:name>
+            <bz:description>Whiteboard</bz:description>
+              <bz:is_active>0</bz:is_active>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=keywords">
+            <bz:name>keywords</bz:name>
+            <bz:description>Keywords</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=resolution">
+            <bz:name>resolution</bz:name>
+            <bz:description>Resolution</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=bug_severity">
+            <bz:name>bug_severity</bz:name>
+            <bz:description>Severity</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=priority">
+            <bz:name>priority</bz:name>
+            <bz:description>Priority</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=component">
+            <bz:name>component</bz:name>
+            <bz:description>Component</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=assigned_to">
+            <bz:name>assigned_to</bz:name>
+            <bz:description>Assignee</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=reporter">
+            <bz:name>reporter</bz:name>
+            <bz:description>Reporter</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=qa_contact">
+            <bz:name>qa_contact</bz:name>
+            <bz:description>QA Contact</bz:description>
+              <bz:is_active>0</bz:is_active>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=cc">
+            <bz:name>cc</bz:name>
+            <bz:description>CC</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=dependson">
+            <bz:name>dependson</bz:name>
+            <bz:description>Depends on</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=blocked">
+            <bz:name>blocked</bz:name>
+            <bz:description>Blocks</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=attachments.description">
+            <bz:name>attachments.description</bz:name>
+            <bz:description>Attachment description</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=attachments.filename">
+            <bz:name>attachments.filename</bz:name>
+            <bz:description>Attachment filename</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=attachments.mimetype">
+            <bz:name>attachments.mimetype</bz:name>
+            <bz:description>Attachment mime type</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=attachments.ispatch">
+            <bz:name>attachments.ispatch</bz:name>
+            <bz:description>Attachment is patch</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=attachments.isobsolete">
+            <bz:name>attachments.isobsolete</bz:name>
+            <bz:description>Attachment is obsolete</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=attachments.isprivate">
+            <bz:name>attachments.isprivate</bz:name>
+            <bz:description>Attachment is private</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=attachments.submitter">
+            <bz:name>attachments.submitter</bz:name>
+            <bz:description>Attachment creator</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=target_milestone">
+            <bz:name>target_milestone</bz:name>
+            <bz:description>Target Milestone</bz:description>
+              <bz:is_active>1</bz:is_active>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=creation_ts">
+            <bz:name>creation_ts</bz:name>
+            <bz:description>Creation date</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=delta_ts">
+            <bz:name>delta_ts</bz:name>
+            <bz:description>Changed</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=longdesc">
+            <bz:name>longdesc</bz:name>
+            <bz:description>Comment</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=longdescs.isprivate">
+            <bz:name>longdescs.isprivate</bz:name>
+            <bz:description>Comment is private</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=alias">
+            <bz:name>alias</bz:name>
+            <bz:description>Alias</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=everconfirmed">
+            <bz:name>everconfirmed</bz:name>
+            <bz:description>Ever confirmed</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=reporter_accessible">
+            <bz:name>reporter_accessible</bz:name>
+            <bz:description>Reporter accessible</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=cclist_accessible">
+            <bz:name>cclist_accessible</bz:name>
+            <bz:description>CC list accessible</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=bug_group">
+            <bz:name>bug_group</bz:name>
+            <bz:description>Group</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=commenter">
+            <bz:name>commenter</bz:name>
+            <bz:description>Commenter</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=flagtypes.name">
+            <bz:name>flagtypes.name</bz:name>
+            <bz:description>Flags</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=requestees.login_name">
+            <bz:name>requestees.login_name</bz:name>
+            <bz:description>Flag Requestee</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=setters.login_name">
+            <bz:name>setters.login_name</bz:name>
+            <bz:description>Flag Setter</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=content">
+            <bz:name>content</bz:name>
+            <bz:description>Content</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=attach_data.thedata">
+            <bz:name>attach_data.thedata</bz:name>
+            <bz:description>Attachment data</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=owner_idle_time">
+            <bz:name>owner_idle_time</bz:name>
+            <bz:description>Time Since Assignee Touched</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=see_also">
+            <bz:name>see_also</bz:name>
+            <bz:description>See Also</bz:description>
+              <bz:is_active>1</bz:is_active>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=days_elapsed">
+            <bz:name>days_elapsed</bz:name>
+            <bz:description>Days since bug changed</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=cf_qt_version">
+            <bz:name>cf_qt_version</bz:name>
+            <bz:description>Qt version</bz:description>
+              <bz:type>3</bz:type>
+              <bz:type_desc>Multiple-Selection Box</bz:type_desc>
+              <bz:enter_bug>1</bz:enter_bug>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=cf_os_brand">
+            <bz:name>cf_os_brand</bz:name>
+            <bz:description>OS brand and version</bz:description>
+              <bz:type>1</bz:type>
+              <bz:type_desc>Free Text</bz:type_desc>
+              <bz:enter_bug>1</bz:enter_bug>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=longdescs.count">
+            <bz:name>longdescs.count</bz:name>
+            <bz:description>Number of Comments</bz:description>
+          </bz:field>
+        </li>
+        <li>
+          <bz:field rdf:about="http://bugs.bibletime.info/field.cgi?name=tag">
+            <bz:name>tag</bz:name>
+            <bz:description>Tags</bz:description>
+          </bz:field>
+        </li>
+    </Seq>
+  </bz:fields>
+</bz:installation>
+
+</RDF>

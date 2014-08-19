@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>11</bug_id>
+          
+          <creation_ts>2012-03-10 17:41:00 +0200</creation_ts>
+          <short_desc>New feature: automatic updates of installed works</short_desc>
+          <delta_ts>2014-07-06 19:11:38 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>General</component>
+          <version>irrelevant</version>
+          <rep_platform>irrelevant</rep_platform>
+          <op_sys>irrelevant</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>MOVED TO NEW ISSUE TRACKER</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>enhancement</bug_severity>
+          <target_milestone>unspecified</target_milestone>
+          
+          
+          <everconfirmed>0</everconfirmed>
+          <reporter name="Jaak Ristioja">jaak</reporter>
+          <assigned_to name="BibleTime Research Department, Institute of Bug Fixes">bibletime-tracker</assigned_to>
+          
+          <cf_qt_version>irrelevant</cf_qt_version>
+          <cf_os_brand>irrelevant</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>75</commentid>
+    <comment_count>0</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2012-03-10 17:41:40 +0200</bug_when>
+    <thetext>It were nice to have a feature which would automatically check for updates for installed works. This feature should be optional, and only enabled when the user requests it (on first run), because it might cause problems for people in countries where christians are persecuted.
+
+
+PS: This bug is from the old tracker: https://sourceforge.net/tracker/index.php?func=detail&amp;aid=2969434&amp;group_id=954&amp;atid=350954</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>202</commentid>
+    <comment_count>1</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2014-07-06 19:11:38 +0300</bug_when>
+    <thetext>Moved to https://github.com/bibletime/bibletime/issues/4</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

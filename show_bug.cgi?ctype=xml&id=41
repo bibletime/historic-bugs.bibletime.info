@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>41</bug_id>
+          
+          <creation_ts>2014-05-25 04:58:00 +0300</creation_ts>
+          <short_desc>Cannot read apocryphal books</short_desc>
+          <delta_ts>2014-08-19 18:01:00 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>General</component>
+          <version>2.10.0</version>
+          <rep_platform>PC</rep_platform>
+          <op_sys>Linux</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>MOVED TO NEW ISSUE TRACKER</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>normal</bug_severity>
+          <target_milestone>unspecified</target_milestone>
+          
+          
+          <everconfirmed>0</everconfirmed>
+          <reporter name="Alister.Hood">alister.hood</reporter>
+          <assigned_to name="BibleTime Research Department, Institute of Bug Fixes">bibletime-tracker</assigned_to>
+          <cc>jaak</cc>
+          <cf_qt_version>irrelevant</cf_qt_version>
+          <cf_os_brand>Arch Linux</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>190</commentid>
+    <comment_count>0</comment_count>
+    <who name="Alister.Hood">alister.hood</who>
+    <bug_when>2014-05-25 04:58:42 +0300</bug_when>
+    <thetext>Using Bibletime 2.10.0 with Sword 1.7.3 and KJVA 3.0.1, the books of the Apocrypha are listed, but Bibletime won&apos;t actually navigate to them.  If I select one from the dropdown, nothing happens, and if I type the name e.g. Tobit then it navigates somewhere else e.g. Revelation.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>191</commentid>
+    <comment_count>1</comment_count>
+    <who name="Alister.Hood">alister.hood</who>
+    <bug_when>2014-05-25 05:04:56 +0300</bug_when>
+    <thetext>Same problem with the DRC translation.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>193</commentid>
+    <comment_count>2</comment_count>
+    <who name="Alister.Hood">alister.hood</who>
+    <bug_when>2014-05-25 11:50:12 +0300</bug_when>
+    <thetext>Hmmm.
+I come back a few hours later and it is working.  I haven&apos;t rebooted or reinstalled or anything - just messed around with some of the other modules and closed all sword frontends down and come back and restarted Bibletime...
+The only thing is that you get funny results when displaying parallel bibles which don&apos;t have the apocrypha (they should really be blank, as they are when displaying the OT with a NT-only parallel bible or vice versa).
+
+Shall I change the status to RESOLVED since I can&apos;t even reproduce it?</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>194</commentid>
+    <comment_count>3</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2014-05-25 15:10:08 +0300</bug_when>
+    <thetext>There may be some problems when displaying works in parallel when the books in them don&apos;t match, e.g. when one (the first) Bible translation does not have the Apocrypha, but the others do. Maybe this helps to reproduce it.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>195</commentid>
+    <comment_count>4</comment_count>
+    <who name="Alister.Hood">alister.hood</who>
+    <bug_when>2014-05-25 19:06:03 +0300</bug_when>
+    <thetext>OK, it looks like there are a few issues, which makes it a little more confusing.  Some of them are related to showing bibles in parallel, and others are not:
+
+(1) it seems that apocryphal &quot;additions&quot; are listed as books, but if you select them nothing happens i.e. in KJVA the &quot;additions to Esther&quot;, &quot;Prayer of Azariah&quot;, &quot;Susanna&quot; and &quot;Bel and the Dragon&quot;.
+
+- bug in bibletime or sword?
+
+(2) modules using &quot;Vulgate&quot; versification list books which they don&apos;t actually include, e.g. the DRC lists &quot;Prayer of Manasses&quot;, &quot;I Esdras&quot;, &quot;II Esdras&quot; (aka 3 &amp; 4 Esdras), &quot;Additional Psalm&quot; and &quot;Laodiceans&quot;, after Revelation, but if you select them, all you get is a blank chapter 0 verse 0.
+
+- I guess this is a minor issue, but can/should it be worked around?
+
+(3) as mentioned, when displaying bibles in parallel, bibles which don&apos;t include the Apocrypha display the first verse of Revelation for every verse, instead of showing blank, as they would with a missing OT or NT.
+
+- I suspect this can be fixed in bibletime, but it is a relatively minor issue.
+
+(4) A similar but different effect to (3), applying to verses instead of books: when displaying e.g. Daniel 13 and 14 in DRC, parallel Bibles display the start of the book of Hosea instead of showing blank.  Even crazier, load up Daniel 3 in the DRC bible, with something else in a parallel view.  Alongside the apocryphal Daniel 3:24-90 you will see Daniel 3:91/24-100/30, followed by Daniel 4 &amp; 5.  If you view the DRC and the KJVA in parallel, should bibletime match up the additions to Daniel in the two versions, even though one translation published them separately (I think...) and the other translation published them together with the (proto)canon?
+
+- issue for bibletime?
+
+(4) If you select I or II Esdras in the DRC, it is blank as noted in (2).  But if you have KJVA as a parallel bible, it displays a header &quot;The First[/Second] Book of Esdras&quot;.  So presumably if you had a bible that actually included I/III and II/IV Esdras as I and II Esdras, with the KJVA in parallel that would display I Esdras/Ezra and II Esdras/Nehemiah, which would of course be totally incorrect.
+
+- based on the comment here I&apos;m guessing this is a module bug; the DRC is using the wrong osisID for these two books:
+https://crosswire.org/svn/sword-tools/trunk/versification/basicv11ns/canon_synodal.h
+Unless bibletime is using the book name somewhere where it should use the osisID...
+
+
+(5) To reproduce my original issue, open from the bookshelf a bible which doesn&apos;t include the apocrypha.  Then &quot;Replace&quot; it with a bible which does include the apocrypha.  Then try selecting a book from the apocrypha - it doesn&apos;t work.  Now close Bibletime and reopen it.  Try selecting a book from the apocrypha - it works.  &quot;Replace&quot; the bible with one which doesn&apos;t include the apocrypha, then &quot;replace&quot; that again with one which does include the apocrypha, and it still works.  So the issue is that bible &quot;windows&quot; (or &quot;views&quot; or whatever you want to call them) in Bibletime do not allow you to view stuff in the apocrypha *if they were initially opened with a bible that doesn&apos;t include the apocrypha*
+
+- I guess this is solely a bibletime issue... and maybe a relatively simple fix?
+
+I don&apos;t envy anyone trying to address these issues, but it would be nice to at least fix 4 and 5, and display blanks in parallel bibles whenever they don&apos;t contain a verse :)</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>196</commentid>
+    <comment_count>5</comment_count>
+    <who name="Alister.Hood">alister.hood</who>
+    <bug_when>2014-05-25 19:07:09 +0300</bug_when>
+    <thetext>Regarding (2) refer to https://crosswire.org/svn/sword-tools/trunk/versification/basicv11ns/canon_vulg.h</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>206</commentid>
+    <comment_count>6</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2014-08-19 18:01:00 +0300</bug_when>
+    <thetext>Moved to new issue tracker: https://github.com/bibletime/bibletime/issues/12</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>

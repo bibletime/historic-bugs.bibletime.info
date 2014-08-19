@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE bugzilla SYSTEM "http://bugs.bibletime.info/page.cgi?id=bugzilla.dtd">
+
+<bugzilla version="4.4.4"
+          urlbase="http://bugs.bibletime.info/"
+          
+          maintainer="jaak@ristioja.ee"
+>
+
+    <bug>
+          <bug_id>22</bug_id>
+          
+          <creation_ts>2012-12-30 18:19:00 +0200</creation_ts>
+          <short_desc>Keyboard Verse Navigation Shortcut Asymmetry</short_desc>
+          <delta_ts>2014-08-19 18:05:56 +0300</delta_ts>
+          <reporter_accessible>1</reporter_accessible>
+          <cclist_accessible>1</cclist_accessible>
+          <classification_id>2</classification_id>
+          <classification>BibleTime applications</classification>
+          <product>BibleTime</product>
+          <component>User interface</component>
+          <version>other</version>
+          <rep_platform>all</rep_platform>
+          <op_sys>Linux</op_sys>
+          <bug_status>RESOLVED</bug_status>
+          <resolution>WONTFIX</resolution>
+          
+          
+          <bug_file_loc></bug_file_loc>
+          <status_whiteboard></status_whiteboard>
+          <keywords></keywords>
+          <priority>Normal</priority>
+          <bug_severity>minor</bug_severity>
+          <target_milestone>unspecified</target_milestone>
+          
+          
+          <everconfirmed>0</everconfirmed>
+          <reporter name="Fred Gilham">gilham</reporter>
+          <assigned_to name="BibleTime Research Department, Institute of Bug Fixes">bibletime-tracker</assigned_to>
+          <cc>jaak</cc>
+          <cf_qt_version>4.8.1</cf_qt_version>
+          <cf_os_brand>Linux Ubuntu 12.04.1</cf_os_brand>
+
+      
+
+      
+
+      
+
+          <comment_sort_order>oldest_to_newest</comment_sort_order>  
+          <long_desc isprivate="0" >
+    <commentid>106</commentid>
+    <comment_count>0</comment_count>
+    <who name="Fred Gilham">gilham</who>
+    <bug_when>2012-12-30 18:19:08 +0200</bug_when>
+    <thetext>I&apos;m using the Git development version that I update from time to time.  Currently the version is 2.1.0_dev+0484ae7
+
+I&apos;ve noticed a kind of asymmetry in the verse scrolling that I don&apos;t think is intentional and doesn&apos;t really make sense.
+
+If I type &quot;ctrl-v&quot; to scroll down the verses in a chapter, when I get to the end of the chapter it stops with the last verse of the chapter. However, when I hit &quot;ctrl-shift-v&quot; to scroll up, when I get to the first verse and hit it again it will scroll to the last verse of the previous chapter.
+
+I actually like this latter behavior because chapter breaks are artificial. But at least it should do one or the other, because if I scroll accidentally into the previous chapter and then try to scroll back with &quot;ctrl-v&quot; it won&apos;t; it just stays at the last verse of the previous chapter. I have to use the chapter-scroll mechanism and that&apos;s inconvenient.
+
+Actually I&apos;ve mapped the second shortcuts in the Bible windows to the arrow keys, which is why it&apos;s inconvenient (I can&apos;t just use the arrow keys to scroll back and forth because it gets &quot;stuck&quot;), but the same behavior exists whether or not there&apos;s any such mapping.</thetext>
+  </long_desc><long_desc isprivate="0" >
+    <commentid>210</commentid>
+    <comment_count>1</comment_count>
+    <who name="Jaak Ristioja">jaak</who>
+    <bug_when>2014-08-19 18:05:56 +0300</bug_when>
+    <thetext>That version if git is no longer supported, closing. If this is still an issue with BibleTime, please use https://github.com/bibletime/bibletime/issues/new to report a new bug.</thetext>
+  </long_desc>
+      
+      
+
+    </bug>
+
+</bugzilla>
